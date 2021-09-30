@@ -5,5 +5,11 @@
     <url>/2021/09/30/first_posts/</url>
     <content><![CDATA[<p>这是第一篇提交的文章, 没有什么可说的, 就是测试一下配置是否正常</p>
 ]]></content>
+      <categories>
+        <category>测试用</category>
+      </categories>
+      <tags>
+        <tag>非闲勿看</tag>
+      </tags>
   </entry>
 </search>
