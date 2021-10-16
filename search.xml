@@ -1,45 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>为啥写mod这么多bug啊!!!!!</title>
-    <url>/2021/10/05/mod-bugs/</url>
-    <content><![CDATA[<h1 id="关于写了个不到米粒儿大的mod却永远无法正常使用这件事"><a href="#关于写了个不到米粒儿大的mod却永远无法正常使用这件事" class="headerlink" title="关于写了个不到米粒儿大的mod却永远无法正常使用这件事"></a>关于写了个不到米粒儿大的mod却永远无法正常使用这件事</h1><hr>
-<p>这几天一直用fabric搞mod, 结果这个bug修完还有那个bug, 总而言之, 非常气人</p>
-<p>甚至我还画了个banner.png</p>
-<p>给大家展示一下</p>
-<span id="more"></span>
-
-<p><img src="https://i.loli.net/2021/10/04/2eXk5VMD7hqjcYT.png" alt="banner"></p>
-<p>甚至我还把github actions搞好了</p>
-<p>那么这个项目是什么呢?</p>
-<p>…</p>
-<p>…</p>
-<p>…</p>
-<p>噔噔蹬~</p>
-<p><a href="https://github.com/foeyt/schematics-download-helper-fabric">schematics-download-helper-fabric</a></p>
-<p>这就是</p>
-<hr>
-<p>最后, 给大家点个歌吧</p>
-<iframe src="https://music.163.com/outchain/player?type=2&id=16648232&amp;auto=0&amp;height=66" width="330" height="86" frameborder="no" marginwidth="0" marginheight="0"></iframe>
-
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>发牢骚</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第一篇文章</title>
-    <url>/2021/09/30/first-posts/</url>
-    <content><![CDATA[<p>这是第一篇提交的文章, 没有什么可说的, 就是测试一下配置是否正常</p>
-]]></content>
-      <categories>
-        <category>测试用</category>
-      </categories>
-      <tags>
-        <tag>非闲勿看</tag>
-      </tags>
+    <title>test</title>
+    <url>/2021/10/17/test/</url>
+    <content><![CDATA[<h1 id="HELLO-WORLD-🎉🎉🎉"><a href="#HELLO-WORLD-🎉🎉🎉" class="headerlink" title="HELLO WORLD 🎉🎉🎉"></a>HELLO WORLD 🎉🎉🎉</h1>]]></content>
   </entry>
 </search>
