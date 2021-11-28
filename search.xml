@@ -7,13 +7,13 @@
 <span id="more"></span>
 
 <hr>
-<h2 id="网络的网络-1"><a href="#网络的网络-1" class="headerlink" title="网络的网络[^1]"></a>网络的网络[^1]</h2><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/network-of-networks.gif" alt="img"></p>
-<p>网络连接多个主机，互连网（internet）连接多个网络，互联网（Internet）连接多个互连网。互联网是世界性的网络</p>
+<h2 id="网络的网络-1"><a href="#网络的网络-1" class="headerlink" title="网络的网络[1]"></a>网络的网络[1]</h2><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/network-of-networks.gif" alt="img"></p>
+<p>网络连接多个主机，互连网（internet）连接多个网络，互联网（Internet）连接多个互连网。互联网是世界性的网络。</p>
 <hr>
 <h2 id="Internet-Service-Providers-ISP"><a href="#Internet-Service-Providers-ISP" class="headerlink" title="Internet Service Providers(ISP)"></a>Internet Service Providers(ISP)</h2><p>Internet Service Providers，中文名互联网服务提供商，简称 ISP。</p>
-<p>ISP 可以给一个主机分配 IP 地址，还有通信设备与线路，只需缴纳一定费用即可连上世界</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	User[用户] --&gt; ISP[ISP] --&gt; Internet((互联网))</span><br><span class="line">	Internet -.-&gt; www1(www)</span><br><span class="line">	Internet -.-&gt; www2(www)</span><br><span class="line">	Internet -.-&gt; www3(www)</span><br></pre></td></tr></table></figure>
-
+<p>ISP 可以给一个主机分配 IP 地址，还有通信设备与线路，只需缴纳一定费用即可连上世界。</p>
+<p><img src="https://i.loli.net/2021/11/28/2ZdhIovQ4XqBzic.png" alt="image-20211128174907234"></p>
+<p>目前的互联网是一种多层次 ISP 结构，ISP 根据覆盖面积的大小分为第一层 ISP、区域 ISP 和接入 ISP。互联网交换点 IXP 允许两个 ISP 直接相连而不用经过第三个 ISP。</p>
 ]]></content>
       <categories>
         <category>学习笔记</category>
