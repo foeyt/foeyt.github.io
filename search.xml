@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>计算机网络学习 - 概述</title>
-    <url>/2021/11/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0-%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h1 id="计算机网络学习-概述"><a href="#计算机网络学习-概述" class="headerlink" title="计算机网络学习 - 概述"></a>计算机网络学习 - 概述</h1><p>本张为计算机网络概述</p>
-<span id="more"></span>
-
-<hr>
-<h2 id="网络的网络-1"><a href="#网络的网络-1" class="headerlink" title="网络的网络[1]"></a>网络的网络[1]</h2><p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/network-of-networks.gif" alt="img"></p>
-<p>网络连接多个主机，互连网（internet）连接多个网络，互联网（Internet）连接多个互连网。互联网是世界性的网络。</p>
-<hr>
-<h2 id="Internet-Service-Providers-ISP"><a href="#Internet-Service-Providers-ISP" class="headerlink" title="Internet Service Providers(ISP)"></a>Internet Service Providers(ISP)</h2><p>Internet Service Providers，中文名互联网服务提供商，简称 ISP。</p>
-<p>ISP 可以给一个主机分配 IP 地址，还有通信设备与线路，只需缴纳一定费用即可连上世界。</p>
-<p><img src="https://i.loli.net/2021/11/28/2ZdhIovQ4XqBzic.png" alt="image-20211128174907234"></p>
-<p>目前的互联网是一种多层次 ISP 结构，ISP 根据覆盖面积的大小分为第一层 ISP、区域 ISP 和接入 ISP。互联网交换点 IXP 允许两个 ISP 直接相连而不用经过第三个 ISP。</p>
+    <title>MPlayer3</title>
+    <url>/2022/03/12/mplayer3/</url>
+    <content><![CDATA[<h1 id="关于-MPlayer3"><a href="#关于-MPlayer3" class="headerlink" title="关于 MPlayer3"></a>关于 MPlayer3</h1><p><strong>它与 MPlayer 没有任何关系！</strong></p>
+<p>非常简单的使用 网易云API 制作的简单程序，使用 Java 编写。用到了 Jlayer 库。</p>
+<p>你只需要简单运行一下就可以了！</p>
+<p>地址：<a href="https://github.com/foeyt/MPlayer3">foeyt/MPlayer3: This is a Java MP3 Player (github.com)</a></p>
+<p>谢谢阅读~</p>
 ]]></content>
       <categories>
-        <category>学习笔记</category>
+        <category>Java程序</category>
       </categories>
       <tags>
-        <tag>网络</tag>
+        <tag>Java</tag>
+        <tag>音乐</tag>
       </tags>
   </entry>
 </search>
