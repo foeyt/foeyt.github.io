@@ -22,25 +22,28 @@
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"foeyt.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="这是Foe522yt的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Foe522yt&#39;s Blog">
-<meta property="og:url" content="https://foeyt.github.io/categories/Java%E7%A8%8B%E5%BA%8F/index.html">
+<meta name="description" content="关于访问 Bilibili 视频源地址的访问 headers已经有很多人贴出来过获取视频源地址的方法了，治理我贴一个 『B站API学习』不使用插件下载B站视频 - 哔哩哔哩 (bilibili.com)。 经过几十次的试错，把标头试出来了。以 BV1GJ411x7h7 为例, 报头如下： 12referer:https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1GJ411x7h7;u">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于访问 Bilibili 视频源地址的访问 headers">
+<meta property="og:url" content="https://foeyt.github.io/2022/03/14/bilivideo-header/index.html">
 <meta property="og:site_name" content="Foe522yt&#39;s Blog">
-<meta property="og:description" content="这是Foe522yt的个人博客">
+<meta property="og:description" content="关于访问 Bilibili 视频源地址的访问 headers已经有很多人贴出来过获取视频源地址的方法了，治理我贴一个 『B站API学习』不使用插件下载B站视频 - 哔哩哔哩 (bilibili.com)。 经过几十次的试错，把标头试出来了。以 BV1GJ411x7h7 为例, 报头如下： 12referer:https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1GJ411x7h7;u">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-14T14:19:22.000Z">
+<meta property="article:modified_time" content="2022-03-14T07:26:47.178Z">
 <meta property="article:author" content="Foe522yt">
+<meta property="article:tag" content="编程心得">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://foeyt.github.io/categories/Java%E7%A8%8B%E5%BA%8F/">
+<link rel="canonical" href="https://foeyt.github.io/2022/03/14/bilivideo-header/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"categories/Java程序/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://foeyt.github.io/2022/03/14/bilivideo-header/","path":"2022/03/14/bilivideo-header/","title":"关于访问 Bilibili 视频源地址的访问 headers"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>分类: Java程序 | Foe522yt's Blog</title>
+<title>关于访问 Bilibili 视频源地址的访问 headers | Foe522yt's Blog</title>
   
 
 
@@ -135,7 +138,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -148,6 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E8%AE%BF%E9%97%AE-Bilibili-%E8%A7%86%E9%A2%91%E6%BA%90%E5%9C%B0%E5%9D%80%E7%9A%84%E8%AE%BF%E9%97%AE-headers"><span class="nav-number">1.</span> <span class="nav-text">关于访问 Bilibili 视频源地址的访问 headers</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -163,13 +167,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -220,51 +224,133 @@
 </noscript>
 
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">Java程序
-          <small>分类</small>
-        </h2>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://foeyt.github.io/2022/03/14/bilivideo-header/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Foe522yt">
+      <meta itemprop="description" content="这是Foe522yt的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Foe522yt's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于访问 Bilibili 视频源地址的访问 headers
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+      <time title="创建时间：2022-03-14 14:19:22 / 修改时间：07:26:47" itemprop="dateCreated datePublished" datetime="2022-03-14T14:19:22Z">2022-03-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BF%83%E5%BE%97/" itemprop="url" rel="index"><span itemprop="name">编程心得</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>268</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="关于访问-Bilibili-视频源地址的访问-headers"><a href="#关于访问-Bilibili-视频源地址的访问-headers" class="headerlink" title="关于访问 Bilibili 视频源地址的访问 headers"></a>关于访问 Bilibili 视频源地址的访问 headers</h2><p>已经有很多人贴出来过获取视频源地址的方法了，治理我贴一个 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bilibili.com/read/cv6415114">『B站API学习』不使用插件下载B站视频 - 哔哩哔哩 (bilibili.com)</a>。</p>
+<p>经过几十次的试错，把标头试出来了。以 <code>BV1GJ411x7h7</code> 为例, 报头如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">referer:https://www.bilibili.com/video/BV1GJ411x7h7;</span><br><span class="line">user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0</span><br></pre></td></tr></table></figure>
+
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-03-12T08:43:19Z"
-              content="2022-03-12">
-          03-12
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/03/12/mplayer3/" itemprop="url">
-            <span itemprop="name">MPlayer3</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          
 
-      
-    </header>
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Foe522yt
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://foeyt.github.io/2022/03/14/bilivideo-header/" title="关于访问 Bilibili 视频源地址的访问 headers">https://foeyt.github.io/2022/03/14/bilivideo-header/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B%E5%BF%83%E5%BE%97/" rel="tag"># 编程心得</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/03/12/mplayer3/" rel="prev" title="MPlayer3">
+                  <i class="fa fa-chevron-left"></i> MPlayer3
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
 
+
+
+
+
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -326,7 +412,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"id":"location.pathname","github_id":"foeyt","repo":"foeyt.github.io","client_id":"7a4f99178860d6212087","client_secret":"ca43952f5fc6f8621a218dd76fbd457fade6779c","admin_user":"foeyt","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"bcca2f48f1b2758ee02a1484f65d0cd6"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"id":"location.pathname","github_id":"foeyt","repo":"foeyt.github.io","client_id":"7a4f99178860d6212087","client_secret":"ca43952f5fc6f8621a218dd76fbd457fade6779c","admin_user":"foeyt","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"7e5038c7e11eac036dedb0e53847309a"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
