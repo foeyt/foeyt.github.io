@@ -19,8 +19,8 @@
   <entry>
     <title>关于访问 Bilibili 视频源地址的访问 headers</title>
     <url>/2022/03/14/bilivideo-header/</url>
-    <content><![CDATA[<h2 id="关于访问-Bilibili-视频源地址的访问-headers"><a href="#关于访问-Bilibili-视频源地址的访问-headers" class="headerlink" title="关于访问 Bilibili 视频源地址的访问 headers"></a>关于访问 Bilibili 视频源地址的访问 headers</h2><p>已经有很多人贴出来过获取视频源地址的方法了，治理我贴一个 <a href="https://www.bilibili.com/read/cv6415114">『B站API学习』不使用插件下载B站视频 - 哔哩哔哩 (bilibili.com)</a>。</p>
-<p>经过几十次的试错，把标头试出来了。以 <code>BV1GJ411x7h7</code> 为例, 报头如下：</p>
+    <content><![CDATA[<h2 id="关于访问-Bilibili-视频源地址的访问-headers"><a href="#关于访问-Bilibili-视频源地址的访问-headers" class="headerlink" title="关于访问 Bilibili 视频源地址的访问 headers"></a>关于访问 Bilibili 视频源地址的访问 headers</h2><p>已经有很多人贴出来过获取视频源地址的方法了，这里我贴一个 <a href="https://www.bilibili.com/read/cv6415114">『B站API学习』不使用插件下载B站视频 - 哔哩哔哩 (bilibili.com)</a>。</p>
+<p>经过几十次的试错，把报头试出来了。以 <code>BV1GJ411x7h7</code> 为例, 报头如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">referer:https://www.bilibili.com/video/BV1GJ411x7h7;</span><br><span class="line">user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0</span><br></pre></td></tr></table></figure>
 
 ]]></content>
