@@ -20,29 +20,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"foeyt.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明 最近翻到了这些不等式、恒等式、定理这些东西，害怕忘掉这里简要记录一下。 首先先说明下这些定理。  Chebyshev 不等式  对于序列 a1 ≤ a2 ≤ ⋯ ≤ an, b1 ≤ b2 ≤ ⋯ ≤ bn，则有：  $$ \begin{flalign} \left(\sum_{i&#x3D;1}^n">
+    <meta name="description" content="来一些不等式、恒等式、定理的证明 最近翻到了这些不等式、恒等式、定理这些东西，害怕忘掉这里简要记录一下。 首先先说明下这些定理。  Chebyshev 不等式  对于序列 a1 ≤ a2 ≤ ⋯ ≤ an, b1 ≤ b2 ≤ ⋯ ≤ bn，则有：  $$ \begin{flalign} \left(\sum_{i&#x3D;1}^na_i\right)\left(\sum_{j&#x3D;1}^">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明">
-<meta property="og:url" content="https://foeyt.github.io/2025/10/06/Chebyshev-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Cauchy-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Abel-%E6%81%92%E7%AD%89%E5%BC%8F%E3%80%81%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/index.html">
+<meta property="og:title" content="来一些不等式、恒等式、定理的证明">
+<meta property="og:url" content="https://foeyt.github.io/2025/10/06/%E6%9D%A5%E4%B8%80%E4%BA%9B%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81%E6%81%92%E7%AD%89%E5%BC%8F%E3%80%81%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/index.html">
 <meta property="og:site_name" content="Razorsax-Blog">
-<meta property="og:description" content="Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明 最近翻到了这些不等式、恒等式、定理这些东西，害怕忘掉这里简要记录一下。 首先先说明下这些定理。  Chebyshev 不等式  对于序列 a1 ≤ a2 ≤ ⋯ ≤ an, b1 ≤ b2 ≤ ⋯ ≤ bn，则有：  $$ \begin{flalign} \left(\sum_{i&#x3D;1}^n">
+<meta property="og:description" content="来一些不等式、恒等式、定理的证明 最近翻到了这些不等式、恒等式、定理这些东西，害怕忘掉这里简要记录一下。 首先先说明下这些定理。  Chebyshev 不等式  对于序列 a1 ≤ a2 ≤ ⋯ ≤ an, b1 ≤ b2 ≤ ⋯ ≤ bn，则有：  $$ \begin{flalign} \left(\sum_{i&#x3D;1}^na_i\right)\left(\sum_{j&#x3D;1}^">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://foeyt.github.io/images/AM_GM_W.png">
 <meta property="article:published_time" content="2025-10-06T03:44:35.000Z">
-<meta property="article:modified_time" content="2025-10-06T04:59:24.268Z">
+<meta property="article:modified_time" content="2025-10-06T14:19:16.383Z">
 <meta property="article:author" content="Razorsax">
 <meta property="article:tag" content="不等式">
 <meta property="article:tag" content="代数">
 <meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://foeyt.github.io/images/AM_GM_W.png">
 
 
-<link rel="canonical" href="https://foeyt.github.io/2025/10/06/Chebyshev-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Cauchy-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Abel-%E6%81%92%E7%AD%89%E5%BC%8F%E3%80%81%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/">
+<link rel="canonical" href="https://foeyt.github.io/2025/10/06/%E6%9D%A5%E4%B8%80%E4%BA%9B%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81%E6%81%92%E7%AD%89%E5%BC%8F%E3%80%81%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://foeyt.github.io/2025/10/06/Chebyshev-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Cauchy-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Abel-%E6%81%92%E7%AD%89%E5%BC%8F%E3%80%81%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/","path":"2025/10/06/Chebyshev-不等式、Cauchy-不等式、Abel-恒等式、二项式定理的证明/","title":"Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://foeyt.github.io/2025/10/06/%E6%9D%A5%E4%B8%80%E4%BA%9B%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81%E6%81%92%E7%AD%89%E5%BC%8F%E3%80%81%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/","path":"2025/10/06/来一些不等式、恒等式、定理的证明/","title":"来一些不等式、恒等式、定理的证明"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明 | Razorsax-Blog</title>
+<title>来一些不等式、恒等式、定理的证明 | Razorsax-Blog</title>
   
 
 
@@ -169,8 +171,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#chebyshev-%E4%B8%8D%E7%AD%89%E5%BC%8Fcauchy-%E4%B8%8D%E7%AD%89%E5%BC%8Fabel-%E6%81%92%E7%AD%89%E5%BC%8F%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">Chebyshev
-不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E-chebyshev-%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">证明 Chebyshev 不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E-cauchy-%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">证明 Cauchy 不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E-abel-%E6%81%92%E7%AD%89%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">证明 Abel 恒等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86"><span class="nav-number">1.4.</span> <span class="nav-text">证明二项式定理</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9D%A5%E4%B8%80%E4%BA%9B%E4%B8%8D%E7%AD%89%E5%BC%8F%E6%81%92%E7%AD%89%E5%BC%8F%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">来一些不等式、恒等式、定理的证明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E-chebyshev-%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">证明 Chebyshev 不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E-cauchy-%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">证明 Cauchy 不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E-abel-%E6%81%92%E7%AD%89%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">证明 Abel 恒等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86"><span class="nav-number">1.4.</span> <span class="nav-text">证明二项式定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E%E6%8E%A8%E5%B9%BF%E7%9A%84-bernoulli-%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">1.5.</span> <span class="nav-text">证明推广的 Bernoulli 不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E-h%C3%B6lder-%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">1.6.</span> <span class="nav-text">证明 Hölder 不等式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%81%E6%98%8E%E5%8A%A0%E6%9D%83%E5%B9%B3%E5%9D%87%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">1.6.1.</span> <span class="nav-text">证明加权平均值不等式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%81%E6%98%8E-young-%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">1.6.2.</span> <span class="nav-text">证明 Young 不等式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%81%E6%98%8E-h%C3%B6lder-%E4%B8%8D%E7%AD%89%E5%BC%8F-1"><span class="nav-number">1.6.3.</span> <span class="nav-text">证明 Hölder 不等式</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -231,7 +232,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://foeyt.github.io/2025/10/06/Chebyshev-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Cauchy-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Abel-%E6%81%92%E7%AD%89%E5%BC%8F%E3%80%81%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/">
+    <link itemprop="mainEntityOfPage" href="https://foeyt.github.io/2025/10/06/%E6%9D%A5%E4%B8%80%E4%BA%9B%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81%E6%81%92%E7%AD%89%E5%BC%8F%E3%80%81%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -244,12 +245,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明 | Razorsax-Blog">
+      <meta itemprop="name" content="来一些不等式、恒等式、定理的证明 | Razorsax-Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明
+          来一些不等式、恒等式、定理的证明
         </h1>
 
         <div class="post-meta-container">
@@ -261,7 +262,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-10-06 11:44:35 / 修改时间：12:59:24" itemprop="dateCreated datePublished" datetime="2025-10-06T11:44:35+08:00">2025-10-06</time>
+      <time title="创建时间：2025-10-06 11:44:35 / 修改时间：22:19:16" itemprop="dateCreated datePublished" datetime="2025-10-06T11:44:35+08:00">2025-10-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -283,8 +284,7 @@
     
     
     <div class="post-body" itemprop="articleBody"><h1
-id="chebyshev-不等式cauchy-不等式abel-恒等式二项式定理的证明">Chebyshev
-不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明</h1>
+id="来一些不等式恒等式定理的证明">来一些不等式、恒等式、定理的证明</h1>
 <p>最近翻到了这些不等式、恒等式、定理这些东西，害怕忘掉这里简要记录一下。</p>
 <p>首先先说明下这些定理。</p>
 <ul>
@@ -329,6 +329,31 @@ class="math inline">∀<em>x</em> ∈ ℝ, <em>n</em> ∈ ℕ<sup>*</s
 <p><span class="math display">$$
 \begin{flalign}
 (1+x)^n=\sum_{i=0}^n{n\choose i}x^i
+\end{flalign}
+$$</span></p></li>
+<li><p>推广的 Bernoulli 不等式</p>
+<ul>
+<li>若 <span
+class="math inline"><em>a</em><sub><em>i</em></sub> &gt; −1, 1 ≤ <em>i</em> ≤ <em>n</em>, <em>i</em> ∈ ℕ<sup>*</sup></span>
+且同号，则有：</li>
+</ul>
+<p><span class="math display">$$
+\begin{flalign}
+\prod_{i=1}^n(1+a_i)\geq1+\sum_{i=1}^na_i
+\end{flalign}
+$$</span></p></li>
+<li><p>Hölder 不等式</p>
+<ul>
+<li>设两组非负实数 <span
+class="math inline"><em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, ⋯, <em>x</em><sub><em>n</em></sub></span>
+和 <span
+class="math inline"><em>y</em><sub>1</sub>, <em>y</em><sub>2</sub>, ⋯, <em>y</em><sub><em>n</em></sub></span>，并设
+<span
+class="math inline">$p,q&gt;1,\frac{1}{p}+\frac{1}{q}=1$</span>，则有：</li>
+</ul>
+<p><span class="math display">$$
+\begin{flalign}
+\sum_{i=1}^nx_iy_i\leq\left(\sum_{i=1}^nx_i^p\right)^\frac{1}{p}\left(\sum_{j=1}^ny_j^q\right)^\frac{1}{q}
 \end{flalign}
 $$</span></p></li>
 </ul>
@@ -390,12 +415,12 @@ S&amp;=\sum_{i=1}^na_ib_i=\sum_{i=1}^na_i(B_i-B_{i-1})\\
 $$</span> 证毕。</p>
 <hr />
 <h2 id="证明二项式定理">证明二项式定理</h2>
-<p>运用数学归纳法</p>
+<p>运用数学归纳法。</p>
 <p>当 <span class="math inline"><em>n</em> = 1，<em>n</em> = 2</span>
-时，显然成立。</p>
+时，显然成立.</p>
 <p>假设对于 <span class="math inline"><em>n</em> − 1</span>
-成立，则推理对于 <span class="math inline"><em>n</em></span>
-也成立即可。 <span class="math display">$$
+成立，则推理对于 <span class="math inline"><em>n</em></span> 也成立即可.
+<span class="math display">$$
 \begin{flalign}
 (1+x)^n&amp;=(1+x)(1+x)^{n-1}=(1+x)\sum_{k=0}^{n-1}{n-1 \choose k}x^k\\
 &amp;=\sum_{k=0}^{n-1}{n-1 \choose k}x^k+\sum_{k=0}^{n-1}{n-1 \choose
@@ -407,9 +432,69 @@ k-1}\right)x^k+1+x^n\\
 &amp;=\sum_{k=1}^{n-1}{n \choose k}x^k+1+x^n=\sum_{k=0}^n{n \choose
 k}x^k
 \end{flalign}
-$$</span> 则对于 <span class="math inline"><em>n</em></span>
-也成立。</p>
+$$</span> 则对于 <span class="math inline"><em>n</em></span> 也成立.</p>
 <p>证毕。</p>
+<hr />
+<h2 id="证明推广的-bernoulli-不等式">证明推广的 Bernoulli 不等式</h2>
+<p>运用数学归纳法。</p>
+<p>当 <span class="math inline"><em>n</em> = 1</span> 时，有 <span
+class="math inline">1 + <em>a</em><sub>1</sub> = 1 + <em>a</em><sub>1</sub></span>.</p>
+<p>当 <span class="math inline"><em>n</em> = 2</span> 时，有 <span
+class="math inline">(1 + <em>a</em><sub>1</sub>)(1 + <em>a</em><sub>2</sub>) = 1 + <em>a</em><sub>1</sub> + <em>a</em><sub>2</sub> + <em>a</em><sub>1</sub><em>a</em><sub>2</sub> &gt; 1 + <em>a</em><sub>1</sub> + <em>a</em><sub>2</sub></span>.</p>
+<p>假设 <span class="math inline"><em>n</em> = <em>k</em></span>
+时，该不等式仍然成立，则证明 <span
+class="math inline"><em>n</em> = <em>k</em> + 1</span> 时也成立即可：
+<span class="math display">$$
+\begin{flalign}
+\prod_{i=1}^{k+1}(1+a_i)&amp;=(1+a_{k+1})\cdot\prod_{i=1}^{k}(1+a_i)\geq(1+a_{k+1})(1+\sum_{i=1}^ka_i)\\
+&amp;=1+\sum_{i=1}^ka_i+a_{k+1}+a_{k+1}\sum_{i=1}^ka_i\\
+&amp;\geq1+\sum_{i=1}^{k+1}a_i
+\end{flalign}
+$$</span> 则对于 <span
+class="math inline"><em>n</em> = <em>k</em> + 1</span> 也成立.</p>
+<p>证毕。</p>
+<hr />
+<h2 id="证明-hölder-不等式">证明 Hölder 不等式</h2>
+<p>发现所有的证明都要用到 Young 不等式，而 Young
+不等式又要用加权平均值不等式证明。</p>
+<p>好麻烦（😓）。</p>
+<hr />
+<h3 id="证明加权平均值不等式">证明加权平均值不等式</h3>
+<p>这里只需要有理数的序列即可，令 <span
+class="math inline">$w_i=\frac{p_i}{q}$</span>. <span
+class="math display">$$
+\begin{flalign}
+\sum_{i=1}^nw_ix_i&amp;=\sum_{i=1}^n\frac{p_i}{q}x_i=\frac{1}{q}\sum_{i=1}^np_ix_i\\
+&amp;\geq\sqrt[q]{\prod_{i=1}^nx_i^{p_i}}=\prod_{i=1}^nx_i^{\frac{p_i}{q}}=\prod_{i=1}^nx_i^{w_i}
+\end{flalign}
+$$</span> 有理数的加权平均值不等式证毕。</p>
+<p>这里给张详细证明的截图，来自<a
+target="_blank" rel="noopener" href="https://www.zhihu.com/question/424154792">知乎</a>的第一条回答。</p>
+<p><img src="/../../images/AM_GM_W.png" alt="AM_GM_W" style="zoom:50%;" /></p>
+<hr />
+<h3 id="证明-young-不等式">证明 Young 不等式</h3>
+<p>这里定义 <span
+class="math inline">$\frac{1}{p}+\frac{1}{q}=1$</span>.</p>
+<p>当 <span class="math inline"><em>a</em><em>b</em> = 0</span>
+时，结论显然成立. <span class="math display">$$
+\begin{flalign}
+\frac{a^p}{p}+\frac{b^q}{q}\geq\sqrt[p]{a^p}\sqrt[q]{b^q}=ab
+\end{flalign}
+$$</span> 有理数时的 Young 不等式证毕。</p>
+<p>详细证明参考<a
+target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9D%A8%E6%B0%8F%E4%B8%8D%E7%AD%89%E5%BC%8F/2833625#4">百度百科</a>。</p>
+<hr />
+<h3 id="证明-hölder-不等式-1">证明 Hölder 不等式</h3>
+<p>令 <span
+class="math inline">$A=\left(\sum_{i=1}^nx_i^p\right)^\frac{1}{p},B=\left(\sum_{i=1}^ny_i^q\right)^\frac{1}{q},a_i=\frac{x_i}{A},b_i=\frac{y_i}{B}$</span>.
+<span class="math display">$$
+\begin{flalign}
+&amp;a_ib_i\leq\frac{a^p}{p}+\frac{b^q}{q}=\frac{\frac{x_i^p}{\sum_{i=1}^nx_i^p}}{p}+\frac{\frac{y_i^q}{\sum_{i=1}^ny_i^q}}{q}\\
+&amp;\sum_{i=1}^na_ib_i=\frac{\sum_{i=1}^nx_iy_i}{AB}\leq\frac{\frac{\sum_{i=1}^nx_i^p}{\sum_{i=1}^nx_i^p}}{p}+\frac{\frac{\sum_{i=1}^ny_i^q}{\sum_{i=1}^ny_i^q}}{q}=\frac{1}{p}+\frac{1}{q}=1\\
+&amp;\sum_{i=1}^nx_iy_i\leq
+AB=\left(\sum_{i=1}^nx_i^p\right)^\frac{1}{p}\left(\sum_{j=1}^ny_j^q\right)^\frac{1}{q}
+\end{flalign}
+$$</span> 证毕。</p>
 
     </div>
 
