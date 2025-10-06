@@ -20,33 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"foeyt.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="利用 C 语言实现任意长度字符串字母小写转大写 如题，这本来是布置的一道手写代码算法作业，我自己稍微加大了点难度，将这个换成了任意长度字符串并且可能有空格的输入。 另外我与手写代码不共戴天之仇！本来挺快敲完跑路的结果手写代码硬控我一天！ 具体涉及了字符型指针与字符型的计算问题，我自我认为我目前对指针了解与运用还是可以的，但是还没搞过内存管理，以后抽时间学习一下。">
+    <meta name="description" content="Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明 最近翻到了这些不等式、恒等式、定理这些东西，害怕忘掉这里简要记录一下。 首先先说明下这些定理。  Chebyshev 不等式  对于序列 a1 ≤ a2 ≤ ⋯ ≤ an, b1 ≤ b2 ≤ ⋯ ≤ bn，则有：  $$ \begin{flalign} \left(\sum_{i&#x3D;1}^n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用 C 语言实现任意长度字符串字母小写转大写">
-<meta property="og:url" content="https://foeyt.github.io/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99/index.html">
+<meta property="og:title" content="Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明">
+<meta property="og:url" content="https://foeyt.github.io/2025/10/06/Chebyshev-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Cauchy-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Abel-%E6%81%92%E7%AD%89%E5%BC%8F%E3%80%81%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/index.html">
 <meta property="og:site_name" content="Razorsax-Blog">
-<meta property="og:description" content="利用 C 语言实现任意长度字符串字母小写转大写 如题，这本来是布置的一道手写代码算法作业，我自己稍微加大了点难度，将这个换成了任意长度字符串并且可能有空格的输入。 另外我与手写代码不共戴天之仇！本来挺快敲完跑路的结果手写代码硬控我一天！ 具体涉及了字符型指针与字符型的计算问题，我自我认为我目前对指针了解与运用还是可以的，但是还没搞过内存管理，以后抽时间学习一下。">
+<meta property="og:description" content="Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明 最近翻到了这些不等式、恒等式、定理这些东西，害怕忘掉这里简要记录一下。 首先先说明下这些定理。  Chebyshev 不等式  对于序列 a1 ≤ a2 ≤ ⋯ ≤ an, b1 ≤ b2 ≤ ⋯ ≤ bn，则有：  $$ \begin{flalign} \left(\sum_{i&#x3D;1}^n">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://foeyt.github.io/images/StringPointer.png">
-<meta property="og:image" content="https://foeyt.github.io/images/ASCII-1.png">
-<meta property="og:image" content="https://foeyt.github.io/images/ASCII-2.png">
-<meta property="article:published_time" content="2025-10-05T05:15:09.000Z">
-<meta property="article:modified_time" content="2025-10-05T05:57:57.044Z">
+<meta property="article:published_time" content="2025-10-06T03:44:35.000Z">
+<meta property="article:modified_time" content="2025-10-06T04:59:24.268Z">
 <meta property="article:author" content="Razorsax">
-<meta property="article:tag" content="C">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="编程">
+<meta property="article:tag" content="不等式">
+<meta property="article:tag" content="代数">
+<meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://foeyt.github.io/images/StringPointer.png">
 
 
-<link rel="canonical" href="https://foeyt.github.io/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99/">
+<link rel="canonical" href="https://foeyt.github.io/2025/10/06/Chebyshev-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Cauchy-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Abel-%E6%81%92%E7%AD%89%E5%BC%8F%E3%80%81%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://foeyt.github.io/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99/","path":"2025/10/05/利用-C-语言实现任意长度字符串字母小写转大写/","title":"利用 C 语言实现任意长度字符串字母小写转大写"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://foeyt.github.io/2025/10/06/Chebyshev-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Cauchy-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Abel-%E6%81%92%E7%AD%89%E5%BC%8F%E3%80%81%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/","path":"2025/10/06/Chebyshev-不等式、Cauchy-不等式、Abel-恒等式、二项式定理的证明/","title":"Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>利用 C 语言实现任意长度字符串字母小写转大写 | Razorsax-Blog</title>
+<title>Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明 | Razorsax-Blog</title>
   
 
 
@@ -173,8 +169,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A9%E7%94%A8-c-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99"><span class="nav-number">1.</span> <span class="nav-text">利用 C
-语言实现任意长度字符串字母小写转大写</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#chebyshev-%E4%B8%8D%E7%AD%89%E5%BC%8Fcauchy-%E4%B8%8D%E7%AD%89%E5%BC%8Fabel-%E6%81%92%E7%AD%89%E5%BC%8F%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">Chebyshev
+不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E-chebyshev-%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">证明 Chebyshev 不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E-cauchy-%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">证明 Cauchy 不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E-abel-%E6%81%92%E7%AD%89%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">证明 Abel 恒等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86"><span class="nav-number">1.4.</span> <span class="nav-text">证明二项式定理</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -235,7 +231,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://foeyt.github.io/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99/">
+    <link itemprop="mainEntityOfPage" href="https://foeyt.github.io/2025/10/06/Chebyshev-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Cauchy-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Abel-%E6%81%92%E7%AD%89%E5%BC%8F%E3%80%81%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -248,12 +244,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="利用 C 语言实现任意长度字符串字母小写转大写 | Razorsax-Blog">
+      <meta itemprop="name" content="Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明 | Razorsax-Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          利用 C 语言实现任意长度字符串字母小写转大写
+          Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明
         </h1>
 
         <div class="post-meta-container">
@@ -265,7 +261,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-10-05 13:15:09 / 修改时间：13:57:57" itemprop="dateCreated datePublished" datetime="2025-10-05T13:15:09+08:00">2025-10-05</time>
+      <time title="创建时间：2025-10-06 11:44:35 / 修改时间：12:59:24" itemprop="dateCreated datePublished" datetime="2025-10-06T11:44:35+08:00">2025-10-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -273,7 +269,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-C/" itemprop="url" rel="index"><span itemprop="name">计算机程序设计(C)</span></a>
+          <a href="/categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" itemprop="url" rel="index"><span itemprop="name">线性代数</span></a>
         </span>
     </span>
 
@@ -286,41 +282,134 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="利用-c-语言实现任意长度字符串字母小写转大写">利用 C
-语言实现任意长度字符串字母小写转大写</h1>
-<p>如题，这本来是布置的一道手写代码算法作业，我自己稍微加大了点难度，将这个换成了任意长度字符串并且可能有空格的输入。</p>
-<p>另外我与手写代码不共戴天之仇！本来挺快敲完跑路的结果手写代码硬控我一天！</p>
-<p>具体涉及了字符型指针与字符型的计算问题，我自我认为我目前对指针了解与运用还是可以的，但是还没搞过内存管理，以后抽时间学习一下。</p>
+    <div class="post-body" itemprop="articleBody"><h1
+id="chebyshev-不等式cauchy-不等式abel-恒等式二项式定理的证明">Chebyshev
+不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明</h1>
+<p>最近翻到了这些不等式、恒等式、定理这些东西，害怕忘掉这里简要记录一下。</p>
+<p>首先先说明下这些定理。</p>
+<ul>
+<li><p>Chebyshev 不等式</p>
+<ul>
+<li>对于序列 <span
+class="math inline"><em>a</em><sub>1</sub> ≤ <em>a</em><sub>2</sub> ≤ ⋯ ≤ <em>a</em><sub><em>n</em></sub>, <em>b</em><sub>1</sub> ≤ <em>b</em><sub>2</sub> ≤ ⋯ ≤ <em>b</em><sub><em>n</em></sub></span>，则有：</li>
+</ul>
+<p><span class="math display">$$
+\begin{flalign}
+\left(\sum_{i=1}^na_i\right)\left(\sum_{j=1}^nb_j\right)\leq
+n\sum_{k=1}^na_kb_k
+\end{flalign}
+$$</span></p></li>
+<li><p>Cauchy 不等式</p>
+<ul>
+<li>设两组实数 <span
+class="math inline"><em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, ⋯, <em>x</em><sub><em>n</em></sub></span>
+和 <span
+class="math inline"><em>y</em><sub>1</sub>, <em>y</em><sub>2</sub>, ⋯, <em>y</em><sub><em>n</em></sub></span>，则有：</li>
+</ul>
+<p><span class="math display">$$
+\begin{flalign}
+\left(\sum_{i=1}^nx_iy_i\right)^2\leq\left(\sum_{i=1}^nx_i^2\right)\left(\sum_{i=1}^ny_i^2\right)
+\end{flalign}
+$$</span></p></li>
+<li><p>Abel 恒等式</p>
+<ul>
+<li>记 <span
+class="math inline">$B_0=0,B_n=\sum_{i=1}^nb_i$</span>，则： <span
+class="math display">$$
+\begin{flalign}
+S_n=\sum_{i=1}^na_ib_i=B_na_n-\sum_{i=1}^{n-1}B_i(a_{i+1}-a_i)
+\end{flalign}
+$$</span></li>
+</ul></li>
+<li><p>二项式定理</p>
+<ul>
+<li>对 <span
+class="math inline">∀<em>x</em> ∈ ℝ, <em>n</em> ∈ ℕ<sup>*</sup></span>，有：</li>
+</ul>
+<p><span class="math display">$$
+\begin{flalign}
+(1+x)^n=\sum_{i=0}^n{n\choose i}x^i
+\end{flalign}
+$$</span></p></li>
+</ul>
 <span id="more"></span>
-<p>二话不说先上代码。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">printString</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *str)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; *(str + i) != <span class="number">0</span>; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, *(str + i));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">getUpperCase</span><span class="params">(<span class="type">char</span> *str)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; *(str + i) != <span class="number">0</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (*(str + i) &gt;= <span class="string">&#x27;a&#x27;</span> &amp;&amp; *(str + i) &lt;= <span class="string">&#x27;z&#x27;</span>)</span><br><span class="line">            *(str + i) = (<span class="type">char</span>) (*(str + i) - (<span class="string">&#x27;a&#x27;</span>- <span class="string">&#x27;A&#x27;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> *str;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%[^\n]&quot;</span>, str);</span><br><span class="line">    getUpperCase(str);</span><br><span class="line">    printString(str);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>整体没啥好说的，挑几个重点说明下。</p>
-<p>首先我用字符型指针来存字符串，保证了任意长度的可能。其次对
-<code>scanf()</code> 函数，这里用到了 <code>"%[^\n]"</code>
-来获取所有输入直到按下回车键。<code>scanf()</code>
-函数并不会获取空格，在检测空格时就停止了输入，在空格后面的一切都不会存入变量。这里我到网上查询了许多，发现这样的方式是我个人感觉最贴合的输入方式。</p>
-<p>下面就是 <code>printString()</code> 函数，其实没啥好说的，一个 for
-循环遍历输出所有字符，但是注意 <code>*str</code> 指针指向的是
-<code>str[0]</code> 通过给指针进行运算来遍历，我附一张图片（比较粗糙，Ps
-上随便搞了一张）</p>
-<p><img src="/../../images/StringPointer.png" style="zoom:150%;" /></p>
-<p>只要 <code>str + i</code> 指向了末尾的 0 （C 语言会默认在最后加一个
-0），就结束输出。</p>
-<p>重点就在于让小写变成大写，只需要进行简单的计算即可。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; *(str + i) != <span class="number">0</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (*(str + i) &gt;= <span class="string">&#x27;a&#x27;</span> &amp;&amp; *(str + i) &lt;= <span class="string">&#x27;z&#x27;</span>)</span><br><span class="line">        *(str + i) = (<span class="type">char</span>) (*(str + i) - (<span class="string">&#x27;a&#x27;</span>- <span class="string">&#x27;A&#x27;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>首先同样进行遍历，选择出 ASCII 码比 a 大或等于 a，同时比 z 小或等于 z
-的字符就是小写字符。</p>
-<p>将字符 ASCII 码减去小写字母与大写字母中间差的那些数即得到大写字母的
-ASCII 码，另外在 ASCII 中，小写是在大写后面的。</p>
-<p>最后附一张 ASCII 表供查阅。</p>
-<figure>
-<img src="/../../images/ASCII-1.png" alt="ASCII-1" />
-<figcaption aria-hidden="true">ASCII-1</figcaption>
-</figure>
-<figure>
-<img src="/../../images/ASCII-2.png" alt="ASCII-2" />
-<figcaption aria-hidden="true">ASCII-2</figcaption>
-</figure>
+<hr />
+<h2 id="证明-chebyshev-不等式">证明 Chebyshev 不等式</h2>
+<p>我们先构建一个神奇的不等式：</p>
+<p><span
+class="math inline">∑<sub>1 ≤ <em>j</em> &lt; <em>i</em> ≤ <em>n</em></sub>(<em>a</em><sub><em>i</em></sub> − <em>a</em><sub><em>j</em></sub>)(<em>b</em><sub><em>i</em></sub> − <em>b</em><sub><em>j</em></sub>) ≥ 0</span>，令
+<span
+class="math inline"><em>S</em> = ∑<sub>1 ≤ <em>j</em> &lt; <em>i</em> ≤ <em>n</em></sub>(<em>a</em><sub><em>i</em></sub> − <em>a</em><sub><em>j</em></sub>)(<em>b</em><sub><em>i</em></sub> − <em>b</em><sub><em>j</em></sub>) ≥ 0</span>
+<span class="math display">$$
+\begin{flalign}
+2S&amp;=\sum_{1\leq j&lt;i\leq n}(a_i-a_j)(b_i-b_j)+\sum_{1\leq
+i&lt;j\leq n}(a_i-a_j)(b_i-b_j)+0\\
+&amp;=\sum_{1\leq j&lt;i\leq n}(a_i-a_j)(b_i-b_j)+\sum_{1\leq i&lt;j\leq
+n}(a_i-a_j)(b_i-b_j)+\sum_{1\leq i=j\leq n}(a_i-a_j)(b_i-b_j)\\
+&amp;=\sum_{i,j=1}^n(a_i-a_j)(b_i-b_j)\\
+&amp;=\sum_{i,j=1}^n(a_ib_i+a_jb_j-a_ib_j-a_jb_i)\\
+&amp;=\sum_{i,j=1}^na_ib_i+\sum_{i,j=1}^na_jb_j-\sum_{i,j=1}^na_ib_j-\sum_{i,j=1}^na_jb_i\\
+&amp;=n\sum_{i=1}^na_ib_i+n\sum_{j=1}^na_jb_j-2\sum_{i,j=1}^na_ib_j\\
+&amp;=2n\sum_{k=1}^na_kb_k-2\left(\sum_{i=1}^na_i\right)\left(\sum_{j=1}^nb_j\right)\\
+&amp;\geq0\\
+即有，&amp;n\sum_{k=1}^na_kb_k-\left(\sum_{i=1}^na_i\right)\left(\sum_{j=1}^nb_j\right)\geq0\\
+可化为，&amp;\left(\sum_{i=1}^na_i\right)\left(\sum_{j=1}^nb_j\right)\leq
+n\sum_{k=1}^na_kb_k
+\end{flalign}
+$$</span> 证毕。</p>
+<hr />
+<h2 id="证明-cauchy-不等式">证明 Cauchy 不等式</h2>
+<p>我们先构建关于 <span class="math inline"><em>t</em></span>
+的二次不等式 <span
+class="math inline">$\sum_{i=0}^n(x_it+y_i)^2\geq0$</span> <span
+class="math display">$$
+\begin{flalign}
+&amp;\sum_{i=0}^n(x_it+y_i)^2\\
+=&amp;\sum_{i=0}^n(x_i^2t^2+2x_iy_it+y_i^2)\\
+=&amp;t^2\sum_{i=0}^nx_i^2+2t\sum_{i=0}^nx_iy_i+\sum_{i=0}^ny_i^2\\
+\geq&amp;0
+\\\\
+\Delta=&amp;4(\sum_{i=0}^nx_iy_i)^2-4(\sum_{i=0}^nx_i^2)(\sum_{i=0}^ny_i^2)\leq0\\
+即&amp;\left(\sum_{i=1}^nx_iy_i\right)^2\leq\left(\sum_{i=1}^nx_i^2\right)\left(\sum_{i=1}^ny_i^2\right)
+\end{flalign}
+$$</span> 证毕。</p>
+<p>注：在高中课后习题中还有一个利用 <span
+class="math inline"><em>n</em></span>
+维向量的内积证明的办法，以后在更新（咕咕咕）。</p>
+<hr />
+<h2 id="证明-abel-恒等式">证明 Abel 恒等式</h2>
+<p>没什么花里胡哨的，直接开证： <span class="math display">$$
+\begin{flalign}
+S&amp;=\sum_{i=1}^na_ib_i=\sum_{i=1}^na_i(B_i-B_{i-1})\\
+&amp;=\sum_{i=1}^na_iB_i-\sum_{i=1}^na_iB_{i-1}\\
+&amp;=a_nB_n+\sum_{i=1}^{n-1}a_iB_i-\sum_{i=0}^{n-1}a_{i+1}B_i\\
+&amp;=a_nB_n+\sum_{i=1}^{n-1}a_iB_i-\sum_{i=1}^{n-1}a_{i+1}B_i-a_1B_0\\
+&amp;=a_nB_n+\sum_{i=1}^{n-1}a_iB_i-\sum_{i=1}^{n-1}a_{i+1}B_i-0\\
+&amp;=a_nB_n+\sum_{i=1}^{n-1}B_i(a_i-a_{i+1})
+\end{flalign}
+$$</span> 证毕。</p>
+<hr />
+<h2 id="证明二项式定理">证明二项式定理</h2>
+<p>运用数学归纳法</p>
+<p>当 <span class="math inline"><em>n</em> = 1，<em>n</em> = 2</span>
+时，显然成立。</p>
+<p>假设对于 <span class="math inline"><em>n</em> − 1</span>
+成立，则推理对于 <span class="math inline"><em>n</em></span>
+也成立即可。 <span class="math display">$$
+\begin{flalign}
+(1+x)^n&amp;=(1+x)(1+x)^{n-1}=(1+x)\sum_{k=0}^{n-1}{n-1 \choose k}x^k\\
+&amp;=\sum_{k=0}^{n-1}{n-1 \choose k}x^k+\sum_{k=0}^{n-1}{n-1 \choose
+k}x^{k+1}\\
+&amp;=\sum_{k=1}^{n-1}{n-1 \choose k}x^k+\sum_{k=1}^{n-1}{n-1 \choose
+k-1}x^k+1+x^n\\
+&amp;=\sum_{k=1}^{n-1}\left({n-1 \choose k}+{n-1 \choose
+k-1}\right)x^k+1+x^n\\
+&amp;=\sum_{k=1}^{n-1}{n \choose k}x^k+1+x^n=\sum_{k=0}^n{n \choose
+k}x^k
+\end{flalign}
+$$</span> 则对于 <span class="math inline"><em>n</em></span>
+也成立。</p>
+<p>证毕。</p>
 
     </div>
 
@@ -330,23 +419,20 @@ ASCII 码，另外在 ASCII 中，小写是在大写后面的。</p>
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
-              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
-              <a href="/tags/C/" rel="tag"># C</a>
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+              <a href="/tags/%E4%BB%A3%E6%95%B0/" rel="tag"># 代数</a>
+              <a href="/tags/%E4%B8%8D%E7%AD%89%E5%BC%8F/" rel="tag"># 不等式</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E5%B7%B2%E7%9F%A5%E4%B8%89%E6%9D%A1%E8%BE%B9%E5%88%A4%E6%96%AD%E4%B8%89%E8%A7%92%E5%BD%A2%E5%BD%A2%E7%8A%B6%E5%B9%B6%E8%AE%A1%E7%AE%97%E5%85%B6%E9%9D%A2%E7%A7%AF/" rel="prev" title="利用 C 语言实现已知三条边判断三角形形状并计算其面积">
-                  <i class="fa fa-angle-left"></i> 利用 C 语言实现已知三条边判断三角形形状并计算其面积
+                <a href="/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99/" rel="prev" title="利用 C 语言实现任意长度字符串字母小写转大写">
+                  <i class="fa fa-angle-left"></i> 利用 C 语言实现任意长度字符串字母小写转大写
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/10/06/Chebyshev-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Cauchy-%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81Abel-%E6%81%92%E7%AD%89%E5%BC%8F%E3%80%81%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/" rel="next" title="Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明">
-                  Chebyshev 不等式、Cauchy 不等式、Abel 恒等式、二项式定理的证明 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
