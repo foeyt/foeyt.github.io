@@ -28,7 +28,7 @@
 <meta property="og:description" content="利用 C 语言实现简单的凯撒密码 布置的一道扩展题，用于实现凯撒加密。 凯撒密码就是一个简单的替换加密，这里题设 key: &#39;A&#39; &#x3D; &#39;D&#39; 所以不需要再搞 key 这一块。我的算法比网上某些转换器精准一点，可以无损转所有的 ASCII 字符，同时跳过所有非 ASCII 字符。 最重头戏的是我搞了一个可变长度的 *buffer 用于存放字符串，这是我第一次尝试搞内存上的编程，先抄">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-10-10T13:22:50.000Z">
-<meta property="article:modified_time" content="2025-10-10T15:35:23.292Z">
+<meta property="article:modified_time" content="2025-10-10T15:54:03.035Z">
 <meta property="article:author" content="Razorsax">
 <meta property="article:tag" content="C">
 <meta property="article:tag" content="算法">
@@ -118,7 +118,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-stars"><a href="/stars/" rel="section"><i class="fa fa-star fa-fw"></i>星级网站</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -170,7 +170,7 @@
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A9%E7%94%A8-c-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81"><span class="nav-number">1.</span> <span class="nav-text">利用 C
-语言实现简单的凯撒密码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%8F%98%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.1.</span> <span class="nav-text">可变长度字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E5%8A%A0%E5%AF%86"><span class="nav-number">1.2.</span> <span class="nav-text">替换加密</span></a></li></ol></li></ol></div>
+语言实现简单的凯撒密码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%8F%98%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.1.</span> <span class="nav-text">可变长度字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E5%8A%A0%E5%AF%86"><span class="nav-number">1.2.</span> <span class="nav-text">替换加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">1.3.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD%E4%BB%A3%E7%A0%81%E4%BC%98%E5%8C%96"><span class="nav-number">1.4.</span> <span class="nav-text">后续代码优化</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -261,7 +261,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-10-10 21:22:50 / 修改时间：23:35:23" itemprop="dateCreated datePublished" datetime="2025-10-10T21:22:50+08:00">2025-10-10</time>
+      <time title="创建时间：2025-10-10 21:22:50 / 修改时间：23:54:03" itemprop="dateCreated datePublished" datetime="2025-10-10T21:22:50+08:00">2025-10-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -372,6 +372,122 @@
 中的字母，不是就不要管，然后判断是不是三个特殊的字母
 <code>x, y, z</code>，因为 <code>A = D</code>，所以
 <code>x, y, z = a, b, c</code>，如果有一个环形的数据结构就好了~就不用选择这些特殊字符了，或许可以用环形链表，这样就好搞了。之后试着优化一下代码。</p>
+<hr />
+<h2 id="测试">测试</h2>
+<p>输入了小岛秀夫（随便想的一个，Salute to Kojima）的英文 wiki
+简介看看结果，原文：</p>
+<blockquote>
+<p><strong>Hideo Kojima</strong> (Kojima Hideo<em>; born August 24,
+1963) is a Japanese video game designer, writer, director, and producer.
+His games are noted for being highly cinematic, the result of a passion
+for film and literature which began during his childhood, and he is
+regarded as a pioneering </em><a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Auteur">auteur</a>* of video
+games.[<a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Hideo_Kojima#cite_note-1">1]</a> He
+is known for the <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Metal_Gear"><em>Metal Gear</em>
+franchise</a>, which remains his most famous and acclaimed work, as well
+as <em><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Death_Stranding">Death
+Stranding</a></em> and <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Death_Stranding_2">its
+sequel</a>.</p>
+<p>Upon joining <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Konami">Konami</a> in 1986, Kojima
+directed, designed, and wrote <em><a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Metal_Gear_(video_game)">Metal
+Gear</a></em> (1987) for the <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/MSX">MSX2</a>. The game laid the
+foundation for the <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Stealth_game">stealth game</a> genre
+and the renowned <em>Metal Gear</em> franchise, which he continued to
+helm up to the release of <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Metal_Gear_Solid_V:_The_Phantom_Pain"><em>Metal
+Gear Solid V</em></a> (2015). During his time at Konami, he also
+produced the <em><a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Zone_of_the_Enders">Zone of the
+Enders</a></em> series, as well as designing and writing <em><a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Snatcher_(video_game)">Snatcher</a></em>
+(1988) and <em><a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Policenauts">Policenauts</a></em>
+(1994); these were <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Graphic_adventure_game">graphic
+adventure games</a> that came to be regarded for their cinematic
+presentation.</p>
+<p>Kojima founded <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Kojima_Productions">Kojima
+Productions</a> within Konami in 2005, and was appointed vice president
+of <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Konami_Digital_Entertainment">Konami
+Digital Entertainment</a> in 2011. Following the controversial
+cancellation of his project, <a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Silent_Hills">Silent Hills</a>, and
+his departure from Konami in 2015, he re-established Kojima Productions
+as an independent studio and released his first games outside Konami
+with <em><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Death_Stranding">Death
+Stranding</a></em> (2019) and <em><a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Death_Stranding_2:_On_the_Beach">Death
+Stranding 2: On the Beach</a></em> (2025). The first game received
+mostly positive reviews, while its sequel received widespread
+acclaim.</p>
+</blockquote>
+<p>加密后：</p>
+<blockquote>
+<p><strong>Klghr Nrmlpd</strong> (Nrmlpd Klghr<em>; eruq Dxjxvw 24,
+1963) lv d Mdsdqhvh ylghr jdph ghvljqhu, zulwhu, gluhfwru, dqg surgxfhu.
+Klv jdphv duh qrwhg iru ehlqj kljkob flqhpdwlf, wkh uhvxow ri d sdvvlrq
+iru ilop dqg olwhudwxuh zklfk ehjdq gxulqj klv fklogkrrg, dqg kh lv
+uhjdughg dv d slrqhhulqj </em><a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Dxwhxu">dxwhxu</a>* ri ylghr
+jdphv.[<a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Klghr_Nrmlpd#flwh_qrwh-1">1]</a> Kh
+lv nqrzq iru wkh <a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Phwdo_Jhdu"><em>Phwdo Jhdu</em>
+iudqfklvh</a>, zklfk uhpdlqv klv prvw idprxv dqg dffodlphg zrun, dv zhoo
+dv <em><a href="kwwsv://hq.zlnlshgld.ruj/zlnl/Ghdwk_Vwudqglqj">Ghdwk
+Vwudqglqj</a></em> dqg <a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Ghdwk_Vwudqglqj_2">lwv
+vhtxho</a>.Xsrq mrlqlqj <a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Nrqdpl">Nrqdpl</a> lq 1986, Nrmlpd
+gluhfwhg, ghvljqhg, dqg zurwh <em><a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Phwdo_Jhdu_(ylghr_jdph)">Phwdo
+Jhdu</a></em> (1987) iru wkh <a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/PVA">PVA2</a>. Wkh jdph odlg wkh
+irxqgdwlrq iru wkh <a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Vwhdowk_jdph">vwhdowk jdph</a> jhquh
+dqg wkh uhqrzqhg <em>Phwdo Jhdu</em> iudqfklvh, zklfk kh frqwlqxhg wr
+khop xs wr wkh uhohdvh ri <a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Phwdo_Jhdu_Vrolg_Y:_Wkh_Skdqwrp_Sdlq"><em>Phwdo
+Jhdu Vrolg Y</em></a> (2015). Gxulqj klv wlph dw Nrqdpl, kh dovr
+surgxfhg wkh <em><a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Crqh_ri_wkh_Hqghuv">Crqh ri wkh
+Hqghuv</a></em> vhulhv, dv zhoo dv ghvljqlqj dqg zulwlqj <em><a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Vqdwfkhu_(ylghr_jdph)">Vqdwfkhu</a></em>
+(1988) dqg <em><a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Srolfhqdxwv">Srolfhqdxwv</a></em>
+(1994); wkhvh zhuh <a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Judsklf_dgyhqwxuh_jdph">judsklf
+dgyhqwxuh jdphv</a> wkdw fdph wr eh uhjdughg iru wkhlu flqhpdwlf
+suhvhqwdwlrq.Nrmlpd irxqghg <a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Nrmlpd_Surgxfwlrqv">Nrmlpd
+Surgxfwlrqv</a> zlwklq Nrqdpl lq 2005, dqg zdv dssrlqwhg ylfh suhvlghqw
+ri <a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Nrqdpl_Gljlwdo_Hqwhuwdlqphqw">Nrqdpl
+Gljlwdo Hqwhuwdlqphqw</a> lq 2011. Iroorzlqj wkh frqwuryhuvldo
+fdqfhoodwlrq ri klv surmhfw, <a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Vlohqw_Kloov">Vlohqw Kloov</a>, dqg
+klv ghsduwxuh iurp Nrqdpl lq 2015, kh uh-hvwdeolvkhg Nrmlpd Surgxfwlrqv
+dv dq lqghshqghqw vwxglr dqg uhohdvhg klv iluvw jdphv rxwvlgh Nrqdpl
+zlwk <em><a href="kwwsv://hq.zlnlshgld.ruj/zlnl/Ghdwk_Vwudqglqj">Ghdwk
+Vwudqglqj</a></em> (2019) dqg <em><a
+href="kwwsv://hq.zlnlshgld.ruj/zlnl/Ghdwk_Vwudqglqj_2:_Rq_wkh_Ehdfk">Ghdwk
+Vwudqglqj 2: Rq wkh Ehdfk</a></em> (2025). Wkh iluvw jdph uhfhlyhg
+prvwob srvlwlyh uhylhzv, zkloh lwv vhtxho uhfhlyhg zlghvsuhdg
+dffodlp.</p>
+</blockquote>
+<p>甚至连粗体这些央视都保留的差不多。</p>
+<hr />
+<h2 id="后续代码优化">后续代码优化</h2>
 <p>//todo</p>
 
     </div>
