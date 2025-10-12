@@ -28,7 +28,7 @@
 <meta property="og:description" content="利用 C 语言实现简单的凯撒密码 布置的一道扩展题，用于实现凯撒加密。 凯撒密码就是一个简单的替换加密，这里题设 key: &#39;A&#39; &#x3D; &#39;D&#39; 所以不需要再搞 key 这一块。我的算法比网上某些转换器精准一点，可以无损转所有的 ASCII 字符，同时跳过所有非 ASCII 字符。 最重头戏的是我搞了一个可变长度的 *buffer 用于存放字符串，这是我第一次尝试搞内存上的编程，先抄">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-10-10T13:22:50.000Z">
-<meta property="article:modified_time" content="2025-10-10T15:54:03.035Z">
+<meta property="article:modified_time" content="2025-10-12T08:27:24.976Z">
 <meta property="article:author" content="Razorsax">
 <meta property="article:tag" content="C">
 <meta property="article:tag" content="算法">
@@ -259,9 +259,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-10-10 21:22:50 / 修改时间：23:54:03" itemprop="dateCreated datePublished" datetime="2025-10-10T21:22:50+08:00">2025-10-10</time>
+      <time title="创建时间：2025-10-10 21:22:50" itemprop="dateCreated datePublished" datetime="2025-10-10T21:22:50+08:00">2025-10-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-10-12 16:27:24" itemprop="dateModified" datetime="2025-10-12T16:27:24+08:00">2025-10-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -485,10 +491,12 @@ Vwudqglqj 2: Rq wkh Ehdfk</a></em> (2025). Wkh iluvw jdph uhfhlyhg
 prvwob srvlwlyh uhylhzv, zkloh lwv vhtxho uhfhlyhg zlghvsuhdg
 dffodlp.</p>
 </blockquote>
-<p>甚至连粗体这些央视都保留的差不多。</p>
+<p>甚至连粗体这些样式都保留的差不多。</p>
 <hr />
 <h2 id="后续代码优化">后续代码优化</h2>
-<p>//todo</p>
+<p>2025.10.12 更新</p>
+<p>发现用环状链表的代码效率简直就是依托，还不如之前的字符运算，优化下算法就行了。</p>
+<p>代码还在 todo（新建文件中。。。）</p>
 
     </div>
 
