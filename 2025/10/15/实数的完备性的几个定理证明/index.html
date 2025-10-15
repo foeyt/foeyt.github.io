@@ -20,33 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"foeyt.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="利用 C 语言实现任意长度字符串字母小写转大写 如题，这本来是布置的一道手写代码算法作业，我自己稍微加大了点难度，将这个换成了任意长度字符串并且可能有空格的输入。 另外我与手写代码不共戴天之仇！本来挺快敲完跑路的结果手写代码硬控我一天！ 具体涉及了字符型指针与字符型的计算问题，我自我认为我目前对指针了解与运用还是可以的，但是还没搞过内存管理，以后抽时间学习一下。">
+    <meta name="description" content="实数的完备性的几个定理证明 实数完备性的六个基本定理，这里记录一下其中几个证明。  基本公理：Dedekind 基本定理  表述1：对 ℝ 中任何非空子集 𝔸 和 𝔹，若 ∀a ∈ 𝔸, ∀b ∈ 𝔹, a ≤ b，则 ∃c ∈ ℝ, a ≤ c ≤ b. 表述2：如果 ℝ 两个子集满足如下性质：  集合 𝔸 和 𝔹 都是非空的； 𝔸 ∪ 𝔹 &#x3D; ℝ； 集">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用 C 语言实现任意长度字符串字母小写转大写">
-<meta property="og:url" content="https://foeyt.github.io/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99/index.html">
+<meta property="og:title" content="实数的完备性的几个定理证明">
+<meta property="og:url" content="https://foeyt.github.io/2025/10/15/%E5%AE%9E%E6%95%B0%E7%9A%84%E5%AE%8C%E5%A4%87%E6%80%A7%E7%9A%84%E5%87%A0%E4%B8%AA%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/index.html">
 <meta property="og:site_name" content="Razorsax-Blog">
-<meta property="og:description" content="利用 C 语言实现任意长度字符串字母小写转大写 如题，这本来是布置的一道手写代码算法作业，我自己稍微加大了点难度，将这个换成了任意长度字符串并且可能有空格的输入。 另外我与手写代码不共戴天之仇！本来挺快敲完跑路的结果手写代码硬控我一天！ 具体涉及了字符型指针与字符型的计算问题，我自我认为我目前对指针了解与运用还是可以的，但是还没搞过内存管理，以后抽时间学习一下。">
+<meta property="og:description" content="实数的完备性的几个定理证明 实数完备性的六个基本定理，这里记录一下其中几个证明。  基本公理：Dedekind 基本定理  表述1：对 ℝ 中任何非空子集 𝔸 和 𝔹，若 ∀a ∈ 𝔸, ∀b ∈ 𝔹, a ≤ b，则 ∃c ∈ ℝ, a ≤ c ≤ b. 表述2：如果 ℝ 两个子集满足如下性质：  集合 𝔸 和 𝔹 都是非空的； 𝔸 ∪ 𝔹 &#x3D; ℝ； 集">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://foeyt.github.io/images/StringPointer.png">
-<meta property="og:image" content="https://foeyt.github.io/images/ASCII-1.png">
-<meta property="og:image" content="https://foeyt.github.io/images/ASCII-2.png">
-<meta property="article:published_time" content="2025-10-05T05:15:09.000Z">
-<meta property="article:modified_time" content="2025-10-05T05:57:57.044Z">
+<meta property="article:published_time" content="2025-10-15T04:46:49.000Z">
+<meta property="article:modified_time" content="2025-10-15T06:19:16.466Z">
 <meta property="article:author" content="Razorsax">
-<meta property="article:tag" content="C">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="编程">
+<meta property="article:tag" content="微积分">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="极限">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://foeyt.github.io/images/StringPointer.png">
 
 
-<link rel="canonical" href="https://foeyt.github.io/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99/">
+<link rel="canonical" href="https://foeyt.github.io/2025/10/15/%E5%AE%9E%E6%95%B0%E7%9A%84%E5%AE%8C%E5%A4%87%E6%80%A7%E7%9A%84%E5%87%A0%E4%B8%AA%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://foeyt.github.io/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99/","path":"2025/10/05/利用-C-语言实现任意长度字符串字母小写转大写/","title":"利用 C 语言实现任意长度字符串字母小写转大写"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://foeyt.github.io/2025/10/15/%E5%AE%9E%E6%95%B0%E7%9A%84%E5%AE%8C%E5%A4%87%E6%80%A7%E7%9A%84%E5%87%A0%E4%B8%AA%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/","path":"2025/10/15/实数的完备性的几个定理证明/","title":"实数的完备性的几个定理证明"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>利用 C 语言实现任意长度字符串字母小写转大写 | Razorsax-Blog</title>
+<title>实数的完备性的几个定理证明 | Razorsax-Blog</title>
   
 
 
@@ -173,8 +169,10 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A9%E7%94%A8-c-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99"><span class="nav-number">1.</span> <span class="nav-text">利用 C
-语言实现任意长度字符串字母小写转大写</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E6%95%B0%E7%9A%84%E5%AE%8C%E5%A4%87%E6%80%A7%E7%9A%84%E5%87%A0%E4%B8%AA%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">实数的完备性的几个定理证明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AE%E7%95%8C%E5%8E%9F%E7%90%86---%E5%8D%95%E8%B0%83%E6%9C%89%E7%95%8C%E6%94%B6%E6%95%9B%E5%AE%9A%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">确界原理 -&gt;
+单调有界收敛定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E8%B0%83%E6%9C%89%E7%95%8C%E6%94%B6%E6%95%9B%E5%AE%9A%E7%90%86---%E5%8C%BA%E9%97%B4%E5%A5%97%E5%AE%9A%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">单调有界收敛定理 -&gt;
+区间套定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4%E5%A5%97%E5%AE%9A%E7%90%86---bolzano-%E5%AE%9A%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">区间套定理 -&gt; Bolzano 定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bolzano-%E5%AE%9A%E7%90%86---cauchy-%E6%94%B6%E6%95%9B%E5%AE%9A%E7%90%86"><span class="nav-number">1.4.</span> <span class="nav-text">Bolzano 定理 -&gt; Cauchy
+收敛定理</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -235,7 +233,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://foeyt.github.io/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99/">
+    <link itemprop="mainEntityOfPage" href="https://foeyt.github.io/2025/10/15/%E5%AE%9E%E6%95%B0%E7%9A%84%E5%AE%8C%E5%A4%87%E6%80%A7%E7%9A%84%E5%87%A0%E4%B8%AA%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -248,12 +246,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="利用 C 语言实现任意长度字符串字母小写转大写 | Razorsax-Blog">
+      <meta itemprop="name" content="实数的完备性的几个定理证明 | Razorsax-Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          利用 C 语言实现任意长度字符串字母小写转大写
+          实数的完备性的几个定理证明
         </h1>
 
         <div class="post-meta-container">
@@ -265,7 +263,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-10-05 13:15:09 / 修改时间：13:57:57" itemprop="dateCreated datePublished" datetime="2025-10-05T13:15:09+08:00">2025-10-05</time>
+      <time title="创建时间：2025-10-15 12:46:49 / 修改时间：14:19:16" itemprop="dateCreated datePublished" datetime="2025-10-15T12:46:49+08:00">2025-10-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -273,7 +271,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-C/" itemprop="url" rel="index"><span itemprop="name">计算机程序设计(C)</span></a>
+          <a href="/categories/%E5%BE%AE%E7%A7%AF%E5%88%86I/" itemprop="url" rel="index"><span itemprop="name">微积分I</span></a>
         </span>
     </span>
 
@@ -301,41 +299,167 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="利用-c-语言实现任意长度字符串字母小写转大写">利用 C
-语言实现任意长度字符串字母小写转大写</h1>
-<p>如题，这本来是布置的一道手写代码算法作业，我自己稍微加大了点难度，将这个换成了任意长度字符串并且可能有空格的输入。</p>
-<p>另外我与手写代码不共戴天之仇！本来挺快敲完跑路的结果手写代码硬控我一天！</p>
-<p>具体涉及了字符型指针与字符型的计算问题，我自我认为我目前对指针了解与运用还是可以的，但是还没搞过内存管理，以后抽时间学习一下。</p>
-<span id="more"></span>
-<p>二话不说先上代码。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">printString</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *str)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; *(str + i) != <span class="number">0</span>; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, *(str + i));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">getUpperCase</span><span class="params">(<span class="type">char</span> *str)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; *(str + i) != <span class="number">0</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (*(str + i) &gt;= <span class="string">&#x27;a&#x27;</span> &amp;&amp; *(str + i) &lt;= <span class="string">&#x27;z&#x27;</span>)</span><br><span class="line">            *(str + i) = (<span class="type">char</span>) (*(str + i) - (<span class="string">&#x27;a&#x27;</span>- <span class="string">&#x27;A&#x27;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> *str;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%[^\n]&quot;</span>, str);</span><br><span class="line">    getUpperCase(str);</span><br><span class="line">    printString(str);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>整体没啥好说的，挑几个重点说明下。</p>
-<p>首先我用字符型指针来存字符串，保证了任意长度的可能。其次对
-<code>scanf()</code> 函数，这里用到了 <code>"%[^\n]"</code>
-来获取所有输入直到按下回车键。<code>scanf()</code>
-函数并不会获取空格，在检测空格时就停止了输入，在空格后面的一切都不会存入变量。这里我到网上查询了许多，发现这样的方式是我个人感觉最贴合的输入方式。</p>
-<p>下面就是 <code>printString()</code> 函数，其实没啥好说的，一个 for
-循环遍历输出所有字符，但是注意 <code>*str</code> 指针指向的是
-<code>str[0]</code> 通过给指针进行运算来遍历，我附一张图片（比较粗糙，Ps
-上随便搞了一张）</p>
-<p><img src="/../../images/StringPointer.png" style="zoom:150%;" /></p>
-<p>只要 <code>str + i</code> 指向了末尾的 0 （C 语言会默认在最后加一个
-0），就结束输出。</p>
-<p>重点就在于让小写变成大写，只需要进行简单的计算即可。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; *(str + i) != <span class="number">0</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (*(str + i) &gt;= <span class="string">&#x27;a&#x27;</span> &amp;&amp; *(str + i) &lt;= <span class="string">&#x27;z&#x27;</span>)</span><br><span class="line">        *(str + i) = (<span class="type">char</span>) (*(str + i) - (<span class="string">&#x27;a&#x27;</span>- <span class="string">&#x27;A&#x27;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>首先同样进行遍历，选择出 ASCII 码比 a 大或等于 a，同时比 z 小或等于 z
-的字符就是小写字符。</p>
-<p>将字符 ASCII 码减去小写字母与大写字母中间差的那些数即得到大写字母的
-ASCII 码，另外在 ASCII 中，小写是在大写后面的。</p>
-<p>最后附一张 ASCII 表供查阅。</p>
-<figure>
-<img src="/../../images/ASCII-1.png" alt="ASCII-1" />
-<figcaption aria-hidden="true">ASCII-1</figcaption>
-</figure>
-<figure>
-<img src="/../../images/ASCII-2.png" alt="ASCII-2" />
-<figcaption aria-hidden="true">ASCII-2</figcaption>
-</figure>
+    <div class="post-body" itemprop="articleBody"><h1 id="实数的完备性的几个定理证明">实数的完备性的几个定理证明</h1>
+<p>实数完备性的六个基本定理，这里记录一下其中几个证明。</p>
+<ul>
+<li><p><strong>基本公理：Dedekind 基本定理</strong></p>
+<blockquote>
+<p>表述1：对 <span class="math inline">ℝ</span> 中任何非空子集 <span
+class="math inline">𝔸</span> 和 <span class="math inline">𝔹</span>，若
+<span
+class="math inline">∀<em>a</em> ∈ 𝔸, ∀<em>b</em> ∈ 𝔹, <em>a</em> ≤ <em>b</em></span>，则
+<span
+class="math inline">∃<em>c</em> ∈ ℝ, <em>a</em> ≤ <em>c</em> ≤ <em>b</em></span>.</p>
+<p>表述2：如果 <span class="math inline">ℝ</span>
+两个子集满足如下性质：</p>
+<ul>
+<li><p>集合 <span class="math inline">𝔸</span> 和 <span
+class="math inline">𝔹</span> 都是非空的；</p></li>
+<li><p><span class="math inline">𝔸 ∪ 𝔹 = ℝ</span>；</p></li>
+<li><p>集合 <span class="math inline">𝔸</span> 中的每一个数都小于 <span
+class="math inline">𝔹</span> 中的任意一个数.</p>
+<p>这种分割 <span class="math inline">𝔸|𝔹</span>
+称为一个戴德金分割，对于任意这种分割，都存在这个分割的实数 <span
+class="math inline"><em>α</em></span>，这个数或者是下组 <span
+class="math inline">𝔸</span> 的最大数，或者是上组 <span
+class="math inline">𝔹</span> 的最小数.</p></li>
+</ul>
+</blockquote></li>
+<li><p><strong>定理一：确界原理</strong></p>
+<blockquote>
+<p>非空有上(下)界数集必有其上(下)确界.</p>
+</blockquote></li>
+<li><p><strong>定理二：单调有界收敛定理</strong></p>
+<blockquote>
+<p>单调数列收敛的充要条件是其为有界数列，进一步地，当数列 <span
+class="math inline"><em>a</em><sub><em>n</em></sub></span>
+单调增时，<span class="math inline">$\lim\limits_{n \to \infty}a_n =
+\sup{\{a_n|n \in N^*\}}$</span>，当数列 <span
+class="math inline"><em>a</em><sub><em>n</em></sub></span>
+单调减时，<span class="math inline">$\lim\limits_{n \to \infty} =
+\inf{\{a_n|n \in N^*\}}$</span>.</p>
+</blockquote></li>
+<li><p><strong>定理三：Cauchy 收敛准则</strong></p>
+<blockquote>
+<p>数列收敛的充要条件是它为柯西数列.</p>
+<p>柯西数列定义：对于数列 <span
+class="math inline"><em>a</em><sub><em>n</em></sub></span>，满足 <span
+class="math inline">∀<em>ϵ</em> &gt; 0, ∃<em>N</em> = <em>N</em>(<em>ϵ</em>) ∈ ℤ<sup>*</sup>, ∀<em>m</em>, <em>n</em> &gt; <em>N</em></span>，有
+<span
+class="math inline">|<em>a</em><sub><em>n</em></sub> − <em>a</em><sub><em>m</em></sub>| &lt; <em>ϵ</em></span>.</p>
+</blockquote></li>
+<li><p><strong>定理四：区间套定理</strong></p>
+<blockquote>
+<p>设有闭区间列 <span
+class="math inline">{[<em>a</em><sub><em>n</em></sub>, <em>b</em><sub><em>n</em></sub>]}</span>，满足条件：</p>
+<ul>
+<li><span
+class="math inline">[<em>a</em><sub>1</sub>, <em>b</em><sub>1</sub>] ⊃ [<em>a</em><sub>2</sub>, <em>b</em><sub>2</sub>] ⊃ ⋯ ⊃ [<em>a</em><sub><em>n</em></sub>, <em>b</em><sub><em>n</em></sub>] ⊃ ⋯</span>;</li>
+<li><span class="math inline">$\lim\limits_{n \to \infty} (b_n-a_n) =
+0$</span>.</li>
+</ul>
+<p>则 <span class="math inline">∃</span> 唯一的点 <span
+class="math inline"><em>ξ</em></span>，使得 <span
+class="math inline">$\xi \in \bigcap_{n=1}^\infty [a_n,b_n]$</span></p>
+</blockquote></li>
+<li><p><strong>定理五：Bolzano 定理</strong></p>
+<blockquote>
+<p>如果一个数列有界，那么他一定有一个收敛的子数列.</p>
+</blockquote></li>
+<li><p><strong>定理六：Borel 有限覆盖定理</strong></p>
+<blockquote>
+<p>如果开区间集合 <span class="math inline">𝕊</span> 覆盖了闭区间 <span
+class="math inline">[<em>a</em>, <em>b</em>]</span>，则 <span
+class="math inline">𝕊</span> 中存在有限个开区间也覆盖了闭区间 <span
+class="math inline">[<em>a</em>, <em>b</em>]</span></p>
+</blockquote></li>
+</ul>
+<p>还有其他很多定理，这里先给出前五个定理之间的证明。</p>
+<hr />
+<h2 id="确界原理---单调有界收敛定理">确界原理 -&gt;
+单调有界收敛定理</h2>
+<p>先假设数列 <span
+class="math inline">{<em>a</em><sub><em>n</em></sub>}</span>
+单调增，<span
+class="math inline">|<em>a</em><sub><em>n</em></sub>| ≤ <em>M</em>, ∀<em>n</em> ∈ ℕ<sup>*</sup></span>，再假设集合
+<span
+class="math inline">𝔸 = {<em>a</em><sub><em>n</em></sub>|<em>n</em> ∈ ℕ<sup>*</sup>}</span>.</p>
+<p>则 <span class="math inline">𝔸</span> 有上界，由确界原理假设 <span
+class="math inline">sup 𝔸 = <em>a</em></span>. <span
+class="math display">$$
+\begin{flalign}
+&amp;\forall \epsilon &gt; 0, \exists a_N \in \mathbb{A}, 使得 a_N &gt;
+a - \epsilon\\
+&amp;\because \{a_n\}单调增，\therefore \forall n&gt;N, a \geq a_n &gt;
+a_N &gt; a - \epsilon \\
+&amp;\therefore \left|a_n - a\right| &lt; \epsilon，\therefore
+\lim\limits_{n \to \infty} a_n = a
+\end{flalign}
+$$</span> 证毕。</p>
+<hr />
+<h2 id="单调有界收敛定理---区间套定理">单调有界收敛定理 -&gt;
+区间套定理</h2>
+<p>先证明存在性：</p>
+<p>假设数列 <span
+class="math inline">{<em>a</em><sub><em>n</em></sub>}</span>
+单调增，<span
+class="math inline">{<em>b</em><sub><em>n</em></sub>}</span>
+单调减，<span
+class="math inline"><em>a</em><sub><em>n</em></sub> &lt; <em>b</em><sub>1</sub>, <em>b</em><sub><em>n</em></sub> &gt; <em>a</em><sub>1</sub></span>，即
+<span
+class="math inline"><em>a</em><sub><em>n</em></sub> ≤ <em>b</em><sub><em>n</em></sub></span>.
+<span class="math display">$$
+\begin{flalign}
+&amp;由单调有界收敛定理设，\lim\limits_{n \to \infty} a_n = \xi,
+\lim\limits_{n \to \infty} b_n = \lim\limits_{n \to \infty} a_n +
+\lim\limits_{n \to \infty} (b_n-a_n) = \xi \\
+&amp;又 a_n \leq b_n，即 \xi \in [a_n,b_n] \\
+\end{flalign}
+$$</span> 存在性证毕。</p>
+<p>再证明唯一性：</p>
+<p>若 <span
+class="math inline"><em>ξ</em>, <em>η</em> ∈ [<em>a</em><sub><em>n</em></sub>, <em>b</em><sub><em>n</em></sub>]</span>
+且 <span class="math inline"><em>ξ</em> ≠ <em>η</em></span> <span
+class="math display">$$
+\begin{flalign}
+&amp;b_n - a_n = \left|\xi - \eta\right| = \tau &gt; 0\\
+&amp;发现与 \lim\limits_{n \to \infty} (b_n - a_n) = \tau = 0 矛盾
+\end{flalign}
+$$</span> 唯一性证毕。</p>
+<hr />
+<h2 id="区间套定理---bolzano-定理">区间套定理 -&gt; Bolzano 定理</h2>
+<p>若 <span
+class="math inline"><em>a</em> ≤ <em>a</em><sub><em>n</em></sub> ≤ <em>b</em></span>
+，<span
+class="math inline">∀<em>a</em><sub><em>p</em><sub><em>n</em></sub></sub></span>.
+<span class="math display">$$
+\begin{flalign}
+1. &amp;记 c = \frac{a + b}{2}，则 [a, c] 与 [c, b] 中至少有一个含有
+\{a_n\} 元素的无穷多项，记为 [a_2, b_2], \\
+   &amp;取 p_2 &gt; p_1，且 a_{p_2} \in [a_2, b_2], b_2 - a_2 = \frac{b
+- a}{2};\\
+2. &amp;类似的取 c_n = \frac{a_n + b_n}{2}，则 [a_n, c_n] 与 [c_n, b_n]
+中也可以选取出无限多项 \{a_n\}，记为 [a_{n+1}, b_{n+1}], \\
+   &amp;取 p_{n+1} &gt; p_n，且 a_{p_{n+1}} \in [a_{n+1},b_{n+1}],
+b_{n+1} - a_{n+1} = \frac{b_n - a_n}{2}; \\
+综上&amp;，有子列 \{a_{p_n} | n \in \mathbb{N^*} \} 且 a_{p_n} \in [a_n,
+b_n] \\
+[a_1&amp; b_1] \supset [a_2, b_2] \supset \cdots \supset [a_n, b_n]
+\supset \cdots, b_n - a_n = \frac{1}{2^{n}}(b_1-a_1) \\
+\lim\limits_{n \to \infty}&amp; (b_n - a_n) = 0，由区间套定理得 \xi \in
+[a_n, b_n], \lim\limits_{n \to \infty}a_{p_n} = \xi \\
+\forall \epsilon &amp;&gt; 0,\exists N = [\log_2(\frac{b_1 -
+a_1}{\epsilon})] + 1, \forall n &gt; N \\
+则 &amp;a_{p_n} \in [a_n, b_n] \subset \cdots \subset [a_N, b_N] 且
+\epsilon \in [a_N, b_N] \\
+&amp;\left|a_n - \xi\right| &lt; \left|b_N - a_N\right| =
+\frac{1}{2^N}(b_1 - a_1) &lt; \epsilon \\
+&amp;即 \lim\limits_{n \to \infty} a_{p_n} = \xi
+\end{flalign}
+$$</span> 证毕。</p>
+<hr />
+<h2 id="bolzano-定理---cauchy-收敛定理">Bolzano 定理 -&gt; Cauchy
+收敛定理</h2>
 
     </div>
 
@@ -345,23 +469,20 @@ ASCII 码，另外在 ASCII 中，小写是在大写后面的。</p>
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
-              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
-              <a href="/tags/C/" rel="tag"># C</a>
+              <a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/" rel="tag"># 微积分</a>
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+              <a href="/tags/%E6%9E%81%E9%99%90/" rel="tag"># 极限</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E5%B7%B2%E7%9F%A5%E4%B8%89%E6%9D%A1%E8%BE%B9%E5%88%A4%E6%96%AD%E4%B8%89%E8%A7%92%E5%BD%A2%E5%BD%A2%E7%8A%B6%E5%B9%B6%E8%AE%A1%E7%AE%97%E5%85%B6%E9%9D%A2%E7%A7%AF/" rel="prev" title="利用 C 语言实现已知三条边判断三角形形状并计算其面积">
-                  <i class="fa fa-angle-left"></i> 利用 C 语言实现已知三条边判断三角形形状并计算其面积
+                <a href="/2025/10/10/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81/" rel="prev" title="利用 C 语言实现简单的凯撒密码">
+                  <i class="fa fa-angle-left"></i> 利用 C 语言实现简单的凯撒密码
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/10/06/%E6%9D%A5%E4%B8%80%E4%BA%9B%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81%E6%81%92%E7%AD%89%E5%BC%8F%E3%80%81%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/" rel="next" title="来一些不等式、恒等式、定理的证明">
-                  来一些不等式、恒等式、定理的证明 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
