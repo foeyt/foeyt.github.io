@@ -28,7 +28,7 @@
 <meta property="og:description" content="实数的完备性的几个定理证明 实数完备性的六个基本定理，这里记录一下其中几个证明。  基本公理：Dedekind 基本定理  表述1：对 ℝ 中任何非空子集 𝔸 和 𝔹，若 ∀a ∈ 𝔸, ∀b ∈ 𝔹, a ≤ b，则 ∃c ∈ ℝ, a ≤ c ≤ b. 表述2：如果 ℝ 两个子集满足如下性质：  集合 𝔸 和 𝔹 都是非空的； 𝔸 ∪ 𝔹 &#x3D; ℝ； 集">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-10-15T04:46:49.000Z">
-<meta property="article:modified_time" content="2025-10-15T06:19:16.466Z">
+<meta property="article:modified_time" content="2025-10-15T07:23:20.796Z">
 <meta property="article:author" content="Razorsax">
 <meta property="article:tag" content="微积分">
 <meta property="article:tag" content="数学">
@@ -172,7 +172,7 @@
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E6%95%B0%E7%9A%84%E5%AE%8C%E5%A4%87%E6%80%A7%E7%9A%84%E5%87%A0%E4%B8%AA%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">实数的完备性的几个定理证明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AE%E7%95%8C%E5%8E%9F%E7%90%86---%E5%8D%95%E8%B0%83%E6%9C%89%E7%95%8C%E6%94%B6%E6%95%9B%E5%AE%9A%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">确界原理 -&gt;
 单调有界收敛定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E8%B0%83%E6%9C%89%E7%95%8C%E6%94%B6%E6%95%9B%E5%AE%9A%E7%90%86---%E5%8C%BA%E9%97%B4%E5%A5%97%E5%AE%9A%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">单调有界收敛定理 -&gt;
 区间套定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4%E5%A5%97%E5%AE%9A%E7%90%86---bolzano-%E5%AE%9A%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">区间套定理 -&gt; Bolzano 定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bolzano-%E5%AE%9A%E7%90%86---cauchy-%E6%94%B6%E6%95%9B%E5%AE%9A%E7%90%86"><span class="nav-number">1.4.</span> <span class="nav-text">Bolzano 定理 -&gt; Cauchy
-收敛定理</span></a></li></ol></li></ol></div>
+收敛定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cauchy-%E6%94%B6%E6%95%9B%E5%AE%9A%E7%90%86---%E7%A1%AE%E7%95%8C%E5%8E%9F%E7%90%86"><span class="nav-number">1.5.</span> <span class="nav-text">Cauchy 收敛定理 -&gt; 确界原理</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -263,7 +263,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-10-15 12:46:49 / 修改时间：14:19:16" itemprop="dateCreated datePublished" datetime="2025-10-15T12:46:49+08:00">2025-10-15</time>
+      <time title="创建时间：2025-10-15 12:46:49 / 修改时间：15:23:20" itemprop="dateCreated datePublished" datetime="2025-10-15T12:46:49+08:00">2025-10-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -282,14 +282,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.5k</span>
+      <span>1.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>6 分钟</span>
     </span>
 </div>
 
@@ -375,6 +375,7 @@ class="math inline">[<em>a</em>, <em>b</em>]</span></p>
 </blockquote></li>
 </ul>
 <p>还有其他很多定理，这里先给出前五个定理之间的证明。</p>
+<span id="more"></span>
 <hr />
 <h2 id="确界原理---单调有界收敛定理">确界原理 -&gt;
 单调有界收敛定理</h2>
@@ -448,8 +449,8 @@ b_n] \\
 \supset \cdots, b_n - a_n = \frac{1}{2^{n}}(b_1-a_1) \\
 \lim\limits_{n \to \infty}&amp; (b_n - a_n) = 0，由区间套定理得 \xi \in
 [a_n, b_n], \lim\limits_{n \to \infty}a_{p_n} = \xi \\
-\forall \epsilon &amp;&gt; 0,\exists N = [\log_2(\frac{b_1 -
-a_1}{\epsilon})] + 1, \forall n &gt; N \\
+\forall \epsilon &amp;&gt; 0,\exists N = \left[\log_2(\frac{b_1 -
+a_1}{\epsilon})\right] + 1, \forall n &gt; N \\
 则 &amp;a_{p_n} \in [a_n, b_n] \subset \cdots \subset [a_N, b_N] 且
 \epsilon \in [a_N, b_N] \\
 &amp;\left|a_n - \xi\right| &lt; \left|b_N - a_N\right| =
@@ -460,6 +461,70 @@ $$</span> 证毕。</p>
 <hr />
 <h2 id="bolzano-定理---cauchy-收敛定理">Bolzano 定理 -&gt; Cauchy
 收敛定理</h2>
+<p>设 <span class="math inline">{<em>a</em><sub><em>n</em></sub>}</span>
+为 Cauchy 数列，可知该数列有界. <span class="math display">$$
+\begin{flalign}
+&amp;对于 \epsilon = 1, \exists N,使得 \forall m, n &gt; N 有 |a_n -
+a_m| &lt; \epsilon = 1 \\
+&amp;即 |a_n| &lt; |a_m| + 1, \forall n &gt; N, 故 |a_n| &lt;
+\max\{|a_1|, |a_2|, \cdots, |a_N|, |a_m| + 1\} \\
+&amp;由 Bolzano 定理得到,有子列 \{a_{p_n}\}, \lim\limits_{n \to \infty}
+a_{p_n} = a \\
+&amp;\forall \epsilon &gt; 0, \exists N_1, \forall n &gt; N_1, 有
+|a_{p_n} - a| &lt; \epsilon \\
+&amp;又该数列为 Cauchy 数列, \exists N_2, \forall m, n &gt; N_2, 有 |a_n
+- a_m| &lt; \epsilon \\
+&amp;故，取 p_L &gt; N_2 且 p_L &gt; p_{N_1}, \exists N = p_L, \forall n
+&gt; N \\
+&amp;\left|a_n - a\right| &lt; \left|a_n - a_{p_L} + a_{p_L} - a\right|
+\leq \left|a_n - a_{p_L}\right| + \left|a_{p_L} - a\right| &lt; \epsilon
++ \epsilon = 2 \epsilon \\
+&amp;即 \lim\limits_{n \to \infty} a_n = a
+\end{flalign}
+$$</span> 证毕。</p>
+<hr />
+<h2 id="cauchy-收敛定理---确界原理">Cauchy 收敛定理 -&gt; 确界原理</h2>
+<p><span class="math display">$$
+\begin{flalign}
+假定, &amp;\mathbb{E} 为非空集合且有上界 M, 且 \mathbb{E} 无最大值 \\
+记 b_1&amp; 为 \mathbb{E} 的一个上界, 且 b_1 = M, 取 \forall a_1 \in
+\mathbb{E} \\
+取 c_1&amp; = \frac{a_1 + b_1}{2}, 若 c_1 为 \mathbb{E} 的上界，记 [a_1,
+c_1] 为 [a_2, b_2] \\
+&amp;否则记 [c_1, b_1] 为 [a_2, b_2] \\
+同理, &amp;记 c_n = \frac{a_n + b_n}{2}, 若 C_n 为 \mathbb{E} 的上界，记
+[a_n, c_n] 为 [a_{n + 1} , b_{n + 1}] \\
+&amp;否则记 [c_n, b_n] 为 [a_{n + 1}, b_{n + 1}] \\
+则 &amp;[a_{n+1}, b_{n+1}] \subset [a_n, b_n] \subset \cdots \subset
+[a_1, b_1], 且 \frac{b_n - a_n}{2} = b_{n + 1} - a_{n + 1} \\
+又 &amp;b_n 为 \mathbb{E} 的上界，a_{n+1} 不是 \mathbb{E} 的上界 \\
+\exists &amp;x \in \mathbb{E}, 使得 x \geq a_{n + 1} \\
+设 a_{n + k} &amp;- a_n \geq 0, k \in \mathbb{N^*} \\
+a_{n + k} &amp;- a_n &lt; b_{n + k} - a_n \leq b_n - a_n =
+\frac{1}{2^n}(b_1 - a_1) \\
+&amp;0 \leq b_n - b_{n + k} &lt; b_n -a_n = \frac{1}{2^n}(b_1 - a_1) \\
+\forall \epsilon &gt; 0, &amp;\exists N = \left[\log_2\frac{b_1 -
+a_1}{\epsilon}\right] + 1, \forall n &gt; N \\
+&amp;|a_{n + k} - a_n| &lt; \frac{1}{2^n}(b_1 - a_1) &lt;
+\frac{1}{2^N}(b_1 - a_1) &lt; \epsilon \\
+&amp;|b_n - b_{n + k}| &lt; \epsilon \\
+则 \{a_n\}, &amp;\{b_n\} 均为 Cauchy 数列 \\
+先&amp;假设，\lim\limits_{n \to \infty} a_n = \xi, \lim\limits_{n \to
+\infty} b_n = \lim\limits_{n \to \infty} a_n + \lim\limits_{n \to
+\infty} (b_n-a_n) = \xi \\
+\forall x \in &amp;\mathbb{E}, b_n 为 \mathbb{E} 上界，对 n \in
+\mathbb{N^*} \\
+\forall n 有&amp; x \leq b_n，即 x \leq \lim\limits_{n \to \infty} b_n =
+\xi, 故 \xi 为 \mathbb{E} 的上界 \\
+\forall \epsilon &gt;&amp; 0, \exists N, 对 n &gt; N, |a_n - \xi| &lt;
+\epsilon, 即 -\epsilon &lt; a_n - \xi &lt; \epsilon \\
+&amp;可改写为 a_n \geq a_{N + 1} &gt; \xi - \epsilon \\
+\therefore \exists x \in &amp;\mathbb{E}, 使得 x \geq a_{N + 1} &gt; \xi
+- \epsilon \\
+综上 \sup &amp;\mathbb{E} = \xi
+\end{flalign}
+$$</span></p>
+<p>证毕。</p>
 
     </div>
 
@@ -514,14 +579,14 @@ $$</span> 证毕。</p>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">26k</span>
+    <span title="站点总字数">25k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23 分钟</span>
+    <span title="站点阅读时长">1:30</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

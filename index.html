@@ -254,7 +254,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-10-15 12:46:49 / 修改时间：14:19:16" itemprop="dateCreated datePublished" datetime="2025-10-15T12:46:49+08:00">2025-10-15</time>
+      <time title="创建时间：2025-10-15 12:46:49 / 修改时间：15:23:20" itemprop="dateCreated datePublished" datetime="2025-10-15T12:46:49+08:00">2025-10-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -273,14 +273,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.5k</span>
+      <span>1.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>6 分钟</span>
     </span>
 </div>
 
@@ -367,92 +367,14 @@ class="math inline">[<em>a</em>, <em>b</em>]</span></p>
 </blockquote></li>
 </ul>
 <p>还有其他很多定理，这里先给出前五个定理之间的证明。</p>
-<hr />
-<h2 id="确界原理---单调有界收敛定理">确界原理 -&gt;
-单调有界收敛定理</h2>
-<p>先假设数列 <span
-class="math inline">{<em>a</em><sub><em>n</em></sub>}</span>
-单调增，<span
-class="math inline">|<em>a</em><sub><em>n</em></sub>| ≤ <em>M</em>, ∀<em>n</em> ∈ ℕ<sup>*</sup></span>，再假设集合
-<span
-class="math inline">𝔸 = {<em>a</em><sub><em>n</em></sub>|<em>n</em> ∈ ℕ<sup>*</sup>}</span>.</p>
-<p>则 <span class="math inline">𝔸</span> 有上界，由确界原理假设 <span
-class="math inline">sup 𝔸 = <em>a</em></span>. <span
-class="math display">$$
-\begin{flalign}
-&amp;\forall \epsilon &gt; 0, \exists a_N \in \mathbb{A}, 使得 a_N &gt;
-a - \epsilon\\
-&amp;\because \{a_n\}单调增，\therefore \forall n&gt;N, a \geq a_n &gt;
-a_N &gt; a - \epsilon \\
-&amp;\therefore \left|a_n - a\right| &lt; \epsilon，\therefore
-\lim\limits_{n \to \infty} a_n = a
-\end{flalign}
-$$</span> 证毕。</p>
-<hr />
-<h2 id="单调有界收敛定理---区间套定理">单调有界收敛定理 -&gt;
-区间套定理</h2>
-<p>先证明存在性：</p>
-<p>假设数列 <span
-class="math inline">{<em>a</em><sub><em>n</em></sub>}</span>
-单调增，<span
-class="math inline">{<em>b</em><sub><em>n</em></sub>}</span>
-单调减，<span
-class="math inline"><em>a</em><sub><em>n</em></sub> &lt; <em>b</em><sub>1</sub>, <em>b</em><sub><em>n</em></sub> &gt; <em>a</em><sub>1</sub></span>，即
-<span
-class="math inline"><em>a</em><sub><em>n</em></sub> ≤ <em>b</em><sub><em>n</em></sub></span>.
-<span class="math display">$$
-\begin{flalign}
-&amp;由单调有界收敛定理设，\lim\limits_{n \to \infty} a_n = \xi,
-\lim\limits_{n \to \infty} b_n = \lim\limits_{n \to \infty} a_n +
-\lim\limits_{n \to \infty} (b_n-a_n) = \xi \\
-&amp;又 a_n \leq b_n，即 \xi \in [a_n,b_n] \\
-\end{flalign}
-$$</span> 存在性证毕。</p>
-<p>再证明唯一性：</p>
-<p>若 <span
-class="math inline"><em>ξ</em>, <em>η</em> ∈ [<em>a</em><sub><em>n</em></sub>, <em>b</em><sub><em>n</em></sub>]</span>
-且 <span class="math inline"><em>ξ</em> ≠ <em>η</em></span> <span
-class="math display">$$
-\begin{flalign}
-&amp;b_n - a_n = \left|\xi - \eta\right| = \tau &gt; 0\\
-&amp;发现与 \lim\limits_{n \to \infty} (b_n - a_n) = \tau = 0 矛盾
-\end{flalign}
-$$</span> 唯一性证毕。</p>
-<hr />
-<h2 id="区间套定理---bolzano-定理">区间套定理 -&gt; Bolzano 定理</h2>
-<p>若 <span
-class="math inline"><em>a</em> ≤ <em>a</em><sub><em>n</em></sub> ≤ <em>b</em></span>
-，<span
-class="math inline">∀<em>a</em><sub><em>p</em><sub><em>n</em></sub></sub></span>.
-<span class="math display">$$
-\begin{flalign}
-1. &amp;记 c = \frac{a + b}{2}，则 [a, c] 与 [c, b] 中至少有一个含有
-\{a_n\} 元素的无穷多项，记为 [a_2, b_2], \\
-   &amp;取 p_2 &gt; p_1，且 a_{p_2} \in [a_2, b_2], b_2 - a_2 = \frac{b
-- a}{2};\\
-2. &amp;类似的取 c_n = \frac{a_n + b_n}{2}，则 [a_n, c_n] 与 [c_n, b_n]
-中也可以选取出无限多项 \{a_n\}，记为 [a_{n+1}, b_{n+1}], \\
-   &amp;取 p_{n+1} &gt; p_n，且 a_{p_{n+1}} \in [a_{n+1},b_{n+1}],
-b_{n+1} - a_{n+1} = \frac{b_n - a_n}{2}; \\
-综上&amp;，有子列 \{a_{p_n} | n \in \mathbb{N^*} \} 且 a_{p_n} \in [a_n,
-b_n] \\
-[a_1&amp; b_1] \supset [a_2, b_2] \supset \cdots \supset [a_n, b_n]
-\supset \cdots, b_n - a_n = \frac{1}{2^{n}}(b_1-a_1) \\
-\lim\limits_{n \to \infty}&amp; (b_n - a_n) = 0，由区间套定理得 \xi \in
-[a_n, b_n], \lim\limits_{n \to \infty}a_{p_n} = \xi \\
-\forall \epsilon &amp;&gt; 0,\exists N = [\log_2(\frac{b_1 -
-a_1}{\epsilon})] + 1, \forall n &gt; N \\
-则 &amp;a_{p_n} \in [a_n, b_n] \subset \cdots \subset [a_N, b_N] 且
-\epsilon \in [a_N, b_N] \\
-&amp;\left|a_n - \xi\right| &lt; \left|b_N - a_N\right| =
-\frac{1}{2^N}(b_1 - a_1) &lt; \epsilon \\
-&amp;即 \lim\limits_{n \to \infty} a_{p_n} = \xi
-\end{flalign}
-$$</span> 证毕。</p>
-<hr />
-<h2 id="bolzano-定理---cauchy-收敛定理">Bolzano 定理 -&gt; Cauchy
-收敛定理</h2>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/10/15/%E5%AE%9E%E6%95%B0%E7%9A%84%E5%AE%8C%E5%A4%87%E6%80%A7%E7%9A%84%E5%87%A0%E4%B8%AA%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -540,7 +462,7 @@ $$</span> 证毕。</p>
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
+      <span>25 分钟</span>
     </span>
 </div>
 
@@ -649,7 +571,7 @@ $$</span> 证毕。</p>
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>17 分钟</span>
     </span>
 </div>
 
@@ -823,7 +745,7 @@ $$</span></p></li>
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -928,7 +850,7 @@ $$</span></p></li>
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>11 分钟</span>
     </span>
 </div>
 
@@ -1070,7 +992,7 @@ $$</span> 变得十分简洁了。</p>
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>9 分钟</span>
     </span>
 </div>
 
@@ -1188,7 +1110,7 @@ $$</span></p>
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>17 分钟</span>
     </span>
 </div>
 
@@ -1279,14 +1201,14 @@ class="math inline"><em>L</em></span>为有限数或无穷大量.</p>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">26k</span>
+    <span title="站点总字数">25k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23 分钟</span>
+    <span title="站点阅读时长">1:30</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
