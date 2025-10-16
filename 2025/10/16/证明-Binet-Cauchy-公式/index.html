@@ -20,33 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"foeyt.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="利用 C 语言实现任意长度字符串字母小写转大写 如题，这本来是布置的一道手写代码算法作业，我自己稍微加大了点难度，将这个换成了任意长度字符串并且可能有空格的输入。 另外我与手写代码不共戴天之仇！本来挺快敲完跑路的结果手写代码硬控我一天！ 具体涉及了字符型指针与字符型的计算问题，我自我认为我目前对指针了解与运用还是可以的，但是还没搞过内存管理，以后抽时间学习一下。">
+    <meta name="description" content="证明 Binet-Cauchy 公式 定义矩阵 A 与 B，则有  若 A, B ∈ 𝔽𝕟 × 𝕟，则 det AB &#x3D; det A ⋅ det B； 若 A ∈ 𝔽𝕞 × 𝕟, B ∈ 𝔽𝕟 × 𝕞, m &gt; n，则 det AB &#x3D; 0； 若 A ∈ 𝔽𝕞 × 𝕟, B ∈ 𝔽𝕟 × 𝕞, m ≤ n，则 det AB &#x3D; ∑Sdet AS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用 C 语言实现任意长度字符串字母小写转大写">
-<meta property="og:url" content="https://foeyt.github.io/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99/index.html">
+<meta property="og:title" content="证明 Binet-Cauchy 公式">
+<meta property="og:url" content="https://foeyt.github.io/2025/10/16/%E8%AF%81%E6%98%8E-Binet-Cauchy-%E5%85%AC%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Razorsax-Blog">
-<meta property="og:description" content="利用 C 语言实现任意长度字符串字母小写转大写 如题，这本来是布置的一道手写代码算法作业，我自己稍微加大了点难度，将这个换成了任意长度字符串并且可能有空格的输入。 另外我与手写代码不共戴天之仇！本来挺快敲完跑路的结果手写代码硬控我一天！ 具体涉及了字符型指针与字符型的计算问题，我自我认为我目前对指针了解与运用还是可以的，但是还没搞过内存管理，以后抽时间学习一下。">
+<meta property="og:description" content="证明 Binet-Cauchy 公式 定义矩阵 A 与 B，则有  若 A, B ∈ 𝔽𝕟 × 𝕟，则 det AB &#x3D; det A ⋅ det B； 若 A ∈ 𝔽𝕞 × 𝕟, B ∈ 𝔽𝕟 × 𝕞, m &gt; n，则 det AB &#x3D; 0； 若 A ∈ 𝔽𝕞 × 𝕟, B ∈ 𝔽𝕟 × 𝕞, m ≤ n，则 det AB &#x3D; ∑Sdet AS">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://foeyt.github.io/images/StringPointer.png">
-<meta property="og:image" content="https://foeyt.github.io/images/ASCII-1.png">
-<meta property="og:image" content="https://foeyt.github.io/images/ASCII-2.png">
-<meta property="article:published_time" content="2025-10-05T05:15:09.000Z">
-<meta property="article:modified_time" content="2025-10-05T05:57:57.044Z">
+<meta property="article:published_time" content="2025-10-16T05:05:56.000Z">
+<meta property="article:modified_time" content="2025-10-16T06:55:26.114Z">
 <meta property="article:author" content="Razorsax">
-<meta property="article:tag" content="C">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="编程">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="矩阵">
+<meta property="article:tag" content="线性代数">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://foeyt.github.io/images/StringPointer.png">
 
 
-<link rel="canonical" href="https://foeyt.github.io/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99/">
+<link rel="canonical" href="https://foeyt.github.io/2025/10/16/%E8%AF%81%E6%98%8E-Binet-Cauchy-%E5%85%AC%E5%BC%8F/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://foeyt.github.io/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99/","path":"2025/10/05/利用-C-语言实现任意长度字符串字母小写转大写/","title":"利用 C 语言实现任意长度字符串字母小写转大写"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://foeyt.github.io/2025/10/16/%E8%AF%81%E6%98%8E-Binet-Cauchy-%E5%85%AC%E5%BC%8F/","path":"2025/10/16/证明-Binet-Cauchy-公式/","title":"证明 Binet-Cauchy 公式"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>利用 C 语言实现任意长度字符串字母小写转大写 | Razorsax-Blog</title>
+<title>证明 Binet-Cauchy 公式 | Razorsax-Blog</title>
   
 
 
@@ -174,8 +170,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A9%E7%94%A8-c-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99"><span class="nav-number">1.</span> <span class="nav-text">利用 C
-语言实现任意长度字符串字母小写转大写</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%81%E6%98%8E-binet-cauchy-%E5%85%AC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">证明 Binet-Cauchy 公式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%95%E4%B8%80%E8%A1%8C%E5%88%97%E5%BC%8F%E5%AE%8C%E5%85%A8%E5%B1%95%E5%BC%80%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">法一：行列式完全展开式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%95%E4%BA%8C%E5%88%A9%E7%94%A8%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.</span> <span class="nav-text">法二：利用初等变换矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="nav-number">1.2.1.</span> <span class="nav-text">前置知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E8%AF%81%E6%98%8E"><span class="nav-number">1.2.2.</span> <span class="nav-text">实际证明</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -236,7 +231,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://foeyt.github.io/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E4%BB%BB%E6%84%8F%E9%95%BF%E5%BA%A6%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99%E8%BD%AC%E5%A4%A7%E5%86%99/">
+    <link itemprop="mainEntityOfPage" href="https://foeyt.github.io/2025/10/16/%E8%AF%81%E6%98%8E-Binet-Cauchy-%E5%85%AC%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -249,12 +244,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="利用 C 语言实现任意长度字符串字母小写转大写 | Razorsax-Blog">
+      <meta itemprop="name" content="证明 Binet-Cauchy 公式 | Razorsax-Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          利用 C 语言实现任意长度字符串字母小写转大写
+          证明 Binet-Cauchy 公式
         </h1>
 
         <div class="post-meta-container">
@@ -266,7 +261,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-10-05 13:15:09 / 修改时间：13:57:57" itemprop="dateCreated datePublished" datetime="2025-10-05T13:15:09+08:00">2025-10-05</time>
+      <time title="创建时间：2025-10-16 13:05:56 / 修改时间：14:55:26" itemprop="dateCreated datePublished" datetime="2025-10-16T13:05:56+08:00">2025-10-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -274,7 +269,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-C/" itemprop="url" rel="index"><span itemprop="name">计算机程序设计(C)</span></a>
+          <a href="/categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" itemprop="url" rel="index"><span itemprop="name">线性代数</span></a>
         </span>
     </span>
 
@@ -285,14 +280,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.3k</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
+      <span>4 分钟</span>
     </span>
 </div>
 
@@ -302,41 +297,166 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="利用-c-语言实现任意长度字符串字母小写转大写">利用 C
-语言实现任意长度字符串字母小写转大写</h1>
-<p>如题，这本来是布置的一道手写代码算法作业，我自己稍微加大了点难度，将这个换成了任意长度字符串并且可能有空格的输入。</p>
-<p>另外我与手写代码不共戴天之仇！本来挺快敲完跑路的结果手写代码硬控我一天！</p>
-<p>具体涉及了字符型指针与字符型的计算问题，我自我认为我目前对指针了解与运用还是可以的，但是还没搞过内存管理，以后抽时间学习一下。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="证明-binet-cauchy-公式">证明 Binet-Cauchy 公式</h1>
+<p>定义矩阵 <span class="math inline"><em>A</em></span> 与 <span
+class="math inline"><em>B</em></span>，则有</p>
+<ul>
+<li>若 <span
+class="math inline"><em>A</em>, <em>B</em> ∈ 𝔽<sup>𝕟 × 𝕟</sup></span>，则
+<span
+class="math inline">det <em>A</em><em>B</em> = det <em>A</em> ⋅ det <em>B</em></span>；</li>
+<li>若 <span
+class="math inline"><em>A</em> ∈ 𝔽<sup>𝕞 × 𝕟</sup>, <em>B</em> ∈ 𝔽<sup>𝕟 × 𝕞</sup>, <em>m</em> &gt; <em>n</em></span>，则
+<span class="math inline">det <em>A</em><em>B</em> = 0</span>；</li>
+<li>若 <span
+class="math inline"><em>A</em> ∈ 𝔽<sup>𝕞 × 𝕟</sup>, <em>B</em> ∈ 𝔽<sup>𝕟 × 𝕞</sup>, <em>m</em> ≤ <em>n</em></span>，则
+<span
+class="math inline">det <em>A</em><em>B</em> = ∑<sub><em>S</em></sub>det <em>A</em><sub><em>S</em></sub> ⋅ det <em>B</em><sub><em>S</em></sub></span>，其中
+<span class="math inline"><em>S</em></span> 是 <span
+class="math inline">{1, 2, ⋯, <em>n</em>}</span> 的一个含有 <span
+class="math inline"><em>m</em></span> 个元素的子集遍历，<span
+class="math inline"><em>A</em><sub><em>S</em></sub></span> 为 <span
+class="math inline"><em>A</em></span> 的一个 <span
+class="math inline"><em>m</em> × <em>m</em></span> 子矩阵。</li>
+</ul>
+<p>以上称为 Binet-Cauchy 公式。</p>
 <span id="more"></span>
-<p>二话不说先上代码。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">printString</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *str)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; *(str + i) != <span class="number">0</span>; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, *(str + i));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">getUpperCase</span><span class="params">(<span class="type">char</span> *str)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; *(str + i) != <span class="number">0</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (*(str + i) &gt;= <span class="string">&#x27;a&#x27;</span> &amp;&amp; *(str + i) &lt;= <span class="string">&#x27;z&#x27;</span>)</span><br><span class="line">            *(str + i) = (<span class="type">char</span>) (*(str + i) - (<span class="string">&#x27;a&#x27;</span>- <span class="string">&#x27;A&#x27;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> *str;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%[^\n]&quot;</span>, str);</span><br><span class="line">    getUpperCase(str);</span><br><span class="line">    printString(str);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>整体没啥好说的，挑几个重点说明下。</p>
-<p>首先我用字符型指针来存字符串，保证了任意长度的可能。其次对
-<code>scanf()</code> 函数，这里用到了 <code>"%[^\n]"</code>
-来获取所有输入直到按下回车键。<code>scanf()</code>
-函数并不会获取空格，在检测空格时就停止了输入，在空格后面的一切都不会存入变量。这里我到网上查询了许多，发现这样的方式是我个人感觉最贴合的输入方式。</p>
-<p>下面就是 <code>printString()</code> 函数，其实没啥好说的，一个 for
-循环遍历输出所有字符，但是注意 <code>*str</code> 指针指向的是
-<code>str[0]</code> 通过给指针进行运算来遍历，我附一张图片（比较粗糙，Ps
-上随便搞了一张）</p>
-<p><img src="/../../images/StringPointer.png" style="zoom:150%;" /></p>
-<p>只要 <code>str + i</code> 指向了末尾的 0 （C 语言会默认在最后加一个
-0），就结束输出。</p>
-<p>重点就在于让小写变成大写，只需要进行简单的计算即可。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; *(str + i) != <span class="number">0</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (*(str + i) &gt;= <span class="string">&#x27;a&#x27;</span> &amp;&amp; *(str + i) &lt;= <span class="string">&#x27;z&#x27;</span>)</span><br><span class="line">        *(str + i) = (<span class="type">char</span>) (*(str + i) - (<span class="string">&#x27;a&#x27;</span>- <span class="string">&#x27;A&#x27;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>首先同样进行遍历，选择出 ASCII 码比 a 大或等于 a，同时比 z 小或等于 z
-的字符就是小写字符。</p>
-<p>将字符 ASCII 码减去小写字母与大写字母中间差的那些数即得到大写字母的
-ASCII 码，另外在 ASCII 中，小写是在大写后面的。</p>
-<p>最后附一张 ASCII 表供查阅。</p>
-<figure>
-<img src="/../../images/ASCII-1.png" alt="ASCII-1" />
-<figcaption aria-hidden="true">ASCII-1</figcaption>
-</figure>
-<figure>
-<img src="/../../images/ASCII-2.png" alt="ASCII-2" />
-<figcaption aria-hidden="true">ASCII-2</figcaption>
-</figure>
+<p>这里只证明第一种情况，运用两种方法。</p>
+<hr />
+<h2 id="法一行列式完全展开式">法一：行列式完全展开式</h2>
+<p><strong>由于显示问题，我只能将完整的过程分成几部分展示出。</strong>
+$$ $$</p>
+<blockquote>
+<p>（以上为第一部分证明；）</p>
+</blockquote>
+<p><span class="math display">$$
+\begin{flalign}
+&amp; 利用行列式的多重线性相关性，即将每一个元素补充为
+\sum_{k_1,k_2,\cdots,k_n=1}^n a_{1k_1} a_{2k_2} \cdots a_{nk_n} B_{k_i}
+\\\\
+&amp; 此时行列式的值不变，同时提取出公因式 \sum_{k_1,k_2,\cdots,k_n=1}^n
+a_{1k_1} a_{2k_2} \cdots a_{nk_n} \\\\
+&amp; 则 \det{AB} = \sum_{k_1,k_2,\cdots,k_n=1}^n a_{1k_1} a_{2k_2}
+\cdots a_{nk_n} \det \left(
+        \begin{matrix}
+            B_1 &amp; B_2 &amp; \cdots &amp; B_n
+        \end{matrix}
+    \right) \\\\
+&amp; 这里序列 (k_1,k_2,\cdots,k_n) (1 \leq k_1, k_2, \cdots, k_n \leq
+n) \\
+&amp; 可以映射至有序序列 (j_1, j_2, \cdots, j_n)(1 \leq j_1 &lt; j_2
+&lt; \cdots &lt; j_n \leq n)
+\end{flalign}
+$$</span></p>
+<blockquote>
+<p>（以上为第二部分证明；）</p>
+</blockquote>
+<p><span class="math display">$$
+\begin{flalign}
+&amp; 则定义 (j_1, j_2, \cdots, j_n) \in S_n，其中 S_n 为
+(k_1,k_2,\cdots,k_n)，即为 (j_1, j_2, \cdots, j_n) 的各种排列形式 \\\\
+&amp; 可视为 \det{AB} = \sum_{(j_1, j_2, \cdots, j_n) \in S_n} a_{1j_1}
+a_{2j_2} \cdots a_{nj_n} \det \left(
+        \begin{matrix}
+            B_1 &amp; B_2 &amp; \cdots &amp; B_n
+        \end{matrix}
+    \right) \\\\
+&amp;
+要得到最后的结果，要将所有的逆排列计入求和情况，这些情况要计算逆序数
+\tau(j)，就可以囊括 (k_1,k_2,\cdots,k_n) \\
+&amp; 这些逆序数要计算入结果需要 (-1)^{\tau(j)} \\\\
+&amp; det{AB} = \sum_{(j_1, j_2, \cdots, j_n) \in S_n} a_{1j_1} a_{2j_2}
+\cdots a_{nj_n} (-1)^{\tau(j)} \det \left(
+        \begin{matrix}
+            B_1 &amp; B_2 &amp; \cdots &amp; B_n
+        \end{matrix}
+    \right) \\\\
+&amp; 又 \sum_{(j_1, j_2, \cdots, j_n) \in S_n} a_{1j_1} a_{2j_2} \cdots
+a_{nj_n} (-1)^{\tau(j)} 为 \det{A} 的完全展开式 \\\\
+&amp; 则 \det{AB} = \det{A} \det{B}
+\end{flalign}
+$$</span></p>
+<p><strong>证毕。</strong></p>
+<hr />
+<h2 id="法二利用初等变换矩阵">法二：利用初等变换矩阵</h2>
+<h3 id="前置知识">前置知识</h3>
+<p>初等变换共有三种：</p>
+<ul>
+<li>交换矩阵中的第 <span
+class="math inline"><em>i</em>, <em>j</em></span>
+行或列，行列式取相反数；</li>
+<li>矩阵第 <span class="math inline"><em>i</em></span> 行或列乘因数
+<span class="math inline"><em>a</em></span>，行列式乘 <span
+class="math inline"><em>a</em></span>；</li>
+<li>矩阵第 <span class="math inline"><em>j</em></span> 行或列乘因数
+<span class="math inline"><em>a</em></span> 后加到第 <span
+class="math inline"><em>i</em></span> 行或列，行列式不变。</li>
+</ul>
+<p>这些初等变换都可以利用矩阵乘法表示，具有这些性质的矩阵叫做初等矩阵：与其他矩阵相乘可以产生初等变换。</p>
+<p>上面的三种情况分别对应矩阵 <span
+class="math inline"><em>P</em><sub><em>i</em><em>j</em></sub>，<em>D</em><sub><em>i</em></sub>(<em>a</em>)，<em>T</em><sub><em>i</em><em>j</em></sub>(<em>a</em>)</span>。</p>
+<p>用实例表示，<span
+class="math inline"><em>P</em><sub><em>i</em><em>j</em></sub><em>A</em></span>
+表示交换 <span class="math inline"><em>i</em>, <em>j</em></span>
+两行，<span
+class="math inline"><em>B</em><em>P</em><sub><em>i</em><em>j</em></sub></span>
+表示交换 <span class="math inline"><em>i</em>, <em>j</em></span>
+两列。其余同理。</p>
+<p>下面以 <span
+class="math inline"><em>P</em><sub><em>i</em><em>j</em></sub></span>
+为例说明交换 <span class="math inline"><em>i</em>, <em>j</em></span>
+两行是如何做到的。 <span class="math display">$$
+\begin{flalign}
+&amp; I_n 为 n 阶单位阵，出对角线为 1 外其余位置全部为 0 \\
+&amp; E_{ij} 为一个特殊的矩阵，它的第 i 行第 j 列为 1，其余位置都是 0 \\
+&amp; 定义 P_{ij} = I_n - E_{ii} - E_{jj} + E_{ij} + E_{ji} \\
+&amp; 则举一个例子 P_{ij}A = I_nA - E_{ii}A - E_{jj}A + E_{ij}A +
+E_{ji}A \\
+&amp; I_nA 没有改变任何东西，仍为 A \\
+&amp; E_{ii}A 清除到只剩 A 的第 i 行，I_nA - E_{ii}A 删除了 A 的第 i 行
+\\
+&amp; E_{jj}A 清除到只剩 A 的第 j 行，I_nA - E_{ii}A - E_{jj}A 删除了 A
+的第 i, j 行 \\
+&amp; E_{ij}A 将第 i 行放到了第 j 行，E_{ji}A将第 j 行放在了第 i 行 \\
+&amp; 由此实现了交换了第 i,j 行
+\end{flalign}
+$$</span></p>
+<hr />
+<h3 id="实际证明">实际证明</h3>
+<ol type="1">
+<li>当 <span class="math inline">det <em>A</em> ≠ 0</span> 时</li>
+</ol>
+<p><span class="math display">$$
+\begin{flalign}
+&amp; 此时任意的 A 都可以由一个单位阵通过任意次初等变换得到 \\
+&amp; 可记 A = P_1 P_2 \cdots P_r，(P_1, P_2, \cdots P_r 为初等矩阵) \\
+&amp; \det{AB} = \det{(P_1 P_2 \cdots P_r B)} = \det{P_1} \det{P_2}
+\cdots \det{P_r} \det B \\
+&amp;= \det{(P_1, P_2, \cdots P_r)} \det{B} = \det{A} \det{B}
+\end{flalign}
+$$</span></p>
+<ol start="2" type="1">
+<li>当 <span class="math inline">det <em>A</em> = 0</span> 时</li>
+</ol>
+<p><span class="math display">$$
+\begin{flalign}
+&amp; 此时任意的 A 都可以通过一个矩阵 O 通过任意次初等变换得到 \\
+&amp; 这里的 O = \left(
+        \begin{matrix}
+            1 \\
+            &amp; 1 \\
+            &amp; &amp; \ddots \\
+            &amp; &amp; &amp; 0
+        \end{matrix}
+    \right) \\
+&amp; 则记 A = P_1 P_2 \cdots P_s O，(P_1, P_2, \cdots P_s 为初等矩阵)
+\\
+&amp; \det{AB} = \det{(P_1 P_2 \cdots P_s O B)} = \det{P_1} \det{P_2}
+\cdots \det{P_s} \det{O} \det{B} \\
+&amp; = 0 = \det{A}\det{B}
+\end{flalign}
+$$</span></p>
+<p>证毕。</p>
 
     </div>
 
@@ -346,23 +466,20 @@ ASCII 码，另外在 ASCII 中，小写是在大写后面的。</p>
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
-              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
-              <a href="/tags/C/" rel="tag"># C</a>
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+              <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag"># 线性代数</a>
+              <a href="/tags/%E7%9F%A9%E9%98%B5/" rel="tag"># 矩阵</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/10/05/%E5%88%A9%E7%94%A8-C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E5%B7%B2%E7%9F%A5%E4%B8%89%E6%9D%A1%E8%BE%B9%E5%88%A4%E6%96%AD%E4%B8%89%E8%A7%92%E5%BD%A2%E5%BD%A2%E7%8A%B6%E5%B9%B6%E8%AE%A1%E7%AE%97%E5%85%B6%E9%9D%A2%E7%A7%AF/" rel="prev" title="利用 C 语言实现已知三条边判断三角形形状并计算其面积">
-                  <i class="fa fa-angle-left"></i> 利用 C 语言实现已知三条边判断三角形形状并计算其面积
+                <a href="/2025/10/15/%E5%AE%9E%E6%95%B0%E7%9A%84%E5%AE%8C%E5%A4%87%E6%80%A7%E7%9A%84%E5%87%A0%E4%B8%AA%E5%AE%9A%E7%90%86%E8%AF%81%E6%98%8E/" rel="prev" title="实数的完备性的几个定理证明">
+                  <i class="fa fa-angle-left"></i> 实数的完备性的几个定理证明
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/10/06/%E6%9D%A5%E4%B8%80%E4%BA%9B%E4%B8%8D%E7%AD%89%E5%BC%8F%E3%80%81%E6%81%92%E7%AD%89%E5%BC%8F%E3%80%81%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E/" rel="next" title="来一些不等式、恒等式、定理的证明">
-                  来一些不等式、恒等式、定理的证明 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
