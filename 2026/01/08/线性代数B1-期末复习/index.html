@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"foeyt.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="期末复习 本篇文章参考课本和资料对期末可能要考的知识点进行总结，并给出一些题目，注意这些总结和例题不是我自创的，我会在文末给出 Reference，在这里感谢这些资料创作者的无私奉献。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性代数B1-期末复习">
+<meta property="og:url" content="https://foeyt.github.io/2026/01/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0B1-%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Razorsax-Blog">
+<meta property="og:description" content="期末复习 本篇文章参考课本和资料对期末可能要考的知识点进行总结，并给出一些题目，注意这些总结和例题不是我自创的，我会在文末给出 Reference，在这里感谢这些资料创作者的无私奉献。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-01-08T14:04:11.000Z">
+<meta property="article:modified_time" content="2026-01-08T14:13:01.155Z">
+<meta property="article:author" content="Razorsax">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="线性代数">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://foeyt.github.io/2026/01/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0B1-%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://foeyt.github.io/2026/01/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0B1-%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/","path":"2026/01/08/线性代数B1-期末复习/","title":"线性代数B1-期末复习"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>线性代数B1-期末复习 | Razorsax-Blog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/7.2.0/pangu.umd.js" integrity="sha256-JnmRRnJK7DC6RQJbAJb6AXOM9OmWzS6z8eYultk/48Y=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <script src="https://cdn.jsdelivr.net/gh/foeyt/live2d-widget/dist/autoload.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Razorsax-Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼一条</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-stars"><a href="/stars/" rel="section"><i class="fa fa-star fa-fw"></i>星级网站</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">期末复习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E4%B8%8E%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E4%BC%BC"><span class="nav-number">1.1.</span> <span class="nav-text">线性变换与矩阵的相似</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%98%A0%E5%B0%84%E4%B8%8E%E7%9B%B8%E4%BC%BC%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">线性映射与相似的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-number">1.1.2.</span> <span class="nav-text">特征向量与特征向量的算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.1.3.</span> <span class="nav-text">特征值的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E5%AF%B9%E8%A7%92%E5%8C%96%E7%9A%84%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="nav-number">1.1.4.</span> <span class="nav-text">可对角化的充要条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%86%85%E7%A7%AF%E7%A9%BA%E9%97%B4"><span class="nav-number">1.2.</span> <span class="nav-text">正交变换与内积空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8C%83%E6%95%B0%E4%B8%8E%E8%B5%8B%E8%8C%83%E7%A9%BA%E9%97%B4"><span class="nav-number">1.2.1.</span> <span class="nav-text">范数与赋范空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E7%A7%AF%E4%B8%8E%E6%AD%A3%E4%BA%A4%E6%80%A7"><span class="nav-number">1.2.2.</span> <span class="nav-text">内积与正交性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="nav-number">1.2.3.</span> <span class="nav-text">基本定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gram-%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.4.</span> <span class="nav-text">Gram 矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%85%E8%80%83%E6%A0%87%E5%87%86%E6%AD%A3%E4%BA%A4%E5%9F%BA%E4%B8%8E-gram-schmidt-%E6%AD%A3%E4%BA%A4%E5%8C%96"><span class="nav-number">1.2.5.</span> <span class="nav-text">（必考）标准正交基与
+Gram-Schmidt 正交化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%AF%B9%E7%A7%B0%E5%8F%98%E6%8D%A2"><span class="nav-number">1.2.6.</span> <span class="nav-text">正交变换与对称变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E5%9E%8B%E4%B8%8E%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E5%90%88"><span class="nav-number">1.3.</span> <span class="nav-text">二次型与矩阵的相合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%90%88%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.3.1.</span> <span class="nav-text">相合的定义</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Razorsax"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Razorsax</p>
+  <div class="site-description" itemprop="description">又是被高数折磨疯的一天</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/foeyt" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;foeyt" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/83490822" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;83490822" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://foeyt.github.io/2026/01/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0B1-%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Razorsax">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Razorsax-Blog">
+      <meta itemprop="description" content="又是被高数折磨疯的一天">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="线性代数B1-期末复习 | Razorsax-Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          线性代数B1-期末复习
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-01-08 22:04:11 / 修改时间：22:13:01" itemprop="dateCreated datePublished" datetime="2026-01-08T22:04:11+08:00">2026-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" itemprop="url" rel="index"><span itemprop="name">线性代数</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>12 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="期末复习">期末复习</h1>
+<p>本篇文章参考课本和资料对期末可能要考的知识点进行总结，并给出一些题目，注意这些总结和例题不是我自创的，我会在文末给出
+Reference，在这里感谢这些资料创作者的无私奉献。</p>
+<span id="more"></span>
+<h2 id="线性变换与矩阵的相似">线性变换与矩阵的相似</h2>
+<h3 id="线性映射与相似的定义">线性映射与相似的定义</h3>
+<blockquote>
+<p><strong>定义</strong></p>
+<p><span class="math inline">𝒜</span> 是 <span
+class="math inline"><em>n</em></span> 维线性空间 <span
+class="math inline"><em>V</em></span> 上的线性映射，在 <span
+class="math inline">{<em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub>}</span>
+下矩阵为 <span class="math inline"><em>A</em></span>，<span
+class="math inline"><em>P</em></span> 为可逆矩阵，且 <span
+class="math inline"><em>β</em><sub><em>i</em></sub> = <em>P</em><em>α</em><sub><em>i</em></sub></span>，那么
+<span class="math inline">𝒜</span> 在 <span
+class="math inline">{<em>β</em><sub>1</sub>, ⋯, <em>β</em><sub><em>n</em></sub>}</span>
+下矩阵为 <span class="math inline"><em>B</em></span>，<span
+class="math inline"><em>B</em> = <em>P</em><sup>−1</sup><em>A</em><em>P</em></span>，此时
+<span class="math inline"><em>A</em></span> 与 <span
+class="math inline"><em>B</em></span> 相似。</p>
+</blockquote>
+<p><span
+class="math inline"><em>P</em><em>r</em><em>o</em><em>v</em><em>e</em>:</span></p>
+<p>设 <span class="math inline"><em>v</em> ∈ <em>V</em></span>，<span
+class="math inline"><em>v</em> = (<em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub>)<em>X</em> = (<em>β</em><sub>1</sub>, ⋯, <em>β</em><sub><em>n</em></sub>)<em>Y</em></span>，<span
+class="math inline"><em>X</em> ∈ ℝ<sup><em>n</em> × 1</sup>, <em>Y</em> ∈ ℝ<sup><em>n</em> × 1</sup></span>。</p>
+<p><span
+class="math inline">𝒜(<em>v</em>) = <em>A</em><em>X</em> = <em>B</em><em>Y</em></span>，<span
+class="math inline"><em>V</em></span> 上的 <span
+class="math inline">{<em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub>}, {<em>β</em><sub>1</sub>, ⋯, <em>β</em><sub><em>n</em></sub>}</span>
+之间过渡矩阵为 <span class="math inline"><em>P</em></span> 且 <span
+class="math inline">(<em>β</em><sub>1</sub>, ⋯, <em>β</em><sub><em>n</em></sub>) = (<em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub>)<em>P</em></span>。</p>
+<p>则 <span
+class="math inline"><em>Y</em> = <em>P</em><em>X</em></span>，则 <span
+class="math inline"><em>B</em><em>Y</em> = <em>P</em><em>A</em><em>X</em></span>，即
+<span
+class="math inline"><em>B</em><em>P</em><em>X</em> = <em>P</em><em>A</em><em>X</em></span>，由于
+<span class="math inline">∀<em>v</em> ∈ <em>V</em></span>，得到 <span
+class="math inline"><em>B</em><em>P</em> = <em>P</em><em>A</em></span>，即
+<span
+class="math inline"><em>B</em> = <em>P</em><sup>−1</sup><em>A</em><em>P</em></span>。</p>
+<hr />
+<h3 id="特征向量与特征向量的算法">特征向量与特征向量的算法</h3>
+<blockquote>
+<p><strong>算法</strong></p>
+<p>对于 <span
+class="math inline"><em>A</em> ∈ ℂ<sup><em>n</em> × <em>n</em></sup></span>：</p>
+<ol type="1">
+<li>计算特征多项式 <span
+class="math inline"><em>p</em><sub><em>A</em></sub>(<em>λ</em>) = det (<em>λ</em><em>I</em> − <em>A</em>) = (<em>λ</em> − <em>λ</em><sub>1</sub>)<sup><em>n</em><sub>1</sub></sup>⋯(<em>λ</em> − <em>λ</em><sub><em>s</em></sub>)<sup><em>n</em><sub><em>s</em></sub></sup></span>，<span
+class="math inline">$\sum_{i = 1}^s = n$</span>，这是关于 <span
+class="math inline"><em>λ</em></span> 的一个 <span
+class="math inline"><em>n</em></span> 次多项式。</li>
+<li>令 <span
+class="math inline"><em>p</em><sub><em>A</em></sub>(<em>λ</em>) = 0</span>，得到特征值
+<span class="math inline"><em>λ</em><sub>1</sub></span> (<span
+class="math inline"><em>n</em><sub>1</sub></span> 重)，<span
+class="math inline">⋯</span>，<span
+class="math inline"><em>λ</em><sub><em>s</em></sub></span> (<span
+class="math inline"><em>n</em><sub><em>s</em></sub></span> 重)，这些
+<span class="math inline"><em>λ</em><sub><em>i</em></sub></span> 是
+<span class="math inline"><em>A</em></span> 的特征值，其中 <span
+class="math inline"><em>n</em><sub><em>i</em></sub></span>
+是对应特征值的代数重数。</li>
+<li>对于每一个特征值 <span
+class="math inline"><em>λ</em><sub><em>i</em></sub></span> 求出 <span
+class="math inline">(<em>A</em> − <em>λ</em><sub><em>i</em></sub><em>I</em>)<strong>x</strong> = <em>A</em></span>，这个齐次方程解空间的维数是对应特征值的代数重数。</li>
+</ol>
+</blockquote>
+<hr />
+<h3 id="特征值的性质">特征值的性质</h3>
+<ul>
+<li><p><span class="math inline"><em>λ</em></span> 为 <span
+class="math inline"><em>A</em></span> 的特征值， <span
+class="math inline"><strong>x</strong></span> 是对应的特征向量，<span
+class="math inline"><em>f</em>(<em>λ</em>)</span> 是 <span
+class="math inline"><em>f</em>(<em>A</em>)</span> 的特征值，<span
+class="math inline"><strong>x</strong></span> 是 <span
+class="math inline"><em>f</em>(<em>A</em>)</span> 的特征向量。</p>
+<p>这是因为特征多项式对于幂运算与加减运算保持不变性。</p></li>
+<li><p><span class="math inline"><em>λ</em> ≠ 0</span> 是 <span
+class="math inline"><em>A</em></span> 的特征值，<span
+class="math inline"><strong>x</strong></span> 是对应特征向量，<span
+class="math inline"><em>λ</em><sup>−1</sup></span> 是 <span
+class="math inline"><em>A</em><sup>−1</sup></span> 的特征值，<span
+class="math inline"><strong>x</strong></span> 是 <span
+class="math inline"><em>A</em><sup>−1</sup></span> 的特征向量。</p></li>
+<li><p><span class="math inline"><em>λ</em></span> 为 <span
+class="math inline"><em>A</em></span> 的特征值， <span
+class="math inline"><strong>x</strong></span> 是对应的特征向量，<span
+class="math inline"><em>λ</em></span> 是 <span
+class="math inline"><em>A</em><sup><em>T</em></sup></span>
+的特征值，<span class="math inline"><strong>x</strong></span>
+<strong>不一定</strong>是 <span
+class="math inline"><em>A</em><sup><em>T</em></sup></span>
+的特征向量。</p>
+<p>可以这么理解，求特征向量时的线性方程组不会因为一个转置而一定改变或者不改变解。</p></li>
+<li><p><span class="math inline"><em>A</em></span> 为正交阵，<span
+class="math inline">|<em>λ</em>| = 1</span>；<span
+class="math inline"><em>A</em></span> 为实对称阵，<span
+class="math inline"><em>λ</em></span> 是实数，且 <span
+class="math inline"><em>A</em></span> 可以正交对角化；<span
+class="math inline"><em>A</em></span> 为实反对称阵，<span
+class="math inline"><em>λ</em></span> 为零或纯虚数。</p></li>
+<li><p>秩是相抵不变量，特征值是相似不变量，正负惯性指数是相合不变量。</p></li>
+<li><p><span
+class="math inline"><em>λ</em><sub>1</sub>, ⋯, <em>λ</em><sub><em>n</em></sub></span>
+是实矩阵 <span class="math inline"><em>A</em></span> 的全部特征值，<span
+class="math inline">$\mathrm{tr} A = \sum_{i = 1}^n \lambda_i, \det A =
+\prod_{i=1}^n
+\lambda_i$</span>，这个结论由特征多项式和韦达定理给出。</p></li>
+<li><p>可对角化矩阵 <span
+class="math inline"><em>A</em>, <em>B</em></span> 满足 <span
+class="math inline"><em>A</em><em>B</em> = <em>B</em><em>A</em></span>
+时，当且仅当 <span class="math inline"><em>A</em>, <em>B</em></span>
+可以同时相似对角化。</p>
+<p><span
+class="math inline"><em>P</em><em>r</em><em>o</em><em>v</em><em>e</em></span>：</p>
+<p><span class="math inline">⇐</span>：对角矩阵乘法可交换，故 <span
+class="math inline"><em>P</em><sup>−1</sup><em>A</em><em>P</em><em>P</em><sup>−1</sup><em>B</em><em>P</em> = <em>P</em><sup>−1</sup><em>B</em><em>P</em><em>P</em><sup>−1</sup><em>A</em><em>P</em></span>，即
+<span
+class="math inline"><em>P</em><sup>−1</sup><em>A</em><em>B</em><em>P</em> = <em>P</em><sup>−1</sup><em>B</em><em>A</em><em>P</em></span>，<span
+class="math inline"><em>P</em></span> 可逆，则 <span
+class="math inline"><em>A</em><em>B</em> = <em>B</em><em>A</em></span>。</p>
+<p><span class="math inline">⇒</span>：<span
+class="math inline"><em>A</em></span> 可以对角化，<span
+class="math inline">∃<em>Q</em>, <em>s</em>.<em>t</em>.</span> <span
+class="math display">$$
+Q^{-1}AQ = \begin{pmatrix}\lambda_1I_{n_1} &amp; &amp; &amp; \\ &amp;
+\lambda_2I_{n_2} &amp; &amp; \\ &amp; &amp; \ddots &amp; \\ &amp; &amp;
+&amp; \lambda_sI_{n_s}\end{pmatrix}
+$$</span> 其中 <span
+class="math inline"><em>λ</em><sub><em>i</em></sub></span>
+互不相同，<span class="math inline">$\sum_{i = 1}^s n_i =
+n$</span>。</p>
+<p>由 <span
+class="math inline"><em>A</em><em>B</em> = <em>B</em><em>A</em></span>，<span
+class="math inline"><em>Q</em><sup>−1</sup><em>A</em><em>Q</em><em>Q</em><sup>−1</sup><em>B</em><em>Q</em> = <em>Q</em><sup>−1</sup><em>B</em><em>Q</em><em>Q</em><sup>−1</sup><em>A</em><em>Q</em></span>，对
+<span
+class="math inline"><em>Q</em><sup>−1</sup><em>B</em><em>Q</em></span>
+分块得到： <span class="math display">$$
+Q^{-1}BQ = \begin{pmatrix}B_{11}  &amp; B_{12} &amp; \cdots &amp; B_{1n}
+\\ B_{21} &amp; B_{22} &amp; \cdots &amp; B_{2n} \\ \vdots &amp; \vdots
+&amp; \ddots &amp; \vdots \\ B_{n1}  &amp; B_{n2} &amp; \cdots &amp;
+B_{nn}\end{pmatrix}
+$$</span> 则： <span class="math display">$$
+\begin{pmatrix}\lambda_1I_{n_1} &amp; &amp; &amp; &amp; \\ &amp;
+\lambda_2I_{n_2} &amp; &amp; \\ &amp; &amp; &amp; \ddots &amp; \\ &amp;
+&amp; &amp;
+&amp;\lambda_sI_{n_s}\end{pmatrix}\begin{pmatrix}B_{11}  &amp; B_{12}
+&amp; \cdots &amp; B_{1n} \\ B_{21} &amp; B_{22} &amp; \cdots &amp;
+B_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ B_{n1}  &amp;
+B_{n2} &amp; \cdots &amp; B_{nn}\end{pmatrix} =
+\begin{pmatrix}B_{11}  &amp; B_{12} &amp; \cdots &amp; B_{1n} \\ B_{21}
+&amp; B_{22} &amp; \cdots &amp; B_{2n} \\ \vdots &amp; \vdots &amp;
+\ddots &amp; \vdots \\ B_{n1}  &amp; B_{n2} &amp; \cdots &amp;
+B_{nn}\end{pmatrix}\begin{pmatrix}\lambda_1I_{n_1} &amp; &amp; &amp;
+&amp; \\ &amp; \lambda_2I_{n_2} &amp; &amp; \\ &amp; &amp; &amp; \ddots
+&amp; \\ &amp; &amp; &amp; &amp;\lambda_sI_{n_s}\end{pmatrix}
+$$</span> 计算得到 <span
+class="math inline">∀<em>i</em> ≠ <em>j</em></span>，<span
+class="math inline"><em>B</em><sub><em>i</em><em>j</em></sub> = 0</span>，即
+<span
+class="math inline"><em>Q</em><sup>−1</sup><em>B</em><em>Q</em> = diag(<em>B</em><sub>11</sub>, <em>B</em><sub>22</sub>, ⋯, <em>B</em><sub><em>n</em><em>n</em></sub>)</span>。</p>
+<p>由 <span class="math inline"><em>B</em></span> 可对角化，得到 <span
+class="math inline"><em>Q</em><sup>−1</sup><em>B</em><em>Q</em></span>
+可对角化，则 <span
+class="math inline"><em>B</em><sub><em>i</em><em>i</em></sub></span>
+可对角化，<span
+class="math inline">∃<em>N</em><sub><em>i</em></sub></span> 可逆 <span
+class="math inline"><em>s</em>.<em>t</em>.</span> <span
+class="math inline"><em>N</em><sub><em>i</em></sub><sup>−1</sup><em>B</em><sub><em>i</em><em>i</em></sub><em>N</em><sub><em>i</em></sub> = <em>Σ</em><sub><em>i</em></sub></span>
+为对角阵。</p>
+<p>接下来： <span class="math display">$$
+\begin{pmatrix}N_1^{-1} &amp; &amp; &amp; \\ &amp; N_2^{-1} &amp; &amp;
+\\ &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp;
+N_s^{-1}\end{pmatrix}Q^{-1}AQ\begin{pmatrix}N_1 &amp; &amp; &amp; \\
+&amp; N_2 &amp; &amp; \\ &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp;
+N_s\end{pmatrix} = \begin{pmatrix}\lambda_1I_{n_1} &amp; &amp; &amp; \\
+&amp; \lambda_2I_{n_2} &amp; &amp; \\ &amp; &amp; \ddots &amp; \\ &amp;
+&amp; &amp; \lambda_sI_{n_s}\end{pmatrix}
+$$</span> 是对角阵。 <span class="math display">$$
+\begin{pmatrix}N_1^{-1} &amp; &amp; &amp; \\ &amp; N_2^{-1} &amp; &amp;
+\\ &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp;
+N_s^{-1}\end{pmatrix}Q^{-1}BQ\begin{pmatrix}N_1 &amp; &amp; &amp; \\
+&amp; N_2 &amp; &amp; \\ &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp;
+N_s\end{pmatrix} = \begin{pmatrix}\Sigma_1 &amp; &amp; &amp; \\ &amp;
+\Sigma_2 &amp; &amp; \\ &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp;
+\Sigma_s\end{pmatrix}
+$$</span> 也是对角阵。</p>
+<p>即 <span
+class="math inline"><em>N</em> = diag(<em>N</em><sub>1</sub>, <em>N</em><sub>2</sub>, ⋯, <em>N</em><sub><em>s</em></sub>)</span>，存在矩阵
+<span class="math inline"><em>P</em> = <em>Q</em><em>N</em></span> 使得
+<span class="math inline"><em>A</em>, <em>B</em></span>
+同时对角化。</p></li>
+</ul>
+<hr />
+<h3 id="可对角化的充要条件">可对角化的充要条件</h3>
+<ul>
+<li><span class="math inline"><em>n</em></span> 阶方阵有 <span
+class="math inline"><em>n</em></span> 个不同的特征值。</li>
+<li><span class="math inline"><em>n</em></span>
+阶方阵每个特征值的几何重数和代数重数相等。</li>
+<li><span class="math inline"><em>n</em></span> 阶方阵 <span
+class="math inline"><em>A</em></span> 的所有特征值的几何重数之和为 <span
+class="math inline"><em>n</em></span>，即 <span
+class="math inline"><em>A</em></span>
+的所有特征向量构成的特征子空间的直和为整个空间 <span
+class="math inline"><em>V</em></span> 时。</li>
+<li><span class="math inline"><em>n</em></span>
+阶方阵的最小多项式没有重根。</li>
+</ul>
+<blockquote>
+<p><strong>补充</strong></p>
+<ul>
+<li>不是所有方阵都可以对角化，但是所有 <span
+class="math inline"><em>n</em></span>
+阶复方阵都可以相似于一个上三角阵，这个上三角阵对角线元素就是原来方阵的特征值。</li>
+<li>零化多项式：一个非零多项式 <span
+class="math inline"><em>f</em>(<em>λ</em>)</span> 满足 <span
+class="math inline"><em>f</em>(<em>A</em>) = 0</span>，<span
+class="math inline"><em>A</em></span> 为 <span
+class="math inline"><em>n</em></span> 阶方阵。</li>
+<li>最小多项式：<span class="math inline"><em>A</em></span>
+的所有零化多项式中，次数最低的首一多项式 <span
+class="math inline"><em>m</em>(<em>A</em>)</span>，唯一确定且整除其他所有零化多项式。</li>
+<li>Caylay-Hamilton
+定理：方阵的特征多项式是其特殊的零化多项式。这个定理同样说明了矩阵的逆可以用多项式表示。</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="正交变换与内积空间">正交变换与内积空间</h2>
+<h3 id="范数与赋范空间">范数与赋范空间</h3>
+<blockquote>
+<p><strong>定义</strong></p>
+<p><span class="math inline">𝕂 = ℝ <em>o</em><em>r</em> ℂ</span>，<span
+class="math inline"><em>X</em></span> 是 <span
+class="math inline">𝕂</span> 上的线性空间，若函数 <span
+class="math inline">||⋅|| : <em>X</em> → ℝ</span> 满足：</p>
+<ul>
+<li>正定性：<span
+class="math inline">||<em>x</em>|| ≥ 0, ∀<em>x</em> ∈ <em>X</em></span>，且
+<span class="math inline">||<em>x</em>|| = 0</span> 当且仅当 <span
+class="math inline"><em>x</em> = 0</span>。</li>
+<li>齐次性：<span
+class="math inline">||<em>α</em><em>x</em>|| = |<em>α</em>|⋅||<em>x</em>||，∀<em>x</em> ∈ <em>X</em>, <em>a</em> ∈ 𝕂</span>。</li>
+<li>三角不等式：<span
+class="math inline">||<em>x</em> + <em>y</em>|| ≤ ||<em>x</em>||+||<em>y</em>||,∀<em>x</em>, <em>y</em> ∈ <em>X</em></span></li>
+</ul>
+<p>则称 <span class="math inline">||⋅||</span> 是 <span
+class="math inline"><em>X</em></span> 上的一个范数，<span
+class="math inline">(<em>X</em>, ||⋅||)</span> 称为赋范线性空间。<span
+class="math inline"><em>d</em>(<em>x</em>, <em>y</em>) = ||<em>x</em> − <em>y</em>||</span>
+是 <span class="math inline"><em>X</em></span>
+上的一个度量，称为典则度量。</p>
+</blockquote>
+<blockquote>
+<p><strong>补充</strong></p>
+<p>Frobenius 范数：对于一个 <span
+class="math inline"><em>m</em> × <em>n</em></span> 阶的实矩阵或者复矩阵
+<span class="math inline"><em>A</em></span>，该范数定义为 <span
+class="math inline">$||A||_F = \sqrt{\sum_{i = 1}^n \sum_{j = 1}^n
+|a_{ij}|^2} = \sqrt{\mathrm{tr}(A^TA)} =
+\sqrt{\mathrm{tr}({AA^T})}$</span>。这个定义来源为 Frobenius
+内积（或叫做 Hilbert-Schmidt 内积）。</p>
+</blockquote>
+<hr />
+<h3 id="内积与正交性">内积与正交性</h3>
+<blockquote>
+<p><strong>定义</strong></p>
+<p><span class="math inline"><em>X</em></span> 是 <span
+class="math inline">𝕂</span> 上的线性空间，若函数 <span
+class="math inline"> &lt; ⋅, ⋅ &gt;  : <em>X</em> × <em>X</em> → 𝕂</span>
+满足：</p>
+<ul>
+<li>双线性：
+<ul>
+<li>对第一变元线性：<span
+class="math inline"> &lt; <em>α</em><em>x</em> + <em>β</em><em>y</em>, <em>z</em> &gt;  = <em>α</em> &lt; <em>x</em>, <em>z</em> &gt; +<em>β</em> &lt; <em>y</em>, <em>z</em>&gt;,∀<em>x</em>, <em>y</em>, <em>z</em> ∈ <em>X</em>, <em>α</em>, <em>β</em> ∈ 𝕂</span>。</li>
+<li>对第二变元线性：<span
+class="math inline"> &lt; <em>x</em>, <em>α</em><em>y</em> + <em>β</em><em>z</em> &gt;  = <em>α</em> &lt; <em>x</em>, <em>z</em> &gt; +<em>β</em> &lt; <em>x</em>, <em>z</em>&gt;,∀<em>x</em>, <em>y</em>, <em>z</em> ∈ <em>X</em>, <em>α</em>, <em>β</em> ∈ 𝕂</span>。</li>
+</ul></li>
+<li>共轭对称：<span class="math inline">$&lt;x, y&gt; = \overline{&lt;y,
+x&gt;}$</span>，若 <span class="math inline">𝕂 = ℝ</span> 时，为对称性
+<span
+class="math inline"> &lt; <em>x</em>, <em>y</em> &gt;  =  &lt; <em>y</em>, <em>x</em>&gt;</span>。</li>
+<li>正定性：<span
+class="math inline"> &lt; <em>x</em>, <em>x</em> &gt;  ≥ 0, ∀<em>x</em> ∈ <em>X</em></span>，且
+<span class="math inline"> &lt; <em>x</em>, <em>x</em> &gt;  = 0</span>
+当且仅当 <span class="math inline"><em>x</em> = 0</span>。</li>
+</ul>
+<p>则称 <span class="math inline"> &lt; ⋅, ⋅&gt;</span> 是 <span
+class="math inline"><em>X</em></span> 的一个内积，<span
+class="math inline">(<em>X</em>,  &lt; ⋅, ⋅ &gt; )</span>
+称为内积空间。<span class="math inline">$||x|| = \sqrt{&lt;x,
+x&gt;}$</span> 是 <span class="math inline"><em>X</em></span>
+上的一个范数，称为由内积诱导的范数。</p>
+</blockquote>
+<blockquote>
+<p><strong>补充</strong></p>
+<p>Frobenius 内积（或叫做 Hilbert-Schmidt 内积）：<span
+class="math inline">$&lt;A, B&gt;_F = \mathrm{tr}(A^TB) = \sum_{i = 1}^n
+\sum_{j = 1}^n a_{ij}b_{ij}$</span>。</p>
+<p><span class="math inline">ℝ<sub><em>n</em></sub>[<em>x</em>]</span>
+的内积：<span
+class="math inline"> &lt; <em>f</em>, <em>g</em> &gt;  = ∫<sub><em>a</em></sub><sup><em>b</em></sup><em>f</em>(<em>x</em>)<em>g</em>(<em>x</em>)d<em>x</em></span>。</p>
+</blockquote>
+<p><span class="math inline"><em>X</em></span> 是内积空间，若对 <span
+class="math inline"><em>x</em>, <em>y</em> ∈ <em>X</em></span>，有 <span
+class="math inline"> &lt; <em>x</em>, <em>y</em> &gt;  = 0</span>，则称
+<span class="math inline"><em>x</em>, <em>y</em></span> 正交，记作 <span
+class="math inline"><em>x</em> ⟂ <em>y</em></span>，对 <span
+class="math inline"><em>M</em> ⊂ <em>X</em></span>，若 <span
+class="math inline">∀<em>y</em> ∈ <em>M</em>, <em>x</em> ⟂ <em>y</em></span>，则称
+<span class="math inline"><em>x</em></span> 正交于 <span
+class="math inline"><em>M</em></span>，记作 <span
+class="math inline"><em>x</em> ⟂ <em>M</em></span>。<span
+class="math inline"><em>M</em><sup>⟂</sup> = {<em>x</em> ∈ <em>X</em>|<em>x</em> ⟂ <em>M</em>}</span>
+称为 <span class="math inline"><em>M</em></span> 的正交补。此时若 <span
+class="math inline"><em>M</em></span> 是 <span
+class="math inline"><em>X</em></span> 的子空间，且 <span
+class="math inline"><em>X</em> = <em>M</em> ⊕ <em>M</em><sup>⟂</sup></span>。</p>
+<hr />
+<h3 id="基本定理">基本定理</h3>
+<ul>
+<li>Cauchy - Schwarz 不等式：<span class="math inline"><em>X</em></span>
+是内积空间，对任意 <span
+class="math inline"><em>x</em>, <em>y</em> ∈ <em>X</em></span>，有 <span
+class="math inline">| &lt; <em>x</em>, <em>y</em> &gt; | ≤ ||<em>x</em>||⋅||<em>y</em>||</span>，当且仅当
+<span class="math inline"><em>x</em>, <em>y</em></span>
+线性相关时等号成立。</li>
+<li>一些额外的定理：
+<ul>
+<li><span class="math inline">ℝ</span> 上的极化恒等式：<span
+class="math inline">(<em>X</em>,  &lt; ⋅, ⋅ &gt; )</span>
+是实内积空间，则 <span class="math inline">$&lt;x, y&gt; =
+\frac{1}{4}(||x + y||^2 - ||x - y||^2)$</span>。</li>
+<li><span class="math inline">ℂ</span> 上的极化恒等式：<span
+class="math inline">(<em>X</em>,  &lt; ⋅, ⋅ &gt; )</span>
+是复内积空间，则 <span class="math inline">$&lt;x, y&gt; =
+\frac{1}{4}(||x + y||^2 + i||x + iy||^2 - ||x - y||^2 - i||x -
+iy||^2)$</span>。</li>
+<li>平行四边形法则：<span class="math inline">(<em>X</em>, ||⋅||)</span>
+是赋范空间，则 <span
+class="math inline">||<em>x</em> + <em>y</em>||<sup>2</sup> + ||<em>x</em> − <em>y</em>||<sup>2</sup> = 2(||<em>x</em>||<sup>2</sup> + ||<em>y</em>||<sup>2</sup>)</span>。</li>
+<li>勾股定理：<span
+class="math inline">(<em>X</em>,  &lt; ⋅, ⋅ &gt; )</span> 是内积空间，则
+<span
+class="math inline"><em>x</em> ⟂ <em>y</em> ⇔ ||<em>x</em> + <em>y</em>||<sup>2</sup> = ||<em>x</em>||<sup>2</sup> + ||<em>y</em>||<sup>2</sup></span>。</li>
+</ul></li>
+</ul>
+<hr />
+<h3 id="gram-矩阵">Gram 矩阵</h3>
+<blockquote>
+<p><strong>定义</strong></p>
+<p><span class="math inline">(<em>X</em>,  &lt; ⋅, ⋅ &gt; )</span>
+是内积空间，<span
+class="math inline"><em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub></span>
+是 <span class="math inline"><em>X</em></span> 的一组基，则 <span
+class="math inline"><em>G</em> = ( &lt; <em>a</em><sub><em>i</em></sub>, <em>a</em><sub><em>j</em></sub> &gt; )<sub><em>n</em> × <em>n</em></sub></span>
+称为基 <span
+class="math inline"><em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub></span>
+的 Gram 矩阵，且 <span class="math inline"><em>G</em> &gt; 0</span>。对
+<span
+class="math inline"><em>α</em> = (<em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub>)<em>x</em>, <em>β</em> = (<em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub>)<em>y</em></span>，有
+<span
+class="math inline"> &lt; <em>x</em>, <em>y</em> &gt;  = <em>x</em><sup><em>T</em></sup><em>G</em><em>y</em></span>。</p>
+</blockquote>
+<ul>
+<li><p><span class="math inline">(<em>X</em>,  &lt; ⋅, ⋅ &gt; )</span>
+是内积空间，<span
+class="math inline"><em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub>; <em>β</em><sub>1</sub>, ⋯, <em>β</em><sub><em>n</em></sub></span>
+分别是 <span class="math inline"><em>X</em></span> 的一组基，<span
+class="math inline"><em>G</em><sub>1</sub></span> 是 <span
+class="math inline"><em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub></span>
+的 Gram 矩阵，<span class="math inline"><em>G</em><sub>2</sub></span> 是
+<span
+class="math inline"><em>β</em><sub>1</sub>, ⋯, <em>β</em><sub><em>n</em></sub></span>
+的 Gram 矩阵，若两组基的过渡阵为 <span
+class="math inline"><em>P</em></span>，即 <span
+class="math inline">(<em>β</em><sub>1</sub>, ⋯, <em>β</em><sub><em>n</em></sub>) = (<em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub>)<em>P</em></span>，则
+<span
+class="math inline"><em>G</em><sub>2</sub> = <em>P</em><sup><em>T</em></sup><em>G</em><sub>1</sub><em>P</em></span>。</p>
+<p><span
+class="math inline"><em>P</em><em>r</em><em>o</em><em>v</em><em>e</em></span>：</p>
+<p>设 <span
+class="math inline"><em>x</em>, <em>y</em> ∈ <em>X</em></span>，且 <span
+class="math inline"><em>x</em> = (<em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub>)<em>x</em><sub>1</sub> = (<em>β</em><sub>1</sub>, ⋯, <em>β</em><sub><em>n</em></sub>)<em>x</em><sub>2</sub>; <em>y</em> = (<em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub>)<em>y</em><sub>1</sub> = (<em>β</em><sub>1</sub>, ⋯, <em>β</em><sub><em>n</em></sub>)<em>y</em><sub>2</sub></span>，则
+<span
+class="math inline"><em>x</em><sub>1</sub> = <em>P</em><em>x</em><sub>2</sub>, <em>y</em><sub>1</sub> = <em>P</em><em>y</em><sub>2</sub></span>，故
+<span
+class="math inline"> &lt; <em>x</em>, <em>y</em> &gt;  = <em>x</em><sub>1</sub><sup><em>T</em></sup><em>G</em><sub>1</sub><em>y</em><sub>1</sub> = <em>x</em><sub>2</sub><sup><em>T</em></sup><em>P</em><sup><em>T</em></sup><em>G</em><sub>1</sub><em>P</em><em>y</em><sub>2</sub> = <em>x</em><sub>2</sub><sup><em>T</em></sup><em>G</em><sub>2</sub><em>y</em><sub>2</sub></span>，由于任意性，则
+<span
+class="math inline"><em>G</em><sub>2</sub> = <em>P</em><sup><em>T</em></sup><em>G</em><sub>1</sub><em>P</em></span>。</p></li>
+</ul>
+<hr />
+<h3 id="必考标准正交基与-gram-schmidt-正交化">（必考）标准正交基与
+Gram-Schmidt 正交化</h3>
+<blockquote>
+<p><strong>定义</strong></p>
+<p><span class="math inline">(<em>X</em>,  &lt; ⋅, ⋅ &gt; )</span>
+是内积空间，<span
+class="math inline"><em>e</em><sub>1</sub>, ⋯, <em>e</em><sub><em>n</em></sub></span>
+是 <span class="math inline"><em>X</em></span> 的一组单位基，若 <span
+class="math inline"> &lt; <em>e</em><sub><em>i</em></sub>, <em>e</em><sub><em>j</em></sub> &gt;  = <em>δ</em><sub><em>i</em><em>j</em></sub></span>，则称
+<span
+class="math inline"><em>e</em><sub>1</sub>, ⋯, <em>e</em><sub><em>n</em></sub></span>
+为 <span class="math inline"><em>X</em></span> 的一组标准正交基，其 Gram
+矩阵为单位阵 <span
+class="math inline"><em>I</em><sub><em>n</em></sub></span>。</p>
+</blockquote>
+<ul>
+<li><p>（必考）Schmidt 正交化：</p>
+<p><span class="math inline">(<em>X</em>,  &lt; ⋅, ⋅ &gt; )</span>
+是内积空间，<span
+class="math inline"><em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub></span>
+是 <span class="math inline"><em>X</em></span> 的一组基，令： <span
+class="math display">$$
+\begin{flalign}
+\beta_1 &amp;= \alpha_1,\; u_1 = \frac{\beta_1}{||\beta_1||} \\
+\beta_2 &amp;= \alpha_2 - &lt;\alpha_1, u_1&gt;u_1,\; u_2 =
+\frac{\beta_2}{||\beta_2||} \\
+\vdots \\
+\beta_n &amp;= \alpha_n - \sum_{i = 1}^{n - 1}&lt;a_n, u_i&gt;u_i,\; u_n
+= \frac{\beta_n}{||\beta_n||}
+\end{flalign}
+$$</span> 则此时 <span
+class="math inline"><em>u</em><sub>1</sub>, ⋯, <em>u</em><sub><em>n</em></sub></span>
+是一组标准正交基。</p></li>
+</ul>
+<blockquote>
+<p><strong>补充</strong>：</p>
+<ul>
+<li><p>正交投影：设 <span class="math inline"><em>W</em></span> 是 <span
+class="math inline">ℝ<sup><em>n</em></sup></span> 的子空间，<span
+class="math inline"><em>u</em><sub>1</sub>, <em>u</em><sub>2</sub>, ⋯, <em>u</em><sub><em>r</em></sub></span>
+是 <span class="math inline"><em>W</em></span>
+的一组标准正交基，则：</p>
+<ol type="1">
+<li>对任意 <span
+class="math inline"><em>x</em> ∈ ℝ<sup><em>n</em></sup></span>，<span
+class="math inline"><em>x</em></span> 在 <span
+class="math inline"><em>W</em></span> 上的正交投影存在唯一，且 <span
+class="math inline"><em>P</em><em>x</em> = (<em>x</em>, <em>u</em><sub>1</sub>)<em>u</em><sub>1</sub> + (<em>x</em>, <em>u</em><sub>2</sub>)<em>u</em><sub>2</sub> + ⋯ + (<em>x</em>, <em>u</em><sub><em>r</em></sub>)<em>u</em><sub><em>r</em></sub></span>。</li>
+<li>对任意 <span
+class="math inline"><em>y</em> ∈ <em>W</em></span>，<span
+class="math inline">||<em>x</em> − <em>y</em>|| ≥ ||<em>x</em> − <em>P</em><em>x</em>||</span>，当且仅当
+<span class="math inline"><em>y</em> = <em>P</em><em>x</em></span>
+时等号成立。</li>
+</ol></li>
+<li><p>矩阵的 QR 分解：若 <span class="math inline"><em>A</em></span>
+是一个可逆实方阵，<span class="math inline"><em>Q</em></span>
+是一个正交阵，<span class="math inline"><em>R</em></span>
+是一个上三角阵且对角元大于零，那么 <span
+class="math inline"><em>A</em> = <em>Q</em><em>R</em></span>。这里假设
+<span
+class="math inline"><em>A</em> = (<em>α</em><sub>1</sub> <em>α</em><sub>2</sub> ⋯ <em>α</em><sub><em>n</em></sub>), <em>Q</em> = (<em>u</em><sub>1</sub> <em>u</em><sub>2</sub> ⋯ <em>u</em><sub><em>n</em></sub>)</span>，则：
+<span class="math display">$$
+\begin{pmatrix}\alpha_1 &amp; \alpha_2 &amp; \cdots &amp;
+\alpha_n\end{pmatrix} = \begin{pmatrix}u_1 &amp; u_2 &amp; \cdots &amp;
+u_n\end{pmatrix}\begin{pmatrix}&lt;\alpha_1, u_1&gt; &amp; &lt;\alpha_2,
+u_1&gt; &amp; \cdots &amp; &lt;\alpha_n, u_1&gt; \\ &amp; &lt;\alpha_2,
+u_2&gt; &amp; \cdots &amp; &lt;\alpha_n, u_2&gt; \\ &amp; &amp; \ddots
+&amp; \vdots \\ &amp; &amp; &amp; &lt;\alpha_n, u_n&gt;\end{pmatrix}
+$$</span></p></li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="正交变换与对称变换">正交变换与对称变换</h3>
+<blockquote>
+<p><strong>定义</strong></p>
+<p><span class="math inline">(<em>X</em>,  &lt; ⋅, ⋅ &gt; )</span>
+是内积空间，<span
+class="math inline"><em>T</em> : <em>X</em> → <em>X</em></span>
+是线性变换：</p>
+<ul>
+<li>若对 <span
+class="math inline"><em>x</em>, <em>y</em> ∈ <em>X</em></span>，有 <span
+class="math inline"> &lt; <em>T</em><em>x</em>, <em>T</em><em>y</em> &gt;  =  &lt; <em>x</em>, <em>y</em>&gt;</span>，则称
+<span class="math inline"><em>T</em></span> 为 <span
+class="math inline"><em>X</em></span> 上的正交变换。</li>
+<li>若对 <span
+class="math inline"><em>x</em>, <em>y</em> ∈ <em>X</em></span>，有 <span
+class="math inline"> &lt; <em>x</em>, <em>T</em><em>y</em> &gt;  =  &lt; <em>T</em><em>x</em>, <em>y</em>&gt;</span>，则称
+<span class="math inline"><em>T</em></span> 为 <span
+class="math inline"><em>X</em></span> 上的对称变换。</li>
+</ul>
+</blockquote>
+<ul>
+<li><span class="math inline">(<em>X</em>,  &lt; ⋅, ⋅ &gt; )</span>
+是内积空间，<span
+class="math inline"><em>T</em> : <em>X</em> → <em>X</em></span>
+是线性变换，下述等价：
+<ol type="1">
+<li><span class="math inline"><em>T</em></span> 是正交变换；</li>
+<li>对任意 <span
+class="math inline"><em>x</em>, <em>y</em> ∈ <em>X</em></span>，<span
+class="math inline"> &lt; <em>T</em><em>x</em>, <em>T</em><em>y</em> &gt;  =  &lt; <em>x</em>, <em>y</em>&gt;</span>；</li>
+<li>对任意 <span
+class="math inline"><em>x</em> ∈ <em>X</em></span>，<span
+class="math inline">||<em>T</em><em>x</em>|| = ||<em>x</em>||</span>，即该变换为保长度的；</li>
+<li><span class="math inline"><em>T</em></span>
+将一组标准正交基变换到另一组标准正交基；</li>
+<li><span class="math inline"><em>T</em></span>
+在任意一组标准正交基下矩阵为正交阵。</li>
+</ol></li>
+<li>正交变换的性质：
+<ul>
+<li>恒同变换是正交变换。</li>
+<li>两个正交变换的复合为正交变换，即正交阵 <span
+class="math inline"><em>A</em>, <em>B</em></span>，则 <span
+class="math inline"><em>A</em><em>B</em>, <em>B</em><em>A</em></span>
+都是正交阵。</li>
+<li>正交变换的逆变换是正交变换，即正交阵 <span
+class="math inline"><em>A</em></span>，则 <span
+class="math inline"><em>A</em><sup>−1</sup></span> 也是正交阵。</li>
+<li>正交变换的行列式值为 <span class="math inline">1</span> 或 <span
+class="math inline">−1</span>，若 <span
+class="math inline">det <em>T</em> = 1</span> 则 <span
+class="math inline"><em>T</em></span> 为第一类正交变换，<span
+class="math inline">det <em>T</em> = −1</span> 则 <span
+class="math inline"><em>T</em></span> 为第二类正交变换。</li>
+<li>正交变换的特征值的模长为 <span class="math inline">1</span>。</li>
+</ul></li>
+<li><span class="math inline">(<em>X</em>,  &lt; ⋅, ⋅ &gt; )</span>
+是内积空间，<span
+class="math inline"><em>T</em> : <em>X</em> → <em>X</em></span>
+是线性变换，下述等价：
+<ol type="1">
+<li><span class="math inline"><em>T</em></span> 是对称变换；</li>
+<li>对任意 <span
+class="math inline"><em>x</em>, <em>y</em> ∈ <em>X</em></span>，<span
+class="math inline"> &lt; <em>x</em>, <em>T</em><em>y</em> &gt;  =  &lt; <em>T</em><em>x</em>, <em>y</em>&gt;</span>；</li>
+<li><span class="math inline"><em>T</em></span>
+在任意一组标准正交基下的矩阵为对称阵。</li>
+</ol></li>
+<li>实对称变换的性质（可对应实对称方阵的性质，这里不再额外指明）：
+<ul>
+<li>对称变换的特征值均为实数。</li>
+<li>对称变换的不同特征值对应的特征向量彼此正交。</li>
+<li>存在 <span class="math inline">ℝ<sup><em>n</em></sup></span>
+的一组标准正交基 <span
+class="math inline"><em>u</em><sub>1</sub>, ⋯, <em>u</em><sub><em>n</em></sub></span>，使得对称变换在这组基下的矩阵为
+<span
+class="math inline">diag(<em>λ</em><sub>1</sub>, ⋯, <em>λ</em><sub><em>n</em></sub>)</span>，这里
+<span class="math inline"><em>λ</em><sub><em>i</em></sub></span> 是
+对称变换的特征值。对应每一个对称阵都可以被正交对角化。</li>
+</ul></li>
+</ul>
+<blockquote>
+<p><strong>补充</strong></p>
+<ul>
+<li><p>不变子空间：若 <span
+class="math inline">𝒜 ∈ ℒ(<em>V</em>)</span>，<span
+class="math inline"><em>W</em> ≤ <em>V</em></span>，若 <span
+class="math inline">𝒜|<sub><em>W</em></sub> : <em>W</em> → <em>W</em></span>，则
+<span class="math inline"><em>W</em></span> 是 <span
+class="math inline">𝒜</span> 的不变子空间。则对于 <span
+class="math inline"><em>W</em></span> 的一组基 <span
+class="math inline"><em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>r</em></sub></span>
+假设 <span
+class="math inline">𝒜(<em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>r</em></sub>) = (<em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>r</em></sub>)<em>A</em></span>，将这组基扩充为
+<span class="math inline"><em>V</em></span> 的一组基 <span
+class="math inline"><em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>r</em></sub>, <em>α</em><sub><em>r</em> + 1</sub>, ⋯, <em>α</em><sub><em>n</em></sub></span>，则
+<span class="math inline">$\mathcal{\alpha_1, \cdots, \alpha_n} =
+(\alpha_1, \cdots, \alpha_n)\begin{pmatrix}A &amp; * \\ O &amp;
+*\end{pmatrix}$</span>。</p>
+<ul>
+<li>若 <span class="math inline">𝒜</span> 为正交变换，<span
+class="math inline"><em>W</em></span> 为 <span
+class="math inline">𝒜</span> 的不变子空间，则 <span
+class="math inline"><em>W</em><sup>⟂</sup></span> 是 <span
+class="math inline">𝒜</span> 的另一个不变子空间。此时取 <span
+class="math inline"><em>W</em></span> 的一组基 <span
+class="math inline"><em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>r</em></sub></span>，与
+<span class="math inline"><em>W</em><sup>⟂</sup></span> 的一组基 <span
+class="math inline"><em>α</em><sub><em>r</em> + 1</sub>, ⋯, <em>α</em><sub><em>n</em></sub></span>
+组成 <span class="math inline"><em>V</em></span> 的一组基 <span
+class="math inline"><em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub></span>，则
+<span
+class="math inline">𝒜(<em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub>) = (<em>α</em><sub>1</sub>, ⋯, <em>α</em><sub><em>n</em></sub>)diag(<em>A</em>, *)</span>。</li>
+</ul></li>
+<li><p>正交矩阵的正交准对角化：设正交变换中所有特征值：<span
+class="math inline">1, −1, cos <em>θ</em><sub>1</sub> ± <em>i</em>sin <em>θ</em><sub>1</sub>, ⋯, cos <em>θ</em><sub><em>s</em></sub> ± <em>i</em>sin <em>θ</em><sub><em>s</em></sub></span>，其代数重数分别为
+<span
+class="math inline"><em>t</em>, <em>n</em> − <em>t</em> − 2<em>s</em>, 2, ⋯, 2</span>，则一定可以找到
+<span class="math inline"><em>V</em></span> 的一组标准正交基使得 <span
+class="math inline">𝒜</span> 在这组基下矩阵为 <span
+class="math display">$$
+\begin{pmatrix}I_t &amp; &amp; &amp; &amp; &amp; &amp; \\ &amp; -I_{n -
+t - 2s} &amp; &amp; &amp; &amp; &amp; \\ &amp; &amp; &amp; \cos\theta_1
+&amp; -sin\theta_1 &amp; &amp; \\ &amp; &amp; &amp; \cos\theta_2 &amp;
+\sin\theta_2 &amp; &amp; &amp; \\ &amp; &amp; &amp; &amp; \ddots &amp;
+\ddots &amp; \\ &amp; &amp; &amp; &amp; &amp; \cos\theta_{s - 1} &amp;
+-\sin\theta_{s - 1} \\ &amp; &amp; &amp; &amp; &amp; \cos\theta_s &amp;
+\sin\theta_s\end{pmatrix}
+$$</span></p></li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="二次型与矩阵的相合">二次型与矩阵的相合</h2>
+<h3 id="相合的定义">相合的定义</h3>
+<blockquote>
+<p><strong>定义</strong></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+              <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag"># 线性代数</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/10/29/%E8%AF%81%E6%98%8E%E4%B8%80%E4%BA%9B%E5%AE%9A%E7%90%86%E5%92%8C%E5%85%AC%E5%BC%8F/" rel="prev" title="证明一些定理和公式">
+                  <i class="fa fa-angle-left"></i> 证明一些定理和公式
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2026/01/08/%E8%BF%91%E6%9C%9F%E7%9A%84%E4%B8%80%E7%82%B9%E5%B0%8F%E5%90%90%E6%A7%BD/" rel="next" title="近期的一点小吐槽">
+                  近期的一点小吐槽 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Razorsax</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">33k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:01</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/foeyt" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
