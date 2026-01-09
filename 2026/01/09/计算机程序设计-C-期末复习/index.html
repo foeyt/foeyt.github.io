@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"foeyt.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.25.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="期末复习 考试前临时过一遍内容，这个笔试我感觉还是记的内容多一点。😓 不妨写个笔记，以后查起来也方便。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机程序设计(C)-期末复习">
+<meta property="og:url" content="https://foeyt.github.io/2026/01/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-C-%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Razorsax-Blog">
+<meta property="og:description" content="期末复习 考试前临时过一遍内容，这个笔试我感觉还是记的内容多一点。😓 不妨写个笔记，以后查起来也方便。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://foeyt.github.io/images/Turing.png">
+<meta property="article:published_time" content="2026-01-09T01:52:11.000Z">
+<meta property="article:modified_time" content="2026-01-09T09:01:49.859Z">
+<meta property="article:author" content="Razorsax">
+<meta property="article:tag" content="C">
+<meta property="article:tag" content="编程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://foeyt.github.io/images/Turing.png">
+
+
+<link rel="canonical" href="https://foeyt.github.io/2026/01/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-C-%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://foeyt.github.io/2026/01/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-C-%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/","path":"2026/01/09/计算机程序设计-C-期末复习/","title":"计算机程序设计(C)-期末复习"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>计算机程序设计(C)-期末复习 | Razorsax-Blog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/7.2.0/pangu.umd.js" integrity="sha256-JnmRRnJK7DC6RQJbAJb6AXOM9OmWzS6z8eYultk/48Y=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  <script src="https://cdn.jsdelivr.net/gh/foeyt/live2d-widget/dist/autoload.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Razorsax-Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">咸鱼一条</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-stars"><a href="/stars/" rel="section"><i class="fa fa-star fa-fw"></i>星级网站</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">期末复习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.1.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E5%A4%A7%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.</span> <span class="nav-text">三大结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#turing-%E6%9C%BA%E4%B8%8E-von-neumann-%E6%9E%B6%E6%9E%84"><span class="nav-number">1.4.</span> <span class="nav-text">Turing 机与 Von-Neumann 架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">1.4.1.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%BB%A5%E5%8F%8A%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F"><span class="nav-number">1.4.2.</span> <span class="nav-text">变量作用域以及静态变量</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Razorsax"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Razorsax</p>
+  <div class="site-description" itemprop="description">又是被高数折磨疯的一天</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/foeyt" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;foeyt" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/83490822" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;83490822" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://foeyt.github.io/2026/01/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-C-%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Razorsax">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Razorsax-Blog">
+      <meta itemprop="description" content="又是被高数折磨疯的一天">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="计算机程序设计(C)-期末复习 | Razorsax-Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机程序设计(C)-期末复习
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-01-09 09:52:11 / 修改时间：17:01:49" itemprop="dateCreated datePublished" datetime="2026-01-09T09:52:11+08:00">2026-01-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1-C/" itemprop="url" rel="index"><span itemprop="name">计算机程序设计(C)</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="期末复习">期末复习</h1>
+<p>考试前临时过一遍内容，这个笔试我感觉还是记的内容多一点。😓</p>
+<p>不妨写个笔记，以后查起来也方便。</p>
+<span id="more"></span>
+<h2 id="运算符">运算符</h2>
+<table>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 39%" />
+<col style="width: 39%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">优先级</th>
+<th style="text-align: center;">运算符</th>
+<th style="text-align: center;">作用</th>
+<th style="text-align: center;">操作数</th>
+<th style="text-align: center;">结合性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">[]</td>
+<td style="text-align: center;">取数组元素，定义数组变量</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">()</td>
+<td style="text-align: center;">多用途</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-&gt;</td>
+<td style="text-align: center;">指向结构体成员</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">取结构体成员</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">后缀++(后缀–)</td>
+<td style="text-align: center;">先返回值，再自增(自减)</td>
+<td style="text-align: center;">单目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">!</td>
+<td style="text-align: center;">逻辑非</td>
+<td style="text-align: center;">单目</td>
+<td style="text-align: center;">右</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">~</td>
+<td style="text-align: center;">按位取反</td>
+<td style="text-align: center;">单目</td>
+<td style="text-align: center;">右</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">前缀++(前缀–)</td>
+<td style="text-align: center;">先自增(自减)，再返回值</td>
+<td style="text-align: center;">单目</td>
+<td style="text-align: center;">右</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">+(-)</td>
+<td style="text-align: center;">正负号</td>
+<td style="text-align: center;">单目</td>
+<td style="text-align: center;">右</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(typename)</td>
+<td style="text-align: center;">强制类型转换</td>
+<td style="text-align: center;">单目</td>
+<td style="text-align: center;">右</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">*</td>
+<td style="text-align: center;">指针运算(取指针指向的地址存放的值)</td>
+<td style="text-align: center;">单目</td>
+<td style="text-align: center;">右</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">&amp;</td>
+<td style="text-align: center;">取地址(取变量存放的地址信息)</td>
+<td style="text-align: center;">单目</td>
+<td style="text-align: center;">右</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">sizeof</td>
+<td style="text-align: center;">求类型字节数</td>
+<td style="text-align: center;">单目</td>
+<td style="text-align: center;">右</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">*</td>
+<td style="text-align: center;">乘法</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">/</td>
+<td style="text-align: center;">除法</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">%</td>
+<td style="text-align: center;">模</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">加法</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">减法</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">&lt;&lt;</td>
+<td style="text-align: center;">位左移</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">&gt;&gt;</td>
+<td style="text-align: center;">位右移</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">&lt; &lt;= &gt; &gt;=</td>
+<td style="text-align: center;">比较关系</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">==</td>
+<td style="text-align: center;">相等</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">!=</td>
+<td style="text-align: center;">不相等</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">&amp;</td>
+<td style="text-align: center;">位与</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">^</td>
+<td style="text-align: center;">位异或</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">|</td>
+<td style="text-align: center;">位或</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">&amp;&amp;</td>
+<td style="text-align: center;">逻辑与</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">||</td>
+<td style="text-align: center;">逻辑或</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">? :</td>
+<td style="text-align: center;">条件运算</td>
+<td style="text-align: center;">三目</td>
+<td style="text-align: center;">右</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">= += -= *= /= %= &amp;= |= ^= &lt;&lt;=
+&gt;&gt;=</td>
+<td style="text-align: center;">赋值</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">右</td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">,</td>
+<td style="text-align: center;">逗号表达式</td>
+<td style="text-align: center;">双目</td>
+<td style="text-align: center;">左</td>
+</tr>
+</tbody>
+</table>
+<p>我用 Kimi 编了一个口诀，便于记忆优先级和结合性：</p>
+<blockquote>
+<ul>
+<li>优先级：括号老大最优先，单目老二站一边，
+乘除老三跑得快，加减老四跟后面， 移位老五左右晃，关系老六比高矮，
+相等老七辨真假，位运老八逐位算， 逻辑老九十关联，条件十一选三元，
+赋值十二排最后，逗号老幺站队尾。</li>
+<li>结合性：左结合是主力军，单目条件赋值从右向左行。</li>
+</ul>
+</blockquote>
+<p>由这些优先级、结合性等引导出下面的问题：</p>
+<ul>
+<li>数组指针与指针数组：<code>*p[]</code> 是指针数组,
+<code>(*p)[]</code>
+是数组指针。主体分别为数组和指针，指针数组本质上是数组，内部元素为指针，数组指针本质为指针，指向一个数组。另外，对一个数组取地址运算得到的数据类型是数组指针而非指向指针的指针（这个之前实际
+coding 过程碰到过）。</li>
+<li>利用指针遍历数组，可以采用 <code>*p++</code> 的方式，这样
+<code>p</code> 会逐个指向数组中的元素（类似于 Python 中的
+Iterator？）。</li>
+<li>逻辑运算符的短路特性：见例题：<code>m, n, a, b, c, d</code>
+整形变量起始值都为0，那么 <code>(m = a == b) || (n = c == d)</code>
+的执行结果是 <code>m = 1, n = 0</code>，首先左结合计算
+<code>m = a == b</code>，右结合计算 <code>a == b</code>，返回值为
+<code>true</code>（在 C 中为
+<code>1</code>），<code>m = 1</code>，触发逻辑或运算短路，右边不参与计算。</li>
+</ul>
+<hr />
+<h2 id="数据类型">数据类型</h2>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 23%" />
+<col style="width: 28%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">关键字</th>
+<th style="text-align: center;">最值</th>
+<th style="text-align: center;">字节数</th>
+<th style="text-align: center;">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>int</code></td>
+<td style="text-align: center;">-2^31 ~ 2^31-1</td>
+<td style="text-align: center;">4B</td>
+<td style="text-align: center;">有符号整形</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>long</code></td>
+<td style="text-align: center;">-2^31 ~ 2^31-1</td>
+<td style="text-align: center;">4B (64 位电脑中为 8B)</td>
+<td style="text-align: center;">有符号长整型</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>long long</code></td>
+<td style="text-align: center;">-2^63 ~ 2^63-1</td>
+<td style="text-align: center;">8B</td>
+<td style="text-align: center;">有符号超长整形</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>short</code></td>
+<td style="text-align: center;">-2^15 ~ 2^15-1</td>
+<td style="text-align: center;">2B</td>
+<td style="text-align: center;">有符号短整型</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>unsigned</code></td>
+<td style="text-align: center;">unsigned int: 0 ~ 255</td>
+<td style="text-align: center;">限制于后面的关键字</td>
+<td style="text-align: center;">无符号</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">unsigned long: 0 ~ 2^32-1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">unsigned short: 0 ~ 2^16-1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">unsigned char: 0 ~ 2^8-1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>char</code></td>
+<td style="text-align: center;">-2^7 ~ 2^7-1</td>
+<td style="text-align: center;">1B</td>
+<td style="text-align: center;">字符型，本质是整型</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>float</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">4B</td>
+<td style="text-align: center;">单精度浮点型 (参见 IEEE-754)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>double</code></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">8B</td>
+<td style="text-align: center;">双精度浮点型</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>signed</code> (C90 以后)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">有符号</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>void</code> (C90 以后)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">通用指针为 4B (64 位电脑中位 8B)</td>
+<td style="text-align: center;">函数无返回值、函数无参数、通用指针</td>
+</tr>
+<tr>
+<td style="text-align: center;">_Bool (C99 以后)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">布尔类型，即 true or false</td>
+</tr>
+<tr>
+<td style="text-align: center;">_Complex (C99 以后)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">复数</td>
+</tr>
+<tr>
+<td style="text-align: center;">_Imaginary (C99 以后)</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">纯虚数</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>IEEE-754（本质是科学计数法）
+<ul>
+<li><code>float</code> 总位数为 32 位，其中 1 位符号位，8 位指数位，23
+位尾数位。</li>
+<li><code>double</code> 总位数为 64 为，其中 1 位符号位，11 位指数位，52
+位尾数位。</li>
+</ul></li>
+</ul>
+<hr />
+<h2 id="三大结构">三大结构</h2>
+<ol type="1">
+<li><p>顺序结构</p></li>
+<li><p>分支结构</p>
+<ol type="1">
+<li><p>if - else</p></li>
+<li><p>if - elif</p></li>
+<li><p>switch</p>
+<ol type="1">
+<li><p>常见的 switch 语句结构如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (expression):</span><br><span class="line"><span class="keyword">case</span> val:</span><br><span class="line">	statement;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> val:</span><br><span class="line">	statement;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">	statement;</span><br></pre></td></tr></table></figure>
+<p>这里 <code>expression</code> 为一个表达式，<code>val</code>
+是这个表达式所可能出现的值的情况。<code>default</code> 可选，在
+<code>case</code> 执行完后自动执行。<code>break</code>
+也可选，跳出下面所有的 <code>case</code>，如果没有这个
+<code>break</code>，会顺序判断所有的情况，类似 <code>elif</code>。</p>
+<p><strong>注意：<code>break</code> 可以用于 <code>switch</code>
+语句和循环语句中，但是 <code>continue</code>
+只能用于循环语句，否则会出现编译期错误。</strong></p></li>
+</ol></li>
+</ol></li>
+<li><p>循环结构</p>
+<ol type="1">
+<li>while</li>
+<li>for</li>
+<li>do - while</li>
+<li>goto</li>
+<li>break，continue，return</li>
+</ol></li>
+</ol>
+<hr />
+<h2 id="turing-机与-von-neumann-架构">Turing 机与 Von-Neumann 架构</h2>
+<p>见例题：</p>
+<ol type="1">
+<li>计算机可以进行自动处理的基础是：<strong>存储程序</strong>。</li>
+<li>计算机的通用性使其可以求解不同的问题，主要取决于其：<strong>可编程性</strong>。</li>
+<li>计算机进行数值计算的高精度主要取决于：<strong>基本字长</strong>。</li>
+</ol>
+<p>自己的解析：</p>
+<blockquote>
+<ol type="1">
+<li><p>当今计算机基于 Turing 机设想以及 Von-Neumann 架构。我这里用 Ps
+简单搞了一张，可能有点问题，但可以解决这个问题。</p>
+<figure>
+<img src="/../../images/Turing.png" alt="Turing" />
+<figcaption aria-hidden="true">Turing</figcaption>
+</figure>
+<p>这里可以看到，RAM Processor 执行的依据在
+RAM，类似于我们用草稿纸算题，RAM
+就是草稿纸，通过暂存信息实现自动化。</p></li>
+<li><p>可以这么想：编程为计算机解决问题提供了方案，从而可以分类解决计算问题。</p></li>
+<li><p>类比 <code>float</code> 和 <code>double</code>
+的精度差异，基本字长越长，表示数据的精度越高。</p></li>
+</ol>
+</blockquote>
+<hr />
+<h3 id="函数">函数</h3>
+<ul>
+<li><p>递归：所有函数都可以递归定义和递归调用，包括 main
+函数，但是如果真有人写了个递归 main 的话，会被打死的。</p>
+<ul>
+<li><p>函数的递归调用，利用栈来解决（其实本质也是栈），例如下面的代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">multiply</span><span class="params">(<span class="type">int</span> n)</span></span><br><span class="line">&#123;</span><br><span class="line"> 	<span class="type">int</span> ans;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">        ans = m;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        ans = m + multiply(m, n - <span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>调用 <code>multiplay(6,3)</code> 不停 push
+栈直到停止递归，栈的结构为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">multiply(6,1)</span><br><span class="line">multiply(6,2)</span><br><span class="line">multiply(6,3)</span><br></pre></td></tr></table></figure>
+<p>接下来对栈逐渐 pop，自上到下即可。结果让
+<code>ans = 6</code>，<code>ans = 12</code>，<code>ans = 18</code>，可以看到确实实现乘法了。</p></li>
+</ul></li>
+<li><p>带参数的宏定义：宏定义可以当作直接替换，注意是直接，不能带入其他的东西。例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> PRODUCT(a, b) a * b</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">product</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当调用 <code>PRODUCT(x + y, x - y)</code> 时，应该是
+<code>x + y * x - y</code>，而调用 <code>product(x + y, x - y)</code>
+应该是
+<code>(x + y) * (x - y)</code>，两个是不一样的。这个其实感觉于函数的形参有关系。</p></li>
+<li><p>函数的形参：</p>
+<ul>
+<li>特别的，针对二维数组的形参，例如 <code>int a[3][4]; func(a);</code>
+那么 <code>func</code> 可以定义为
+<code>func(int arr[][4])</code>，<code>func(int arr[3][4])</code>，<code>func(int (*arr)[4])</code>，但是不能定义为
+<code>func(int **arr)</code>，这里注意指针数组和指向指针的指针本质上是和二维数组不同的，只不过能表示二维数组罢了，但是数组指针就是数组的指针，二维数组自己就会容纳数组指针。</li>
+</ul></li>
+</ul>
+<hr />
+<h3 id="变量作用域以及静态变量">变量作用域以及静态变量</h3>
+<p>C 语言中是没有 <code>global</code>
+关键字的，所有的全局变量都位于函数体之外，作用域为整个程序。所有的全局变量都是静态的。</p>
+<p>静态变量可以当作 Java 的静态方法区来理解，<code>static</code>
+变量会划分一个专门的区域来存储，作用域限制在对应语句块内，但是不会在作用域结束后被自动释放，直到程序停止运行后自动释放。另外静态变量默认起始值为
+0。并且重复定义静态变量是不会改变值的，比如我重复运行语句
+<code>static int x = 1</code>，只有在第一次运行时 <code>x</code> 为
+1，此后执行 <code>x++</code> 后，再次运行这个定义语句，<code>x</code>
+不会变成 1，而是为 2。</p>
+<p>此外关于变量的作用域，和作用域结束后自动释放变量，我觉得利用 Rust
+的生命周期概念解释比较好。把作用域看作是变量的生命周期，作用域结束即生命周期结束，自动释放变量，此后再次调用变量会出现未定义。</p>
+<hr />
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+              <a href="/tags/C/" rel="tag"># C</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/01/08/%E8%BF%91%E6%9C%9F%E7%9A%84%E4%B8%80%E7%82%B9%E5%B0%8F%E5%90%90%E6%A7%BD/" rel="prev" title="近期的一点小吐槽">
+                  <i class="fa fa-angle-left"></i> 近期的一点小吐槽
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Razorsax</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">37k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">33 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/foeyt" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
