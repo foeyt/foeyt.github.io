@@ -28,7 +28,7 @@
 <meta property="og:description" content="期末复习 本篇文章参考课本和资料对期末可能要考的知识点进行总结，并给出一些题目，注意这些总结和例题不是我自创的，我会在文末给出 Reference，在这里感谢这些资料创作者的无私奉献。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-01-08T14:04:11.000Z">
-<meta property="article:modified_time" content="2026-01-08T14:13:01.155Z">
+<meta property="article:modified_time" content="2026-01-13T14:48:33.543Z">
 <meta property="article:author" content="Razorsax">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="线性代数">
@@ -60,7 +60,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
 <script src="/js/third-party/search/local-search.js" defer></script>
 
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.3.1/pdfobject.min.js","integrity":"sha256-jI72I8ZLVflVOisZIOaLvRew3tyvzeu6aZXFm7P7dEo="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js" defer></script>
 
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
 
 
 
@@ -105,7 +109,7 @@
       <p class="site-title">Razorsax-Blog</p>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">咸鱼一条</p>
+      <p class="site-subtitle" itemprop="description">Ferrum, Scientia, Identitas Cretus in Certamine.</p>
   </div>
 
   <div class="site-nav-right">
@@ -118,7 +122,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-stars"><a href="/stars/" rel="section"><i class="fa fa-star fa-fw"></i>星级网站</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-ranks"><a href="/ranks/" rel="section"><i class="fa fa-gamepad fa-fw"></i>游戏评鉴师</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -169,8 +173,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">期末复习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E4%B8%8E%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E4%BC%BC"><span class="nav-number">1.1.</span> <span class="nav-text">线性变换与矩阵的相似</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%98%A0%E5%B0%84%E4%B8%8E%E7%9B%B8%E4%BC%BC%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">线性映射与相似的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-number">1.1.2.</span> <span class="nav-text">特征向量与特征向量的算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.1.3.</span> <span class="nav-text">特征值的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E5%AF%B9%E8%A7%92%E5%8C%96%E7%9A%84%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="nav-number">1.1.4.</span> <span class="nav-text">可对角化的充要条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%86%85%E7%A7%AF%E7%A9%BA%E9%97%B4"><span class="nav-number">1.2.</span> <span class="nav-text">正交变换与内积空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8C%83%E6%95%B0%E4%B8%8E%E8%B5%8B%E8%8C%83%E7%A9%BA%E9%97%B4"><span class="nav-number">1.2.1.</span> <span class="nav-text">范数与赋范空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E7%A7%AF%E4%B8%8E%E6%AD%A3%E4%BA%A4%E6%80%A7"><span class="nav-number">1.2.2.</span> <span class="nav-text">内积与正交性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="nav-number">1.2.3.</span> <span class="nav-text">基本定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gram-%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.4.</span> <span class="nav-text">Gram 矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%85%E8%80%83%E6%A0%87%E5%87%86%E6%AD%A3%E4%BA%A4%E5%9F%BA%E4%B8%8E-gram-schmidt-%E6%AD%A3%E4%BA%A4%E5%8C%96"><span class="nav-number">1.2.5.</span> <span class="nav-text">（必考）标准正交基与
-Gram-Schmidt 正交化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%AF%B9%E7%A7%B0%E5%8F%98%E6%8D%A2"><span class="nav-number">1.2.6.</span> <span class="nav-text">正交变换与对称变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E5%9E%8B%E4%B8%8E%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E5%90%88"><span class="nav-number">1.3.</span> <span class="nav-text">二次型与矩阵的相合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%90%88%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.3.1.</span> <span class="nav-text">相合的定义</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">期末复习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E4%B8%8E%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E4%BC%BC"><span class="nav-number">1.1.</span> <span class="nav-text">线性变换与矩阵的相似</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%98%A0%E5%B0%84%E4%B8%8E%E7%9B%B8%E4%BC%BC%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">线性映射与相似的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%85%E8%80%83%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-number">1.1.2.</span> <span class="nav-text">（必考）特征向量与特征向量的算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">1.1.3.</span> <span class="nav-text">特征值的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E5%AF%B9%E8%A7%92%E5%8C%96%E7%9A%84%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="nav-number">1.1.4.</span> <span class="nav-text">可对角化的充要条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%86%85%E7%A7%AF%E7%A9%BA%E9%97%B4"><span class="nav-number">1.2.</span> <span class="nav-text">正交变换与内积空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8C%83%E6%95%B0%E4%B8%8E%E8%B5%8B%E8%8C%83%E7%A9%BA%E9%97%B4"><span class="nav-number">1.2.1.</span> <span class="nav-text">范数与赋范空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E7%A7%AF%E4%B8%8E%E6%AD%A3%E4%BA%A4%E6%80%A7"><span class="nav-number">1.2.2.</span> <span class="nav-text">内积与正交性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="nav-number">1.2.3.</span> <span class="nav-text">基本定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gram-%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.4.</span> <span class="nav-text">Gram 矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%85%E8%80%83%E6%A0%87%E5%87%86%E6%AD%A3%E4%BA%A4%E5%9F%BA%E4%B8%8E-gram-schmidt-%E6%AD%A3%E4%BA%A4%E5%8C%96"><span class="nav-number">1.2.5.</span> <span class="nav-text">（必考）标准正交基与
+Gram-Schmidt 正交化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%AF%B9%E7%A7%B0%E5%8F%98%E6%8D%A2"><span class="nav-number">1.2.6.</span> <span class="nav-text">正交变换与对称变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E5%9E%8B%E4%B8%8E%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%B8%E5%90%88"><span class="nav-number">1.3.</span> <span class="nav-text">二次型与矩阵的相合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%90%88%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.3.1.</span> <span class="nav-text">相合的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%90%88%E6%A0%87%E5%87%86%E5%9E%8B%E7%9A%84%E6%B1%82%E6%B3%95"><span class="nav-number">1.3.2.</span> <span class="nav-text">相合标准型的求法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%90%88%E8%A7%84%E8%8C%83%E5%9E%8B"><span class="nav-number">1.3.3.</span> <span class="nav-text">相合规范型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E6%9B%B2%E9%9D%A2%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">1.3.4.</span> <span class="nav-text">二次曲面的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%AE%9A%E5%8D%8A%E6%AD%A3%E5%AE%9A%E8%B4%9F%E5%AE%9A%E5%8D%8A%E8%B4%9F%E5%AE%9A%E7%9F%A9%E9%98%B5"><span class="nav-number">1.3.5.</span> <span class="nav-text">正定、半正定、负定、半负定矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%AE%9A%E7%9A%84%E7%AD%89%E4%BB%B7%E5%91%BD%E9%A2%98"><span class="nav-number">1.3.6.</span> <span class="nav-text">正定的等价命题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8A%E6%AD%A3%E5%AE%9A%E7%9A%84%E7%AD%89%E4%BB%B7%E5%91%BD%E9%A2%98"><span class="nav-number">1.3.7.</span> <span class="nav-text">半正定的等价命题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">例题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="nav-number">2.1.</span> <span class="nav-text">线性变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E7%A7%AF%E7%A9%BA%E9%97%B4"><span class="nav-number">2.2.</span> <span class="nav-text">内积空间</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -179,7 +183,7 @@ Gram-Schmidt 正交化</span></a></li><li class="nav-item nav-level-3"><a class=
     <img class="site-author-image" itemprop="image" alt="Razorsax"
       src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Razorsax</p>
-  <div class="site-description" itemprop="description">又是被高数折磨疯的一天</div>
+  <div class="site-description" itemprop="description">为探索未知铸剑，为实现理想磨刃。</div>
 </div>
 <div class="site-state-wrap animated">
   <nav class="site-state">
@@ -240,7 +244,7 @@ Gram-Schmidt 正交化</span></a></li><li class="nav-item nav-level-3"><a class=
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Razorsax-Blog">
-      <meta itemprop="description" content="又是被高数折磨疯的一天">
+      <meta itemprop="description" content="为探索未知铸剑，为实现理想磨刃。">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
@@ -259,9 +263,15 @@ Gram-Schmidt 正交化</span></a></li><li class="nav-item nav-level-3"><a class=
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2026-01-08 22:04:11 / 修改时间：22:13:01" itemprop="dateCreated datePublished" datetime="2026-01-08T22:04:11+08:00">2026-01-08</time>
+      <time title="创建时间：2026-01-08 22:04:11" itemprop="dateCreated datePublished" datetime="2026-01-08T22:04:11+08:00">2026-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-01-13 22:48:33" itemprop="dateModified" datetime="2026-01-13T22:48:33+08:00">2026-01-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -280,14 +290,14 @@ Gram-Schmidt 正交化</span></a></li><li class="nav-item nav-level-3"><a class=
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.3k</span>
+      <span>5.4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -340,7 +350,8 @@ class="math inline"><em>B</em><em>P</em> = <em>P</em><em>A</em></span>，即
 <span
 class="math inline"><em>B</em> = <em>P</em><sup>−1</sup><em>A</em><em>P</em></span>。</p>
 <hr />
-<h3 id="特征向量与特征向量的算法">特征向量与特征向量的算法</h3>
+<h3
+id="必考特征向量与特征向量的算法">（必考）特征向量与特征向量的算法</h3>
 <blockquote>
 <p><strong>算法</strong></p>
 <p>对于 <span
@@ -444,19 +455,21 @@ Q^{-1}BQ = \begin{pmatrix}B_{11}  &amp; B_{12} &amp; \cdots &amp; B_{1n}
 &amp; \ddots &amp; \vdots \\ B_{n1}  &amp; B_{n2} &amp; \cdots &amp;
 B_{nn}\end{pmatrix}
 $$</span> 则： <span class="math display">$$
+\begin{flalign}
 \begin{pmatrix}\lambda_1I_{n_1} &amp; &amp; &amp; &amp; \\ &amp;
 \lambda_2I_{n_2} &amp; &amp; \\ &amp; &amp; &amp; \ddots &amp; \\ &amp;
 &amp; &amp;
 &amp;\lambda_sI_{n_s}\end{pmatrix}\begin{pmatrix}B_{11}  &amp; B_{12}
 &amp; \cdots &amp; B_{1n} \\ B_{21} &amp; B_{22} &amp; \cdots &amp;
 B_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ B_{n1}  &amp;
-B_{n2} &amp; \cdots &amp; B_{nn}\end{pmatrix} =
+B_{n2} &amp; \cdots &amp; B_{nn}\end{pmatrix} \\ =
 \begin{pmatrix}B_{11}  &amp; B_{12} &amp; \cdots &amp; B_{1n} \\ B_{21}
 &amp; B_{22} &amp; \cdots &amp; B_{2n} \\ \vdots &amp; \vdots &amp;
 \ddots &amp; \vdots \\ B_{n1}  &amp; B_{n2} &amp; \cdots &amp;
 B_{nn}\end{pmatrix}\begin{pmatrix}\lambda_1I_{n_1} &amp; &amp; &amp;
 &amp; \\ &amp; \lambda_2I_{n_2} &amp; &amp; \\ &amp; &amp; &amp; \ddots
 &amp; \\ &amp; &amp; &amp; &amp;\lambda_sI_{n_s}\end{pmatrix}
+\end{flalign}
 $$</span> 计算得到 <span
 class="math inline">∀<em>i</em> ≠ <em>j</em></span>，<span
 class="math inline"><em>B</em><sub><em>i</em><em>j</em></sub> = 0</span>，即
@@ -902,7 +915,391 @@ $$</span></p></li>
 <h3 id="相合的定义">相合的定义</h3>
 <blockquote>
 <p><strong>定义</strong></p>
+<ul>
+<li><p><span
+class="math inline"><em>A</em>, <em>B</em> ∈ ℝ<sup><em>n</em> × <em>n</em></sup></span>
+是对称矩阵，若存在可逆矩阵 <span class="math inline"><em>P</em></span>
+使得 <span
+class="math inline"><em>A</em> = <em>P</em><sup><em>T</em></sup><em>B</em><em>P</em></span>，则称
+<span class="math inline"><em>A</em>, <em>B</em></span> 相合。</p></li>
+<li><p>相合是一种等价关系，即满足自反性、对称性、传递性。（分清相抵、相似、相合）</p></li>
+<li><p>每一个二次型都与一个对称矩阵一一对应，矩阵的相合等价于二次型换元。类似于相抵、相似标准型，引入相合标准型。</p></li>
+</ul>
 </blockquote>
+<hr />
+<h3 id="相合标准型的求法">相合标准型的求法</h3>
+<ul>
+<li>正交相似/正交相合：<span class="math inline"><em>A</em></span> 是实
+<span class="math inline"><em>n</em></span>
+阶实对称矩阵，可以正交相似对角化，即存在 <span
+class="math inline"><em>P</em></span> 是正交矩阵，使得 <span
+class="math inline"><em>P</em><sup><em>T</em></sup><em>A</em><em>P</em></span>
+是对角矩阵，此即为 <span class="math inline"><em>A</em></span>
+的正交相似对角化。</li>
+<li>配方法：若二次型 <span
+class="math inline"><em>Q</em>(<em>x</em>)</span>
+含有平方项，直接配方即可，否则利用极化恒等式 <span
+class="math inline">$ab = \frac{1}{4}((a + b)^2 - (a - b)^2)$</span>
+构造出平方项。</li>
+<li>初等变换：对 <span class="math inline">$\begin{pmatrix}A \\
+I\end{pmatrix}$</span> 上面的 <span
+class="math inline"><em>A</em></span>
+进行成对的的列变换和行变换，但是只对下面的 <span
+class="math inline"><em>I</em></span> 进行初等列变换，得到 <span
+class="math inline">$\begin{pmatrix}P^TAP \\
+P\end{pmatrix}$</span>。</li>
+</ul>
+<hr />
+<h3 id="相合规范型">相合规范型</h3>
+<p>由于相合标准型中的对角项系数不唯一，我们可以进一步求出唯一的相合规范型。</p>
+<blockquote>
+<p><strong>定义</strong></p>
+<p><span class="math inline"><em>A</em></span>
+是对称矩阵，则存在可逆矩阵 <span
+class="math inline"><em>P</em></span>，使得 <span
+class="math inline">$P^TAP = \begin{pmatrix}I_r &amp; &amp; \\ &amp;
+-I_s &amp; \\ &amp; &amp; O\end{pmatrix}$</span>，其中 <span
+class="math inline">$r + s = \rank(A)$</span>，其中 <span
+class="math inline"><em>r</em></span> 是正惯性指数，<span
+class="math inline"><em>s</em></span> 是副惯性指数，<span
+class="math inline"><em>r</em> − <em>s</em></span> 称为符号差，<span
+class="math inline"><em>r</em>, <em>s</em></span> 由 <span
+class="math inline"><em>A</em></span> 唯一确定。</p>
+</blockquote>
+<hr />
+<h3 id="二次曲面的分类">二次曲面的分类</h3>
+<p>把二次曲面化为标准形式（即把二次型化为标准型），则有：(假设 <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em> &gt; 0</span>)</p>
+<ul>
+<li>椭球面：<span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>y</em><sup>2</sup> + <em>c</em><em>z</em><sup>2</sup> = 1</span>；</li>
+<li>单叶双曲面：<span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>y</em><sup>2</sup> − <em>c</em><em>z</em><sup>2</sup> = 1</span>；</li>
+<li>双叶双曲面：<span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> − <em>b</em><em>y</em><sup>2</sup> − <em>c</em><em>z</em><sup>2</sup> = 1</span>；</li>
+<li>椭圆抛物面：<span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>y</em><sup>2</sup> − <em>c</em><em>z</em> = 0</span>；</li>
+<li>双曲抛物面：<span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> − <em>b</em><em>y</em><sup>2</sup> − <em>c</em><em>z</em> = 0</span>；</li>
+<li>圆锥面：<span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>y</em><sup>2</sup> − <em>c</em><em>z</em><sup>2</sup> = 0</span>；</li>
+<li>椭圆圆柱面：<span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>y</em><sup>2</sup> = 1</span>；</li>
+<li>双曲圆柱面：<span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> − <em>b</em><em>y</em><sup>2</sup> = 1</span>；</li>
+<li>抛物圆柱面：<span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> − <em>b</em><em>y</em> = 0</span>。</li>
+</ul>
+<hr />
+<h3 id="正定半正定负定半负定矩阵">正定、半正定、负定、半负定矩阵</h3>
+<p>对 <span
+class="math inline"><em>A</em> ∈ ℝ<sup><em>n</em> × <em>n</em></sup></span>，<span
+class="math inline"><em>A</em><sup><em>T</em></sup> = <em>A</em></span>，</p>
+<ul>
+<li>若 <span
+class="math inline">∀0 ≠ <em>x</em> ∈ ℝ<sup><em>n</em></sup>, <em>x</em><sup><em>T</em></sup><em>A</em><em>x</em> &gt; 0</span>，则称
+<span class="math inline"><em>A</em></span> 是正定的，记作 <span
+class="math inline"><em>A</em> &gt; 0</span>；</li>
+<li>若 <span
+class="math inline">∀<em>x</em> ∈ <em>R</em><sup><em>n</em></sup>, <em>x</em><sup><em>T</em></sup><em>A</em><em>x</em> ≥ 0</span>，则称
+<span class="math inline"><em>A</em></span> 是半正定的，记作 <span
+class="math inline"><em>A</em> ≥ 0</span>；</li>
+<li>若 <span
+class="math inline">∀0 ≠ <em>x</em> ∈ ℝ<sup><em>n</em></sup>, <em>x</em><sup><em>T</em></sup><em>A</em><em>x</em> &lt; 0</span>，则称
+<span class="math inline"><em>A</em></span> 是负定的，记作 <span
+class="math inline"><em>A</em> &lt; 0</span>；</li>
+<li>若 <span
+class="math inline">∀<em>x</em> ∈ ℝ<sup><em>n</em></sup>, <em>x</em><sup><em>T</em></sup><em>A</em><em>x</em> ≤ 0</span>，则称
+<span class="math inline"><em>A</em></span> 是半负定的，记作 <span
+class="math inline"><em>A</em> ≤ 0</span>。</li>
+</ul>
+<hr />
+<h3 id="正定的等价命题">正定的等价命题</h3>
+<p>若 <span
+class="math inline"><em>A</em> ∈ ℝ<sup><em>n</em> × <em>n</em></sup>, <em>A</em><sup><em>T</em></sup> = <em>A</em></span>，以下命题等价：</p>
+<ol type="1">
+<li><span class="math inline"><em>A</em></span> 是正定的。</li>
+<li><span class="math inline"><em>A</em></span> 的正惯性指数为 <span
+class="math inline"><em>n</em></span>，负惯性指数为 <span
+class="math inline">0</span>。</li>
+<li><span class="math inline"><em>A</em></span> 的特征值全是正的。</li>
+<li>存在唯一的矩阵 <span
+class="math inline"><em>B</em> &gt; 0</span>，使得 <span
+class="math inline"><em>A</em> = <em>B</em><sup>2</sup></span>。</li>
+<li>存在唯一的可逆矩阵 <span class="math inline"><em>P</em></span>
+，使得 <span
+class="math inline"><em>A</em> = <em>P</em><sup><em>T</em></sup><em>P</em></span>（相合于单位阵）。</li>
+<li><span class="math inline"><em>A</em></span>
+的所有主子式大于零。</li>
+<li><span class="math inline"><em>A</em></span>
+的所有顺序主子式大于零。</li>
+</ol>
+<hr />
+<h3 id="半正定的等价命题">半正定的等价命题</h3>
+<p>若 <span
+class="math inline"><em>A</em> ∈ ℝ<sup><em>n</em> × <em>n</em></sup>, <em>A</em><sup><em>T</em></sup> = <em>A</em></span>，以下命题等价：</p>
+<ol type="1">
+<li><span class="math inline"><em>A</em></span> 是半正定的。</li>
+<li><span class="math inline"><em>A</em></span> 的正惯性指数为 <span
+class="math inline"><em>r</em> = rank(<em>A</em>)</span>，负惯性指数为
+<span class="math inline">0</span>。</li>
+<li><span class="math inline"><em>A</em></span>
+的特征值全是非负的。</li>
+<li>存在矩阵 <span class="math inline"><em>B</em> ≥ 0</span>，使得 <span
+class="math inline"><em>A</em> = <em>B</em><sup>2</sup></span>，且 <span
+class="math inline">rank(<em>A</em>) = rank(<em>B</em>)</span>。</li>
+<li>存在矩阵 <span class="math inline"><em>P</em></span>，使得 <span
+class="math inline"><em>A</em> = <em>P</em><sup><em>T</em></sup><em>P</em></span>，且
+<span
+class="math inline">rank(<em>A</em>) = rank(<em>P</em>)</span>。</li>
+<li><span class="math inline"><em>A</em></span>
+的所有主子式全为非负。</li>
+<li><span class="math inline"><em>A</em></span> 的所有 <span
+class="math inline"><em>k</em></span> 阶主子式之和非负。</li>
+</ol>
+<hr />
+<h1 id="例题">例题</h1>
+<h2 id="线性变换">线性变换</h2>
+<ol type="1">
+<li><blockquote>
+<p><strong>例题</strong></p>
+<p>若 <span
+class="math inline">(<em>A</em> − <em>I</em>)<sup>2</sup> = <em>O</em></span>，<span
+class="math inline"><em>A</em>𝟙 = 𝟙</span>，其中 <span
+class="math inline">𝟙 = (1, 1, ⋯, 1)<sup><em>T</em></sup></span>，则
+<span class="math inline"><em>A</em> = <em>I</em></span>。</p>
+</blockquote>
+<p><span
+class="math inline"><em>S</em><em>o</em><em>l</em><em>v</em><em>e</em></span>：</p>
+<p>错误，<span class="math inline"><em>A</em>𝟙</span> 是 <span
+class="math inline"><em>A</em></span>
+的每一行元素之和组成的列向量，若存在矩阵满足矩阵和为 <span
+class="math inline">1</span>，但 <span
+class="math inline"><em>A</em> ≠ <em>I</em></span>
+即可，所以构建反例：<span class="math inline">$A = \begin{pmatrix}2
+&amp; -1 \\ 1 &amp; 0\end{pmatrix}$</span>。</p></li>
+<li><blockquote>
+<p><strong>例题</strong></p>
+<p>若 <span class="math inline"><em>A</em></span> 的每行元素和为 <span
+class="math inline">2</span>，则 <span
+class="math inline"><em>A</em><sup>5</sup></span> 每行元素和为 <span
+class="math inline">32</span>。</p>
+</blockquote>
+<p><span
+class="math inline"><em>S</em><em>o</em><em>l</em><em>v</em><em>e</em></span>：</p>
+<p>正确，<span class="math inline"><em>A</em>𝟙 = 2𝟙</span>，所以 <span
+class="math inline"><em>A</em></span> 的特征值为 <span
+class="math inline">2</span>，对应的特征向量为 <span
+class="math inline">𝟙</span>，则 <span
+class="math inline"><em>A</em><sup>5</sup></span> 的特征值为 <span
+class="math inline">2<sup>5</sup> = 32</span>，对应的有 <span
+class="math inline"><em>A</em><sup>5</sup>𝟙 = 32𝟙</span>，则 <span
+class="math inline"><em>A</em><sup>5</sup></span> 每行元素和为 <span
+class="math inline">32</span>。</p></li>
+<li><blockquote>
+<p><strong>例题</strong></p>
+<p>证明矩阵 <span
+class="math inline"><em>N</em> ∈ ℝ<sup><em>n</em> × <em>n</em></sup></span>，<span
+class="math inline"><em>A</em> ∈ ℝ<sup><em>n</em> × <em>n</em></sup></span>
+相似。 <span class="math display">$$
+N = \begin{pmatrix}1 &amp; 1 &amp; \cdots &amp; 1 \\ 1 &amp; 1 &amp;
+\cdots &amp; 1 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 1
+&amp; 1 &amp; \cdots &amp; 1\end{pmatrix},\; A = \begin{pmatrix}n &amp;
+0 &amp; \cdots &amp; 0 \\ n - 1 &amp; 0 &amp; \cdots &amp; 0 \\ \vdots
+&amp; \vdots &amp; \ddots &amp; \vdots \\ 1 &amp; 0 &amp; \cdots &amp;
+0\end{pmatrix}
+$$</span></p>
+</blockquote>
+<p><span
+class="math inline"><em>P</em><em>r</em><em>o</em><em>o</em><em>f</em></span>：</p>
+<p><span
+class="math inline">det (<em>λ</em><em>I</em> − <em>A</em>) = <em>λ</em><sup><em>n</em> − 1</sup>(<em>λ</em> − <em>n</em>)</span>，则
+<span class="math inline"><em>A</em></span> 的特征值为 <span
+class="math inline">0</span> 或 <span
+class="math inline"><em>n</em></span>。若 <span
+class="math inline"><em>λ</em> = 0</span>，则特征向量为 <span
+class="math inline"><strong>a</strong> ∈ Ker(<em>A</em>)</span>，且
+<span
+class="math inline">dim Ker(<em>A</em>) = <em>n</em> − rank(<em>A</em>) = <em>n</em> − 1</span>。若
+<span class="math inline"><em>λ</em> = <em>n</em></span>，则特征向量为
+<span
+class="math inline">(<em>A</em> − <em>n</em><em>I</em>)<strong>b</strong> = 0</span>，解得
+<span class="math inline">$\mathbf{b} = (b_1, b_2, \cdots, b_n)^T = b_1
+(1, \frac{n - 1}{n}, \cdots, \frac{1}{n})$</span>。则 <span
+class="math inline"><em>V</em><sub>1</sub>(<em>λ</em>) ⊕ <em>V</em><sub><em>n</em></sub>(<em>λ</em> = ) = ℝ<sup><em>n</em> × <em>n</em></sup></span>，则
+<span class="math inline"><em>A</em></span> 可以对角化。存在可逆矩阵
+<span class="math inline"><em>P</em></span>，使得 <span
+class="math inline"><em>P</em><sup>−1</sup><em>A</em><em>P</em> = <em>Λ</em> = diag(0, 0, ⋯, 0, <em>n</em>)</span>。</p>
+<p>而 <span
+class="math inline">dim Ker(<em>N</em>) = <em>n</em> − rank(<em>N</em>) = <em>n</em> − 1</span>，且
+<span class="math inline"><em>N</em>𝟙 = <em>n</em>𝟙</span>，则 <span
+class="math inline">𝟙</span> 是 <span
+class="math inline"><em>N</em></span> 的一个特征向量且对应的特征值为
+<span class="math inline"><em>n</em></span>，故 <span
+class="math inline"><em>V</em><sub>1</sub>(<em>λ</em>) ⊕ <em>V</em><sub><em>n</em></sub>(<em>λ</em>) = ℝ<sup><em>n</em> × <em>n</em></sup></span>，<span
+class="math inline"><em>N</em></span> 也可以对角化。存在可逆矩阵 <span
+class="math inline"><em>Q</em></span>，使得 <span
+class="math inline"><em>Q</em><sup>−1</sup><em>N</em><em>Q</em> = <em>Λ</em></span>。此时令
+<span
+class="math inline"><em>T</em> = <em>Q</em><em>P</em><sup>−1</sup></span>，有
+<span
+class="math inline"><em>T</em><sup>−1</sup><em>A</em><em>T</em> = <em>Q</em><em>P</em><sup>−1</sup><em>A</em><em>P</em><em>Q</em><sup>−1</sup> = <em>Q</em><em>Λ</em><em>Q</em><sup>−1</sup> = <em>N</em></span>，则
+<span class="math inline"><em>N</em></span> 与 <span
+class="math inline"><em>A</em></span> 相似。</p></li>
+<li><blockquote>
+<p><strong>例题</strong></p>
+<p>假设 <span
+class="math inline"><em>e</em><sub>1</sub> = (1, 0, 0)<sup><em>T</em></sup>, <em>e</em><sub>2</sub> = (0, 1, 0)<sup><em>T</em></sup>, <em>e</em><sub>3</sub> = (0, 0, 1)<sup><em>T</em></sup>, <em>β</em><sub>1</sub> = (−1, 0, 1)<sup><em>T</em></sup>, <em>β</em><sub>2</sub> = (0, 1, 1)<sup><em>T</em></sup>, <em>β</em><sub>3</sub> = (2, −1, −2)<sup><em>T</em></sup></span>；<span
+class="math inline"><em>M</em><sub>1</sub> = {<em>e</em><sub>1</sub>, <em>e</em><sub>2</sub>, <em>e</em><sub>3</sub>}, <em>M</em><sub>2</sub> = {<em>β</em><sub>1</sub>, <em>β</em><sub>2</sub>, <em>β</em><sub>3</sub>}</span>
+是 <span class="math inline">ℝ<sup>3</sup></span> 的两组基。设 <span
+class="math inline"><em>σ</em></span> 是 <span
+class="math inline">ℝ<sup>3</sup></span> 上的一个线性变换，且 <span
+class="math inline"><em>σ</em>(<em>β</em><sub>1</sub>) = (1, 0, −3)<sup><em>T</em></sup>, <em>σ</em>(<em>β</em><sub>2</sub>) = (0, −1, −1)<sup><em>T</em></sup>, <em>σ</em>(<em>β</em><sub>3</sub>) = (−5, −1, 0)<sup><em>T</em></sup></span>。分别求出
+<span class="math inline"><em>σ</em></span> 在 <span
+class="math inline"><em>M</em><sub>1</sub>, <em>M</em><sub>2</sub></span>
+下的矩阵 <span
+class="math inline"><em>T</em><sub>1</sub>, <em>T</em><sub>2</sub></span>。</p>
+</blockquote>
+<p><span
+class="math inline"><em>S</em><em>o</em><em>l</em><em>v</em><em>e</em></span>：</p>
+<p>求出 <span class="math inline"><em>M</em><sub>1</sub></span> 到 <span
+class="math inline"><em>M</em><sub>2</sub></span> 的过渡矩阵 <span
+class="math inline"><em>P</em></span>： <span class="math display">$$
+\begin{flalign}
+&amp;\begin{pmatrix}\beta_1 &amp; \beta_2 &amp; \beta_3\end{pmatrix} =
+\begin{pmatrix}e_1 &amp; e_2 &amp; e_3\end{pmatrix}P \\
+&amp;P = \begin{pmatrix}-1 &amp; 0 &amp; 2 \\ 0 &amp; 1 &amp; -1 \\ 1
+&amp; 1 &amp; -2\end{pmatrix} \\
+\end{flalign}
+$$</span> 通过初等变换得到逆矩阵 <span
+class="math inline">(<em>P</em>|<em>I</em>) → (<em>I</em>|<em>P</em><sup>−1</sup>)</span>。
+<span class="math display">$$
+P^{-1} = \begin{pmatrix}1 &amp; -2 &amp; 2 \\ 1 &amp; 0 &amp; 1 \\ 1
+&amp; -1 &amp; 1\end{pmatrix}
+$$</span> 假设 <span
+class="math inline"><em>σ</em>(<em>β</em><sub>1</sub>) = <em>γ</em><sub>1</sub>, <em>σ</em>(<em>β</em><sub>2</sub>) = <em>γ</em><sub>2</sub>, <em>σ</em>(<em>β</em><sub>3</sub>) = <em>γ</em><sub>3</sub></span>，且
+<span
+class="math inline"><em>γ</em><sub>1</sub>, <em>γ</em><sub>2</sub>, <em>γ</em><sub>3</sub></span>
+在 <span class="math inline"><em>M</em><sub>1</sub></span> 的坐标集为
+<span class="math inline"><em>X</em></span>，在 <span
+class="math inline"><em>M</em><sub>2</sub></span> 的坐标集为 <span
+class="math inline"><em>Y</em></span>，则 <span
+class="math inline"><em>Y</em> = <em>P</em><sup>−1</sup><em>X</em></span>，故：
+<span class="math display">$$
+Y = P^{-1}X = \begin{pmatrix}1 &amp; -2 &amp; 2 \\ 1 &amp; 0 &amp; 1 \\
+1 &amp; -1 &amp; 1 \\\end{pmatrix}\begin{pmatrix}1 &amp; 0 &amp; -5 \\ 0
+&amp; -1 &amp; -1 \\ -3 &amp; -1 &amp; 0\end{pmatrix} =
+\begin{pmatrix}-5 &amp; 0 &amp; -3 \\ -2 &amp; -1 &amp; -5 \\ -2 &amp; 0
+&amp; -4\end{pmatrix}
+$$</span> 则 <span
+class="math inline"><em>σ</em>(<em>β</em><sub>1</sub>) = −5<em>β</em><sub>1</sub> − 2<em>β</em><sub>2</sub> − 2<em>β</em><sub>3</sub>, <em>σ</em>(<em>β</em><sub>2</sub>) = −<em>β</em><sub>2</sub>, <em>σ</em>(<em>β</em><sub>3</sub>) = −3<em>β</em><sub>1</sub> − 5<em>β</em><sub>2</sub> − 4<em>β</em><sub>3</sub></span>，则
+<span class="math inline"><em>σ</em></span> 在 <span
+class="math inline"><em>M</em><sub>2</sub></span> 下的矩阵为 <span
+class="math inline">$T_2 = Y = \begin{pmatrix}-5 &amp; 0 &amp; -3 \\ -2
+&amp; -1 &amp; -5 \\ -2 &amp; 0 &amp; -4\end{pmatrix}$</span>。且 <span
+class="math inline"><em>σ</em>(<em>β</em><sub>1</sub>, <em>β</em><sub>2</sub>, <em>β</em><sub>3</sub>) = (<em>β</em><sub>1</sub>, <em>β</em><sub>2</sub>, <em>β</em><sub>3</sub>)<em>T</em><sub>2</sub> = (<em>e</em><sub>1</sub>, <em>e</em><sub>2</sub>, <em>e</em><sub>3</sub>)<em>P</em><em>T</em><sub>2</sub> = <em>σ</em>((<em>e</em><sub>1</sub>, <em>e</em><sub>2</sub>, <em>e</em><sub>3</sub>)<em>P</em><sup>−1</sup>) = (<em>e</em><sub>1</sub>, <em>e</em><sub>2</sub>, <em>e</em><sub>3</sub>)<em>P</em><em>T</em><sub>2</sub><em>P</em><sup>−1</sup> = (<em>e</em><sub>1</sub>, <em>e</em><sub>2</sub>, <em>e</em><sub>3</sub>)<em>T</em><sub>1</sub></span>，则
+<span
+class="math inline"><em>T</em><sub>1</sub> = <em>P</em><em>T</em><sub>2</sub><em>P</em><sup>−1</sup></span>
+<span class="math display">$$
+T_1 = PT_2P^{-1} = XP^{-1} = \begin{pmatrix}1 &amp; 0 &amp; -5 \\ 0
+&amp; -1 &amp; -1 \\ -3 &amp; -1 &amp; 0\end{pmatrix}\begin{pmatrix}1
+&amp; -2 &amp; 2 \\ 1 &amp; 0 &amp; 1 \\ 1 &amp; -1 &amp; 1\end{pmatrix}
+= \begin{pmatrix}-4 &amp; 3 &amp; -3 \\ -2 &amp; 1 &amp; -2 \\ -4 &amp;
+6 &amp; -7\end{pmatrix}
+$$</span></p></li>
+<li><blockquote>
+<p><strong>例题</strong></p>
+<p><span class="math inline"><em>A</em></span> 是 <span
+class="math inline"><em>n</em></span> 阶实对称矩阵，已知 <span
+class="math inline"><em>A</em><sup>2</sup> + 3<em>A</em> + 2<em>I</em> = 0</span></p>
+<ol type="1">
+<li>给出 <span class="math inline"><em>A</em></span>
+的所有可能的互异特征值。</li>
+<li>若 <span class="math inline"><em>n</em></span> 是奇数，证明 <span
+class="math inline"><em>A</em></span> 的伴随矩阵 <span
+class="math inline"><em>A</em><sup>*</sup></span> 正定。</li>
+</ol>
+</blockquote>
+<p><span
+class="math inline"><em>P</em><em>r</em><em>o</em><em>o</em><em>f</em></span>：</p>
+<ol type="1">
+<li><p>可知 <span
+class="math inline"><em>f</em>(<em>A</em>) = <em>A</em><sup>2</sup> + 3<em>A</em> + 2<em>I</em></span>
+是 <span class="math inline"><em>A</em></span> 的一个零化多项式，那么
+<span
+class="math inline"><em>f</em>(<em>x</em>) = <em>x</em><sup>2</sup> + 3<em>x</em> + 2 = (<em>x</em> + 1)(<em>x</em> + 2)</span>，那么
+<span class="math inline"><em>A</em> + <em>I</em> = <em>O</em></span> 或
+<span
+class="math inline"><em>A</em> + 2<em>I</em> = <em>O</em></span>，<span
+class="math inline"><em>A</em></span> 的特征值为 <span
+class="math inline"><em>λ</em><sub>1</sub> = −1, <em>λ</em><sub>2</sub> = −2</span>，都是一重根。</p></li>
+<li><p>由于 <span class="math inline"><em>n</em></span> 是奇数，<span
+class="math inline"><em>A</em></span> 的所有可能的互异特征值都为负数，且
+<span class="math inline">$\det A = \prod_{i=1}^n \lambda_i &lt;
+0$</span>，且 <span class="math inline">$A^{-1} = \frac{1}{\det
+A}A^*$</span>。而，<span class="math inline">$A^{-1} \mathbf{x} =
+\lambda \mathbf{x} \Rightarrow AA^{-1}\mathbf{x} = \mathbf{x} = \lambda
+A\mathbf{x} = \lambda \frac{1}{\lambda}\mathbf{x}$</span>，故 <span
+class="math inline"><em>A</em></span> 与 <span
+class="math inline"><em>A</em><sup>−1</sup></span>
+的特征值互为倒数。得到 <span
+class="math inline"><em>A</em><sup>−1</sup></span>
+的所有可能的互异特征值为 <span class="math inline">$-1,
+-\frac{1}{2}$</span>，则 <span
+class="math inline"><em>A</em><sup>−1</sup> &lt; 0</span>，故 <span
+class="math inline"><em>A</em><sup>*</sup> = (det <em>A</em>)<em>A</em><sup>−1</sup> &gt; 0</span>
+(负负得正)。</p></li>
+<li><p>下面证明若 <span
+class="math inline"><em>A</em>, <em>B</em> ∈ ℝ<sup><em>n</em> × <em>n</em></sup>, <em>c</em> ∈ ℝ, <em>c</em> &lt; 0</span>，则
+<span
+class="math inline"><em>A</em> &lt; 0, <em>B</em> = <em>c</em><em>A</em> &gt; 0</span>。</p>
+<p><span
+class="math inline"><em>P</em><em>r</em><em>o</em><em>o</em><em>f</em></span>：</p>
+<p>设 <span class="math inline"><em>A</em></span> 的特征值为 <span
+class="math inline"><em>λ</em><sub>1</sub>, ⋯, <em>λ</em><sub><em>r</em></sub></span>，由于
+<span class="math inline"><em>A</em> &lt; 0</span>，<span
+class="math inline">∀<em>λ</em><sub><em>i</em></sub>(<em>i</em> = 1, 2, ⋯, <em>r</em>) &lt; 0</span>。而
+<span
+class="math inline"><em>A</em><strong>x</strong><sub><em>i</em></sub> = <em>λ</em><sub><em>i</em></sub><strong>x</strong><sub><em>i</em></sub></span>，<span
+class="math inline"><em>B</em><strong>x</strong><sub><strong>i</strong></sub> = <em>c</em><em>A</em><strong>x</strong><sub><em>i</em></sub> = <em>c</em><em>λ</em><sub><em>i</em></sub><strong>x</strong><sub><em>i</em></sub></span>，故
+<span class="math inline"><em>B</em></span> 的特征值是 <span
+class="math inline"><em>A</em></span> 的特征值的 <span
+class="math inline"><em>c</em></span> 倍，那么 <span
+class="math inline"><em>B</em></span> 的所有特征值都是正的，故 <span
+class="math inline"><em>B</em></span> 正定。</p></li>
+</ol></li>
+</ol>
+<hr />
+<h2 id="内积空间">内积空间</h2>
+<ol type="1">
+<li><blockquote>
+<p><strong>例题</strong></p>
+<p>设 <span
+class="math inline"><em>V</em> = ℝ<sub>2</sub>[<em>x</em>]</span>，则
+<span
+class="math inline"> &lt; <em>f</em>, <em>g</em> &gt;  = <em>f</em>(0)<em>g</em>(0)</span>
+定义了一个 <span class="math inline"><em>V</em></span> 上的内积。</p>
+</blockquote>
+<p><span
+class="math inline"><em>S</em><em>o</em><em>l</em><em>v</em><em>e</em></span>：</p>
+<p><span
+class="math inline"><em>f</em>(0) = <em>a</em><sub>0</sub>, <em>g</em>(0) = <em>b</em><sub>0</sub></span>，则验证下面的性质。</p>
+<p>双线性：<span
+class="math inline"> &lt; <em>λ</em><sub>1</sub><em>f</em><sub>1</sub> + <em>λ</em><sub>2</sub><em>f</em><sub>2</sub>, <em>g</em> &gt;  = <em>λ</em><sub>1</sub><em>f</em><sub>1</sub>(0)<em>g</em>(0) + <em>λ</em><sub>2</sub><em>f</em><sub>2</sub>(0)<em>g</em>(0) = <em>λ</em><sub>1</sub><em>a</em><sub>0</sub><em>b</em><sub>0</sub> + <em>λ</em><sub>2</sub><em>a</em><sub>0</sub><em>b</em><sub>0</sub> = (<em>λ</em><sub>1</sub> + <em>λ</em><sub>2</sub>)<em>a</em><sub>0</sub><em>b</em><sub>0</sub> = (<em>λ</em><sub>1</sub> + <em>λ</em><sub>2</sub>) &lt; <em>f</em>, <em>g</em>&gt;</span>，对于
+<span class="math inline"><em>g</em></span> 也易得到成立。</p>
+<p>对称性：<span
+class="math inline"> &lt; <em>f</em>, <em>g</em> &gt;  = <em>a</em><sub>0</sub><em>b</em><sub>0</sub> =  &lt; <em>g</em>, <em>f</em>&gt;</span>。</p>
+<p>正定性：<span
+class="math inline"> &lt; <em>f</em>, <em>f</em> &gt;  = <em>a</em><sub>0</sub><sup>2</sup> ≥ 0</span>，但是当
+<span class="math inline"><em>a</em><sub>0</sub> = 0</span> 而非 <span
+class="math inline"><em>f</em> = 0</span> 时就有 <span
+class="math inline"> &lt; <em>f</em>, <em>f</em> &gt;  = 0</span>，不符合正定性要求。</p>
+<p>故错误，这不是 <span class="math inline"><em>V</em></span>
+上的内积。</p></li>
+<li><blockquote>
+<p><strong>例题</strong></p>
+</blockquote></li>
+</ol>
 
     </div>
 
@@ -959,14 +1356,14 @@ $$</span></p></li>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">44k</span>
+    <span title="站点总字数">46k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">40 分钟</span>
+    <span title="站点阅读时长">42 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
