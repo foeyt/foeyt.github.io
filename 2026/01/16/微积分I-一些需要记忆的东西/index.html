@@ -28,7 +28,7 @@
 <meta property="og:description" content="期末复习 依旧期末周，所以快马加编，赶制了一份出来。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-01-16T08:48:14.000Z">
-<meta property="article:modified_time" content="2026-01-18T05:20:26.877Z">
+<meta property="article:modified_time" content="2026-01-18T11:46:15.131Z">
 <meta property="article:author" content="Razorsax">
 <meta property="article:tag" content="微积分">
 <meta property="article:tag" content="数学">
@@ -280,7 +280,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-01-18 13:20:26" itemprop="dateModified" datetime="2026-01-18T13:20:26+08:00">2026-01-18</time>
+      <time title="修改时间：2026-01-18 19:46:15" itemprop="dateModified" datetime="2026-01-18T19:46:15+08:00">2026-01-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -299,14 +299,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>20k</span>
+      <span>9.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1:11</span>
+      <span>36 分钟</span>
     </span>
 </div>
 
@@ -1226,22 +1226,34 @@ class="math inline">$\lim\limits_{\lambda(T)\to 0^+}\sum_{i=1}^n
 class="math inline"><em>S</em><em>o</em><em>l</em><em>v</em><em>e</em></span>：</p>
 <p>取分割 <span class="math inline">$x_i = \frac{\pi}{2n}i$</span>，且
 <span class="math inline">$0 \leq x_i \leq \frac{\pi}{2}$</span>，取
-<span class="math inline">$\xi_i = x_i = \frac{\pi}{2n}i$</span> <span
+<span class="math inline">$\xi_i = x_i = \frac{\pi}{2n}i$</span>，<span
+class="math inline">$\Delta x_i = \frac{\pi}{2n}$</span> <span
 class="math display">$$
 \int_0^\frac{\pi}{2}\sin x \mathrm{d}x = \lim\limits_{n \to
 \infty}\sum_{i=1}^n \sin\xi_i \Delta x_i = \lim\limits_{n \to
-\infty}\frac{\sum_{i=1}^n\sin{\frac{\pi}{2n}i}}{n}
-$$</span> 有不等式 <span class="math inline">$\frac{2}{\pi}x \leq \sin x
-\leq 1$</span>，则 <span
-class="math inline">$\frac{1}{n}\sum_{i=1}^n\frac{i}{n} &lt;
-\frac{1}{n}\sum_{i=1}^n\sin{\frac{\pi}{2n}i} &lt; \frac{1}{n} \cdot
-n$</span>，即 <span class="math inline">$\frac{n-1}{n}&lt;
-\frac{1}{n}\sum_{i=1}^n\sin{\frac{\pi}{2n}i} &lt;
-1$</span>，由夹逼原理得到：<span class="math inline">$\lim\limits_{n\to
-\infty} \frac{n-1}{n} =
-\lim\limits_{n\to\infty}\frac{1}{n}\sum_{i=1}^n\sin{\frac{\pi}{2n}i} =
-1$</span>，综上 <span class="math inline">$\int_0^\frac{\pi}{2} = \sin
-x\mathrm{d}x = 1$</span>。</p>
+\infty}\frac{\pi\sum_{i=1}^n\sin{\frac{\pi}{2n}i}}{2n}
+$$</span> 下面化简 <span
+class="math inline">$\sum_{i=1}^n\sin\frac{\pi}{2n}i$</span>。 <span
+class="math display">$$
+\begin{align}
+&amp;\sum_{i=1}^n\sin\frac{\pi}{2n}i =
+\frac{1}{2\sin\frac{\pi}{4n}}\sum_{i=1}^n2\sin\frac{\pi}{2n}\sin\frac{\pi}{4n}
+\\
+&amp;=
+\frac{1}{2\sin\frac{\pi}{4n}}\sum_{i=1}^n(\cos\frac{\pi(2i-1)}{4n}-\cos\frac{\pi(2i+1)}{4n})
+\\
+&amp;= \frac{1}{2\sin\frac{\pi}{4n}}(\cos\frac{\pi}{4n} -
+\cos\frac{\pi(2n+1)}{4n})
+\end{align}
+$$</span></p>
+<p><span class="math display">$$
+\lim\limits_{n\to\infty}\frac{\pi}{2n}\sum_{i=1}^n\sin{\frac{\pi}{2n}i}
+=
+\lim\limits_{n\to\infty}\frac{\pi}{4n\sin\frac{\pi}{4n}}(\cos\frac{\pi}{4n}-\cos\frac{\pi(2n+1)}{4n})
+= 1
+$$</span></p>
+<p>故 <span class="math inline">$\int_0^\frac{\pi}{2} \sin x\mathrm{d}x=
+1$</span></p>
 <h4 id="利用定义计算极限">利用定义计算极限</h4>
 <blockquote>
 <p><strong>例题</strong></p>
@@ -1348,25 +1360,505 @@ class="math inline">[<em>a</em>, <em>b</em>]</span> 上可积，且 <span
 class="math inline"><em>m</em> ≤ <em>f</em>(<em>x</em>) ≤ <em>M</em></span>，则有
 <span
 class="math inline"><em>m</em>(<em>b</em> − <em>a</em>) ≤ ∫<sub><em>a</em></sub><sup><em>b</em></sup><em>f</em>(<em>x</em>)d<em>x</em> ≤ <em>M</em>(<em>b</em> − <em>a</em>)</span>。</p></li>
-<li><p>绝对可积性：</p></li>
+<li><p>绝对可积性：设 <span
+class="math inline"><em>f</em>(<em>x</em>)</span> 在 <span
+class="math inline">[<em>a</em>, <em>b</em>]</span> 上可积，则 <span
+class="math inline">|<em>f</em>(<em>x</em>)|</span> 也在 <span
+class="math inline">[<em>a</em>, <em>b</em>]</span> 上可积，并且<span
+class="math inline">|∫<sub><em>a</em></sub><sup><em>b</em></sup><em>f</em>(<em>x</em>)d<em>x</em>| ≤ ∫<sub><em>a</em></sub><sup><em>b</em></sup>|<em>f</em>(<em>x</em>)|d<em>x</em></span>，这类似于一个连续的三角不等式。</p></li>
+<li><p>积分中值定理：设 <span
+class="math inline"><em>f</em>(<em>x</em>)</span> 在闭区间 <span
+class="math inline">[<em>a</em>, <em>b</em>]</span>
+上连续，则至少存在一点 <span
+class="math inline"><em>ξ</em> ∈ (<em>a</em>, <em>b</em>)</span>，使得
+<span
+class="math display">∫<sub><em>a</em></sub><sup><em>b</em></sup><em>f</em>(<em>x</em>)d<em>x</em> = <em>f</em>(<em>ξ</em>)(<em>b</em> − <em>a</em>)    (<em>a</em> &lt; <em>ξ</em> &lt; <em>b</em>)</span></p></li>
+<li><p>第一积分中值定理：设 <span
+class="math inline"><em>f</em>(<em>x</em>)</span> 在闭区间 <span
+class="math inline">[<em>a</em>, <em>b</em>]</span> 上连续，<span
+class="math inline"><em>φ</em>(<em>x</em>)</span>
+可积且不变号，则至少存在一点 <span
+class="math inline"><em>ξ</em> ∈ (<em>a</em>, <em>b</em>)</span>，使得
+<span
+class="math display">∫<sub><em>a</em></sub><sup><em>b</em></sup><em>f</em>(<em>x</em>)<em>φ</em>(<em>x</em>)d<em>x</em> = <em>f</em>(<em>ξ</em>)∫<sub><em>a</em></sub><sup><em>b</em></sup><em>φ</em>(<em>x</em>)d<em>x</em></span></p></li>
 </ol>
+<hr />
 <h3 id="微积分基本定理">微积分基本定理</h3>
+<blockquote>
+<p><strong>定义</strong></p>
+<p>积分上限函数：若 <span
+class="math inline"><em>f</em>(<em>x</em>)</span> 在 <span
+class="math inline">[<em>a</em>, <em>b</em>]</span> 上可积，则对 <span
+class="math inline">[<em>a</em>, <em>b</em>]</span> 上的任意一点 <span
+class="math inline"><em>x</em></span>，都对应唯一的一个定积分值 <span
+class="math inline">∫<sub><em>a</em></sub><sup><em>x</em></sup><em>f</em>(<em>t</em>)d<em>t</em></span>，则有函数
+<span
+class="math display"><em>Φ</em>(<em>x</em>) = ∫<sub><em>a</em></sub><sup><em>x</em></sup><em>f</em>(<em>t</em>)d<em>t</em></span>
+称为积分上限函数或者变上限函数。</p>
+</blockquote>
+<blockquote>
+<p><strong>定理</strong></p>
+<ol type="1">
+<li><p>若函数 <span class="math inline"><em>f</em>(<em>x</em>)</span> 在
+<span class="math inline">[<em>a</em>, <em>b</em>]</span>
+上可积，则其积分上限函数 <span
+class="math inline"><em>Φ</em>(<em>x</em>)</span> 在区间 <span
+class="math inline">[<em>a</em>, <em>b</em>]</span> 上连续。</p></li>
+<li><p>若函数 <span class="math inline"><em>f</em>(<em>x</em>)</span> 在
+<span class="math inline">[<em>a</em>, <em>b</em>]</span> 上可积，在点
+<span class="math inline"><em>x</em> ∈ [<em>a</em>, <em>b</em>]</span>
+处连续，则其积分上限函数 <span
+class="math inline"><em>Φ</em>(<em>x</em>)</span> 在点 <span
+class="math inline"><em>x</em> ∈ [<em>a</em>, <em>b</em>]</span>
+处可导，且 <span class="math display">$$
+\Phi'(x) = \frac{\mathrm{d}}{\mathrm{d}x}\int_a^xf(t)\mathrm{d}t = f(x)
+$$</span></p></li>
+</ol>
+</blockquote>
+<blockquote>
+<p><strong>定理</strong></p>
+<p>微积分基本定理：设函数 <span
+class="math inline"><em>f</em>(<em>x</em>)</span> 在区间 <span
+class="math inline">[<em>a</em>, <em>b</em>]</span> 上连续，则有 <span
+class="math display">$$
+\frac{\mathrm{d}}{\mathrm{d}x}\int_{x_0}^x f(t)\mathrm{d}t = f(x)\;\; (a
+\leq x \leq b)
+$$</span> 其中 <span
+class="math inline"><em>x</em><sub>0</sub> ∈ [<em>a</em>, <em>b</em>]</span>
+是任意固定的一点。</p>
+</blockquote>
+<p>注意：这里能够使用复合函数求导的链式法则： <span
+class="math display">$$
+\frac{\mathrm{d}}{\mathrm{d}x}\int_{v(x)}^{u(x)}f(t)\mathrm{d}t =
+\frac{\mathrm{d}}{\mathrm{d}x}\int_{x_0}^{u(x)}f(t)\mathrm{d}t -
+\frac{\mathrm{d}}{\mathrm{d}x}\int_{x_0}^{v(x)}f(t)\mathrm{d}t =
+f(u(x))u'(x) - f(v(x))v'(x)
+$$</span></p>
+<blockquote>
+<p><strong>定理</strong></p>
+<p>Newton-Leibniz 公式：设函数 <span
+class="math inline"><em>f</em>(<em>x</em>)</span> 在区间 <span
+class="math inline">[<em>a</em>, <em>b</em>]</span> 上连续，<span
+class="math inline"><em>F</em>(<em>x</em>)</span> 是 <span
+class="math inline"><em>f</em>(<em>x</em>)</span> 在 <span
+class="math inline">[<em>a</em>, <em>b</em>]</span>
+上的任意一个原函数，则有 <span
+class="math display">∫<sub><em>a</em></sub><sup><em>b</em></sup><em>f</em>(<em>x</em>)d<em>x</em> = <em>F</em>(<em>x</em>)|<sub><em>a</em></sub><sup><em>b</em></sup> = <em>F</em>(<em>b</em>) − <em>F</em>(<em>a</em>)</span></p>
+</blockquote>
+<hr />
 <h3 id="定积分的极限与求导">定积分的极限与求导</h3>
+<blockquote>
+<p><strong>例题</strong></p>
+<p>证明：若函数 <span class="math inline"><em>f</em>(<em>x</em>)</span>
+是区间 <span class="math inline">[<em>a</em>, <em>b</em>]</span>
+上的连续正值函数，则： <span class="math display">$$
+e^{\frac{1}{b-a}\int_a^b\ln f(x)\mathrm{d}x} \leq
+\frac{1}{b-a}\int_a^bf(x)\mathrm{d}x
+$$</span></p>
+</blockquote>
+<p><span
+class="math inline"><em>P</em><em>r</em><em>o</em><em>v</em><em>e</em></span>：</p>
+<p>利用 Jensen 不等式：<span class="math inline">ln <em>x</em></span>
+是凹函数，则 <span class="math inline">$\ln(\frac{x_1+x_2}{2}) &gt;
+\frac{\ln x_1 + \ln x_2}{2}$</span>，则推广有： <span
+class="math display">$$
+\ln(\frac{1}{n}\sum_{i=1}^nf(\xi_i)) \geq \frac{\sum_{i=1}^n\ln
+f(\xi_i)}{n}
+$$</span> 这里取分割 <span class="math inline">$x_i = a +
+\frac{b-a}{n}i$</span>，<span class="math inline">$\Delta x_i =
+\frac{b-a}{n}$</span>，<span class="math inline">$\xi_i = x_i = a +
+\frac{b-a}{n}i$</span> 即可。</p>
+<p>两边取极限，由极限的保号性得到： <span class="math display">$$
+\ln(\frac{1}{b-a}\lim\limits_{n\to\infty}\sum_{i=1}^nf(\xi_i)\Delta x_i)
+\geq \frac{1}{b-a}\lim\limits_{n\to\infty}\sum_{i=1}^n\ln f(\xi_i)\Delta
+x_i
+$$</span></p>
+<p><span class="math display">$$
+\ln(\frac{1}{b-a}\int_a^bf(x)\mathrm{d}x) \geq \frac{1}{b-a}\int_a^b\ln
+f(x)\mathrm{d}x
+$$</span></p>
+<p>则有：</p>
+<p><span class="math display">$$
+e^{\frac{1}{b-a}\int_a^b\ln f(x)\mathrm{d}x} \leq
+e^{\ln(\frac{1}{b-a}\int_a^bf(x)\mathrm{d}x)} =
+\frac{1}{b-a}\int_a^bf(x)\mathrm{d}x
+$$</span></p>
+<blockquote>
+<p><strong>例题</strong></p>
+<p><span
+class="math inline">$\lim\limits_{n\to\infty}\int_n^{n+p}\frac{\sin
+x}{x}\mathrm{d}x\;\; (p&gt;0)$</span></p>
+</blockquote>
+<p><span
+class="math inline"><em>S</em><em>o</em><em>l</em><em>v</em><em>e</em></span>:</p>
+<p>这是一个病态积分，不能直接求解，利用积分中值定理即可。</p>
+<p><span
+class="math inline">∃<em>ξ</em> ∈ (<em>n</em>, <em>n</em> + <em>p</em>)</span>，使得
+<span class="math inline">$\int_n^{n+p}\frac{\sin x}{x}\mathrm{d}x =
+p\frac{\sin\xi}{\xi}$</span>。且 <span
+class="math inline"><em>n</em> → ∞, <em>n</em> + <em>p</em> → ∞</span>，故
+<span class="math inline"><em>ξ</em> → ∞</span>。 <span
+class="math display">$$
+\lim\limits_{n\to\infty}\int_n^{n+p}\frac{\sin x}{x}\mathrm{d}x =
+p\lim\limits_{\xi\to\infty}\frac{\sin\xi}{\xi}\mathrm{d}x
+$$</span> 而 <span
+class="math inline">−1 ≤ sin <em>ξ</em> ≤ 1</span>，故 <span
+class="math inline">$-\frac{1}{\xi} \leq \frac{\sin\xi}{\xi} \leq
+\frac{1}{\xi}$</span>，故 <span
+class="math inline">$\lim\limits_{\xi\to\infty}\frac{\sin\xi}{\xi} =
+0$</span>。</p>
+<p>故 <span
+class="math inline">$\lim\limits_{n\to\infty}\int_n^{n+p}\frac{\sin
+x}{x}\mathrm{d}x = 0$</span>。</p>
+<blockquote>
+<p><strong>例题</strong></p>
+<p><span
+class="math inline">$\frac{\mathrm{d}}{\mathrm{d}x}\int_a^b\frac{1}{\sqrt{1+x^2}}\mathrm{d}x$</span>，<span
+class="math inline">$\frac{\mathrm{d}}{\mathrm{d}x}\int_{\sqrt{\ln x}}^x
+e^{-t^2}\mathrm{d}t$</span>。</p>
+</blockquote>
+<p><span
+class="math inline"><em>S</em><em>o</em><em>l</em><em>v</em><em>e</em></span>：</p>
+<p>第一个导数不是变上限的，因此积分是一个固定值，相当于对常数求导，<span
+class="math inline">$\frac{\mathrm{d}}{\mathrm{d}x}\int_a^b\frac{1}{\sqrt{1+x^2}}\mathrm{d}x
+= 0$</span>。</p>
+<p>第二个导数利用公式即可： <span class="math display">$$
+\frac{\mathrm{d}}{\mathrm{d}x}\int_{\sqrt{\ln x}}^x e^{-t^2}\mathrm{d}t
+= e^{-x^2} - \frac{1}{2x^2\sqrt{\ln x}}
+$$</span></p>
+<blockquote>
+<p><strong>例题</strong></p>
+<p>设函数 <span
+class="math inline"><em>F</em>(<em>x</em>) = ∫<sub><em>a</em></sub><sup><em>b</em></sup><em>f</em>(<em>t</em>)|<em>x</em> − <em>t</em>|d<em>t</em>  (<em>a</em> &lt; <em>x</em> &lt; <em>b</em>)</span>，其中
+<span class="math inline"><em>f</em>(<em>t</em>)</span>
+连续，求证：<span
+class="math inline"><em>F</em><sup>″</sup>(<em>x</em>) = 2<em>f</em>(<em>x</em>)</span>。</p>
+</blockquote>
+<p><span
+class="math inline"><em>S</em><em>o</em><em>l</em><em>v</em><em>e</em></span>：
+<span class="math display">$$
+\begin{align}
+&amp;F(x) = \int_a^bf(t)|x-t|\mathrm{d}t = \int_a^xf(t)(x-t)\mathrm{d}t
++ \int_b^xf(t)(x-t)\mathrm{d}t \\
+&amp;= x\int_a^xf(t)\mathrm{d}t - \int_a^xtf(t)\mathrm{d}t +
+x\int_b^xf(t)\mathrm{d}t - \int_b^xtf(t)\mathrm{d}t
+\end{align}
+$$</span></p>
+<p><span class="math display">$$
+\begin{align}
+&amp;F'(x) = \int_a^xf(t)\mathrm{d}t + xf(x) - xf(x) +
+\int_b^xf(t)\mathrm{d}t + xf(x)- xf(x) \\
+&amp;= \int_a^xf(t)\mathrm{d}t + \int_b^xf(t)\mathrm{d}t
+\end{align}
+$$</span></p>
+<p><span
+class="math display"><em>F</em><sup>″</sup>(<em>x</em>) = <em>f</em>(<em>x</em>) + <em>f</em>(<em>x</em>) = 2<em>f</em>(<em>x</em>)</span></p>
+<blockquote>
+<p><strong>例题</strong></p>
+<p><span
+class="math inline">$\lim\limits_{x\to\infty}\frac{(\int_0^xe^{t^2}\mathrm{d}t)^2}{\int_0^xe^{2t^2}\mathrm{d}t}$</span></p>
+</blockquote>
+<p><span
+class="math inline"><em>S</em><em>o</em><em>l</em><em>v</em><em>e</em></span>：</p>
+<p>运用 L’Hospital 定理即可 <span class="math display">$$
+\lim\limits_{x\to\infty}\frac{(\int_0^xe^{t^2}\mathrm{d}t)^2}{\int_0^xe^{2t^2}\mathrm{d}t}
+=
+\lim\limits_{x\to\infty}\frac{2e^{x^2}\int_0^xe^{t^2}\mathrm{d}t}{e^{2x^2}}
+= \lim\limits_{x\to\infty}\frac{\int_0^xe^{t^2}\mathrm{d}t}{e^{x^2}} =
+\lim\limits_{x\to\infty}\frac{e^{x^2}}{2xe^{x^2}} = 0
+$$</span></p>
 <hr />
 <h2 id="定积分的计算方法">定积分的计算方法</h2>
 <h3 id="对称性与周期性求定积分">对称性与周期性求定积分</h3>
+<ul>
+<li>设函数 <span class="math inline"><em>f</em>(<em>x</em>)</span> 在
+<span class="math inline">[−<em>l</em>, <em>l</em>]</span>
+上连续且可积，则：
+<ul>
+<li><span class="math inline"><em>f</em>(<em>x</em>)</span>
+是奇函数时，<span
+class="math inline">∫<sub>−<em>l</em></sub><sup><em>l</em></sup><em>f</em>(<em>x</em>)d<em>x</em> = 0</span>。</li>
+<li><span class="math inline"><em>f</em>(<em>x</em>)</span>
+是偶函数时，<span
+class="math inline">∫<sub>−<em>l</em></sub><sup><em>l</em></sup><em>f</em>(<em>x</em>)d<em>x</em> = 2∫<sub>0</sub><sup><em>l</em></sup><em>f</em>(<em>x</em>)d<em>x</em></span>。</li>
+</ul></li>
+<li>设函数 <span class="math inline"><em>f</em>(<em>x</em>)</span>
+在一段区间 <span
+class="math inline">[<em>α</em>, <em>α</em> + <em>T</em>]</span>
+上连续且可积，<span class="math inline"><em>f</em>(<em>x</em>)</span>
+的周期是 <span class="math inline"><em>T</em></span>，那么 <span
+class="math inline">∫<sub><em>α</em></sub><sup><em>α</em> + <em>T</em></sup><em>f</em>(<em>x</em>)d<em>x</em> = ∫<sub>0</sub><sup><em>T</em></sup><em>f</em>(<em>x</em>)d<em>x</em></span>。</li>
+<li>可以利用函数的对称性解决问题，如果无法注意到对称性可以令 <span
+class="math inline"><em>x</em> = <em>a</em> + <em>b</em> − <em>t</em></span>
+发现对称性。
+<ul>
+<li><span
+class="math inline"><em>f</em>(<em>a</em> + <em>b</em> − <em>x</em>) = −<em>f</em>(<em>x</em>)</span>，称为
+<span class="math inline"><em>f</em>(<em>x</em>)</span> 关于 <span
+class="math inline">$(\frac{a+b}{2}, 0)$</span> 奇对称，<span
+class="math inline">∫<sub><em>a</em></sub><sup><em>b</em></sup><em>f</em>(<em>x</em>)d<em>x</em> = 0</span>。</li>
+<li><span
+class="math inline"><em>f</em>(<em>a</em> + <em>b</em> − <em>x</em>) = <em>f</em>(<em>x</em>)</span>，
+称为 <span class="math inline"><em>f</em>(<em>x</em>)</span> 关于 <span
+class="math inline">$x=\frac{a+b}{2}$</span> 偶对称，<span
+class="math inline">$\int_a^bf(x)\mathrm{d}x =
+2\int_{\frac{a+b}{2}}^bf(x)\mathrm{d}x$</span>。</li>
+</ul></li>
+<li>若 <span
+class="math inline"><em>f</em>(<em>x</em>), <em>g</em>(<em>x</em>)</span>
+在区间 <span class="math inline">$[\frac{1}{a}, a]$</span>
+上有连续的区间代换，<span
+class="math inline">$f(x)=f(\frac{1}{x})$</span>，<span
+class="math inline">$g(x)+g(\frac{1}{x})=A$</span>，直接可以令 <span
+class="math inline">$t =
+\frac{1}{x}$</span>，当作一个对称代换处理。</li>
+</ul>
+<p><strong>注意：利用对称性，尤其是奇对称性可以大幅简化问题，要注意运用。</strong></p>
 <h3 id="wallis-公式">Wallis 公式</h3>
+<p><span class="math display">$$
+\int_0^\frac{\pi}{2}\sin^mx\mathrm{d}x =
+\int_0^\frac{\pi}{2}cos^mx\mathrm{d}x =
+\left\{\begin{flalign}&amp;\frac{(m-1)!!}{m!!}\cdot\frac{\pi}{2},\;\;m为偶数
+\\&amp;\frac{(m-1)!!}{m!!},\;\;m为奇数\end{flalign}\right.
+$$</span></p>
+<p>这个结论可以直接运用，简化计算流程。</p>
+<blockquote>
+<p><strong>定理</strong></p>
+<p>Wallis 公式： <span class="math display">$$
+\int_0^\frac{\pi}{2}\sin^{2n-1}x\mathrm{d}x &lt;
+\int_0^\frac{\pi}{2}\sin^{2n}\mathrm{d}x &lt;
+\int_0^\frac{\pi}{2}\sin^{2n+1}x\mathrm{d}x
+$$</span></p>
+</blockquote>
 <hr />
 <h2 id="定积分的应用">定积分的应用</h2>
 <h3 id="平面图形的面积">平面图形的面积</h3>
+<ul>
+<li><p>直角坐标系下的面积公式：</p>
+<p>当曲线 <span
+class="math inline"><em>y</em> = <em>f</em>(<em>x</em>)</span> 在 <span
+class="math inline">[<em>a</em>, <em>b</em>]</span>
+上连续且可积时，已知由曲线 <span
+class="math inline"><em>y</em> = <em>f</em>(<em>x</em>)</span>，<span
+class="math inline"><em>x</em></span> 轴以及直线 <span
+class="math inline"><em>x</em> = <em>a</em>, <em>x</em> = <em>b</em></span>
+所围成的曲边梯形的面积为： <span
+class="math display"><em>A</em> = ∫<sub><em>a</em></sub><sup><em>b</em></sup>|<em>f</em>(<em>x</em>)|d<em>x</em></span>
+注意：这里有绝对值，要把原函数分为小区间解决。</p>
+<p>若图形由连续曲线 <span
+class="math inline"><em>y</em> = <em>f</em><sub>1</sub>(<em>x</em>), <em>y</em> = <em>f</em><sub>2</sub>(<em>x</em>)</span>
+以及直线 <span
+class="math inline"><em>x</em> = <em>a</em>, <em>x</em> = <em>b</em></span>
+围成，面积为： <span
+class="math display"><em>A</em> = ∫<sub><em>a</em></sub><sup><em>b</em></sup>|<em>f</em><sub>1</sub>(<em>x</em>) − <em>f</em><sub>2</sub>(<em>x</em>)|d<em>x</em></span>
+若图形由连续曲线 <span
+class="math inline"><em>x</em> = <em>φ</em><sub>1</sub>(<em>y</em>), <em>x</em> = <em>φ</em><sub>2</sub>(<em>x</em>)</span>
+以及直线 <span
+class="math inline"><em>y</em> = <em>a</em>, <em>y</em> = <em>b</em></span>
+围成，面积为： <span
+class="math display"><em>A</em> = ∫<sub><em>a</em></sub><sup><em>b</em></sup>|<em>φ</em><sub>1</sub>(<em>y</em>) − <em>φ</em><sub>2</sub>(<em>y</em>)|d<em>y</em></span></p></li>
+<li><p>极坐标下的面积公式：</p>
+<p>曲线 <span
+class="math inline"><em>r</em> = <em>f</em>(<em>θ</em>)</span>
+与两条射线 <span
+class="math inline"><em>θ</em> = <em>α</em>, <em>θ</em> = <em>β</em></span>
+所围成的图形的面积公式： <span class="math display">$$
+A = \frac{1}{2}\int_\alpha^\beta r^2\mathrm{d}\theta =
+\frac{1}{2}\int_\alpha^\beta f^2(\theta)\mathrm{d}\theta
+$$</span>
+注意：实际图形的旋转过程中要去掉重叠部分，计算实际走过的角度，还要掌握实际图形的对称性。且这里是按照逆时针旋转图像的。</p></li>
+<li><p>参数方程下的面积公式：</p>
+<p>闭合曲线 <span
+class="math inline"><em>x</em> = <em>φ</em>(<em>t</em>), <em>y</em> = <em>ψ</em>(<em>t</em>)  (<em>t</em><sub>0</sub> ≤ <em>t</em> ≤ <em>T</em>)</span>
+围成的图像的面积公式： <span class="math display">$$
+A=\frac{1}{2}\int_{t_0}^T(\psi'(t)\varphi(t) -
+\varphi'(t)\psi(t))\mathrm{d}t
+$$</span></p></li>
+</ul>
+<hr />
 <h3 id="平面曲线的弧长">平面曲线的弧长</h3>
+<ul>
+<li><p>直角坐标系下的弧长公式：</p>
+<p>若曲线弧由方程 <span
+class="math inline"><em>y</em> = <em>y</em>(<em>x</em>)  (<em>a</em> ≤ <em>x</em> ≤ <em>b</em>)</span>
+给出，且 <span
+class="math inline"><em>y</em><sup>′</sup>(<em>x</em>)</span>
+在这个区间上连续，则曲线弧是可求长的。</p>
+<p>弧长微分公式： <span class="math display">$$
+\mathrm{d}s = \sqrt{\mathrm{d}x^2 + \mathrm{d}y^2}
+$$</span> 对应的弧长公式： <span class="math display">$$
+s = \int_a^b\sqrt{1+(y'(x))^2}\mathrm{d}x
+$$</span></p></li>
+<li><p>参数方程表示的曲线：</p>
+<p>若曲线弧由方程 <span
+class="math inline"><em>x</em> = <em>φ</em>(<em>t</em>), <em>y</em> = <em>ψ</em>(<em>t</em>)  (<em>α</em> ≤ <em>t</em> ≤ <em>β</em>)</span>
+给出，且函数 <span
+class="math inline"><em>φ</em>(<em>t</em>), <em>ψ</em>(<em>t</em>)</span>
+在这个区间上有连续的导数 <span
+class="math inline"><em>φ</em><sup>′</sup>(<em>t</em>) ≠ 0</span>，则曲线弧是可求长的，对应的弧长公式：
+<span class="math display">$$
+s = \int_\alpha^\beta\sqrt{(\varphi'(t))^2 + (\psi'(t))^2}\mathrm{d}t
+$$</span></p></li>
+<li><p>极坐标方程表示的曲线：</p>
+<p>若曲线弧由极坐标方程 <span
+class="math inline"><em>r</em> = <em>f</em>(<em>θ</em>)  (<em>α</em> &lt; <em>θ</em> &lt; <em>β</em>)</span>
+给出，且 <span
+class="math inline"><em>f</em><sup>′</sup>(<em>θ</em>)</span>
+在这个区间上连续，则曲线弧是可求长的，对应的弧长公式： <span
+class="math display">$$
+s = \int_\alpha^\beta \sqrt{f^2(\theta)+(f'(\theta)^2)}\mathrm{d}\theta
+$$</span></p></li>
+</ul>
+<hr />
 <h3 id="横截面积计算立体体积">横截面积计算立体体积</h3>
+<p>介于平面 <span
+class="math inline"><em>x</em> = <em>a</em>, <em>x</em> = <em>b</em></span>
+之间的立体，若立体被垂直于 <span class="math inline"><em>x</em></span>
+轴的平面截下的平面面积 <span
+class="math inline"><em>S</em>(<em>x</em>)  (<em>a</em> ≤ <em>b</em>)</span>
+为已知的连续函数，则立体的体积为： <span
+class="math display"><em>V</em> = ∫<sub><em>a</em></sub><sup><em>b</em></sup><em>S</em>(<em>x</em>)d<em>x</em></span></p>
+<hr />
 <h3 id="旋转体的体积">旋转体的体积</h3>
+<ul>
+<li><p>绕 <span class="math inline"><em>x</em></span> 轴旋转：</p>
+<p>考虑连续曲线 <span
+class="math inline"><em>y</em> = <em>f</em>(<em>x</em>)</span>，直线
+<span
+class="math inline"><em>x</em> = <em>a</em>, <em>x</em> = <em>b</em></span>
+以及 <span class="math inline"><em>x</em></span> 轴所围成的曲边梯形绕
+<span class="math inline"><em>x</em></span>
+轴旋转一周而形成的旋转体，其横截面积为 <span
+class="math inline"><em>S</em>(<em>x</em>) = <em>π</em><em>y</em><sup>2</sup> = <em>π</em><em>f</em><sup>2</sup>(<em>x</em>)</span>，体积为：
+<span
+class="math display"><em>V</em> = ∫<sub><em>a</em></sub><sup><em>b</em></sup><em>π</em><em>y</em><sup>2</sup>d<em>x</em> = ∫<sub><em>a</em></sub><sup><em>b</em></sup><em>π</em><em>f</em><sup>2</sup>(<em>x</em>)d<em>x</em></span></p></li>
+<li><p>绕 <span class="math inline"><em>y</em></span> 轴旋转：</p>
+<p>同样地，此时横截面积为 <span
+class="math inline"><em>S</em>(<em>x</em>) = <em>π</em>((<em>x</em> + <em>Δ</em><em>x</em>)<sup>2</sup> − <em>x</em><sup>2</sup>) = <em>π</em>(2<em>x</em> + <em>Δ</em><em>x</em>)<em>Δ</em><em>x</em></span>，体积为：
+<span
+class="math display"><em>V</em> = 2<em>π</em>∫<sub><em>a</em></sub><sup><em>b</em></sup><em>x</em><em>f</em>(<em>x</em>)d<em>x</em></span></p></li>
+</ul>
+<hr />
 <h3 id="旋转体的侧面积">旋转体的侧面积</h3>
+<ul>
+<li><p>参数方程给出的旋转体侧面积：</p>
+<p>设定义在 <span class="math inline">[<em>a</em>, <em>b</em>]</span>
+上的曲线 <span
+class="math inline"><em>x</em> = <em>φ</em>(<em>t</em>), <em>u</em> = <em>ψ</em>(<em>t</em>)  (<em>α</em> ≤ <em>t</em> ≤ <em>β</em>)</span>，而曲线的起点
+<span
+class="math inline"><em>A</em> = (<em>φ</em>(<em>α</em>), <em>ψ</em>(<em>α</em>))</span>，终点
+<span
+class="math inline"><em>B</em> = (<em>φ</em>(<em>β</em>), <em>ψ</em>(<em>β</em>))</span>。若函数
+<span class="math inline"><em>φ</em>(<em>t</em>)</span> 与 <span
+class="math inline"><em>ψ</em>(<em>t</em>)</span> 在 <span
+class="math inline">[<em>α</em>, <em>β</em>]</span> 上具有连续的导数且
+<span
+class="math inline"><em>φ</em><sup>′</sup>(<em>t</em>)<em>ψ</em><sup>′</sup>(<em>t</em>) ≠ 0</span>，则上述旋转体的侧面积为：
+<span class="math display">$$
+P = 2\pi\int_\alpha^\beta|\psi(t)|\sqrt{(\varphi'(t))^2 +
+(\psi'(t))^2}\mathrm{d}t
+$$</span></p></li>
+<li><p>直角坐标系给出的旋转体侧面积：</p>
+<p>设曲线 <span
+class="math inline"><em>y</em> = <em>f</em>(<em>x</em>)</span>，曲线的起点
+<span
+class="math inline"><em>A</em> = (<em>a</em>, <em>f</em>(<em>a</em>))</span>，终点
+<span
+class="math inline"><em>B</em> = (<em>b</em>, <em>f</em>(<em>b</em>))</span>，则侧面积公式：
+<span class="math display">$$
+P = 2\pi\int_a^b|y|\sqrt{1+(f'(x))^2}\mathrm{d}x
+$$</span></p></li>
+</ul>
 <hr />
 <h2 id="广义积分">广义积分</h2>
 <h3 id="无穷积分">无穷积分</h3>
+<blockquote>
+<p><strong>定义</strong></p>
+<p>无穷积分：设函数 <span
+class="math inline"><em>f</em>(<em>x</em>)</span> 定义在无穷区间 <span
+class="math inline">[<em>a</em>, +∞)</span> 上，而且对任意 <span
+class="math inline"><em>b</em> &gt; <em>a</em></span>， 函数 <span
+class="math inline"><em>f</em>(<em>x</em>)</span> 在 <span
+class="math inline">[<em>a</em>, <em>b</em>]</span>
+上可积，对变上限的函数 <span
+class="math inline">∫<sub><em>a</em></sub><sup><em>b</em></sup><em>f</em>(<em>x</em>)d<em>x</em></span>，如果极限
+<span class="math display">$$
+\lim\limits_{b\to+\infty}\int_a^bf(x)\mathrm{d}x
+$$</span> 存在，就记该极限为 <span
+class="math display">∫<sub><em>a</em></sub><sup>+∞</sup><em>f</em>(<em>x</em>)d<em>x</em></span>
+并称它是 <span class="math inline"><em>f</em>(<em>x</em>)</span>
+在无穷区间 <span class="math inline">[<em>a</em>, +∞)</span>
+上的无穷积分或第一类广义积分，即 <span class="math display">$$
+\int_a^{+\infty}f(x)\mathrm{d}x =
+\lim\limits_{b\to+\infty}\int_a^bf(x)\mathrm{d}x
+$$</span> 此时称无穷积分收敛，否则称无穷积分发散，当无穷积分收敛时，函数
+<span class="math inline"><em>f</em>(<em>x</em>)</span> 在区间 <span
+class="math inline">[<em>a</em>, +∞)</span> 上广义可积，简称可积。</p>
+</blockquote>
+<p>对于无穷积分依然可以使用 Newton-Leibniz
+公式，但是相应的要换成极限。</p>
+<blockquote>
+<p><strong>定义</strong></p>
+<p>Cauchy 主值：设 <span
+class="math inline"><em>f</em>(<em>x</em>)</span> 在 <span
+class="math inline">(−∞, ∞)</span> 上有定义，如果 <span
+class="math inline">∫<sub>−<em>b</em></sub><sup>0</sup><em>f</em>(<em>x</em>)d<em>x</em></span>
+与 <span
+class="math inline">∫<sub>0</sub><sup><em>b</em></sup><em>f</em>(<em>x</em>)d<em>x</em></span>
+对任意的 <span class="math inline"><em>b</em> &gt; 0</span>
+都存在，则称极限（如果存在） <span class="math display">$$
+\lim\limits_{b\to+\infty}(\int_{-b}^0f(x)\mathrm{d}x +
+\int_0^bf(x)\mathrm{d}x) =
+\lim\limits_{b\to+\infty}\int_{-b}^bf(x)\mathrm{d}x
+$$</span> 是无穷积分 <span
+class="math inline">∫<sub>−∞</sub><sup>+∞</sup><em>f</em>(<em>x</em>)d<em>x</em></span>
+的 Cauchy 主值，记为 <span class="math display">$$
+\mathrm{V.P.}\int_{-\infty}^{+\infty}f(x)\mathrm{d}x =
+\lim\limits_{b\to+\infty}\int_{-b}^bf(x)\mathrm{d}x
+$$</span> 此时称无穷积分 <span
+class="math inline">∫<sub>−∞</sub><sup>+∞</sup><em>f</em>(<em>x</em>)d<em>x</em></span>
+在 Cauchy 主值的意义下收敛，简称 Cauchy
+主值积分收敛，如果上述极限不存在，就说无穷积分 <span
+class="math inline">∫<sub>−∞</sub><sup>+∞</sup><em>f</em>(<em>x</em>)d<em>x</em></span>
+在 Cauchy 主值的意义下发散，简称 Cauchy 主值积分发散。</p>
+<p>如果 Cauchy 主值积分发散，则无穷积分必发散，但反之不为真。</p>
+</blockquote>
+<hr />
 <h3 id="瑕积分">瑕积分</h3>
+<blockquote>
+<p><strong>定义</strong></p>
+<p>瑕积分：设函数 <span
+class="math inline"><em>f</em>(<em>x</em>)</span> 在区间 <span
+class="math inline">(<em>a</em>, <em>b</em>]</span> 上有定义且在点 <span
+class="math inline"><em>a</em></span> 的任意小的右领域内无界，但对 <span
+class="math inline">∀<em>ϵ</em> ∈ (0, <em>b</em> − <em>a</em>)</span>，函数
+<span class="math inline"><em>f</em>(<em>x</em>)</span> 在区间 <span
+class="math inline">[<em>a</em> + <em>ϵ</em>, <em>b</em>]</span>
+上可积，如果极限 <span class="math display">$$
+\lim\limits_{\epsilon\to0^+}\int_{a+\epsilon}^bf(x)\mathrm{d}x
+$$</span> 存在且有限，则称无界函数的积分或瑕积分 <span
+class="math inline">∫<sub><em>a</em></sub><sup><em>b</em></sup><em>f</em>(<em>x</em>)d<em>x</em></span>
+收敛，并记为 <span class="math display">$$
+\int_a^bf(x)\mathrm{d}x =
+\lim\limits_{\epsilon\to0^+}\int_{a+\epsilon}^bf(x)\mathrm{d}x
+$$</span> 否则称该瑕积分发散，点 <span
+class="math inline"><em>a</em></span> 叫做积分的瑕点。</p>
+</blockquote>
+<blockquote>
+<p><strong>定义</strong></p>
+<p>Cauchy 主值：<span class="math inline"><em>f</em>(<em>x</em>)</span>
+在 <span class="math inline">[<em>a</em>, <em>b</em>]</span> 的内点
+<span class="math inline"><em>c</em></span> 附近无界，不含 <span
+class="math inline"><em>c</em></span> 的子区间上可积，极限 <span
+class="math display">$$
+\lim\limits_{\epsilon\to0^+}(\int_a^{c-\epsilon}f(x)\mathrm{d}x+\int_{c+\epsilon}^bf(x)\mathrm{d}x)
+$$</span> 存在有限，称为 <span
+class="math inline">∫<sub><em>a</em></sub><sup><em>b</em></sup><em>f</em>(<em>x</em>)d<em>x</em></span>
+的 Cauchy 主值，记为 <span class="math display">$$
+\mathrm{V.P.}\int_a^bf(x)\mathrm{d}x =
+\lim\limits_{\epsilon\to0^+}(\int_a^{c-\epsilon}f(x)\mathrm{d}x+\int_{c+\epsilon}^bf(x)\mathrm{d}x)
+$$</span> 同样的定义有 Cauchy 主值积分收敛与发散。</p>
+</blockquote>
 <hr />
 <h2 id="微分方程的基本概念">微分方程的基本概念</h2>
 <hr />
@@ -1444,14 +1936,14 @@ id="二阶非齐次线性微分方程的解的结构">二阶非齐次线性微�
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">44k</span>
+    <span title="站点总字数">35k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:41</span>
+    <span title="站点阅读时长">2:06</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
